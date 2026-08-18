@@ -1,0 +1,145 @@
+/* =========================================================
+   STACKLY — auth.css
+   Shared styles for login.html and signup.html.
+   Reuses shared tokens from style.css (--black, --accent, etc.)
+   Signature element: the orbit-scene role switcher — a satellite
+   icon that orbits the core atom mark and morphs between
+   Customer (indigo) and Admin (amber) as the role toggle changes.
+   ========================================================= */
+
+.au-page{ min-height:100vh; display:grid; grid-template-columns:1.05fr 1fr; }
+
+/* ---------- Visual panel (left) ---------- */
+.au-visual{ position:relative; overflow:hidden; background:linear-gradient(160deg, var(--black-soft), var(--black)); display:flex; flex-direction:column; justify-content:space-between; padding:44px 5vw 48px; }
+
+.au-visual-grid{ position:absolute; inset:0; z-index:0; background-image:linear-gradient(var(--line-soft) 1px, transparent 1px), linear-gradient(90deg, var(--line-soft) 1px, transparent 1px); background-size:54px 54px; mask-image:radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 80%); -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 80%); animation:auGridPulse 9s ease-in-out infinite; }
+@keyframes auGridPulse{ 0%,100%{ opacity:1; } 50%{ opacity:0.5; } }
+
+.au-glow{ position:absolute; z-index:0; border-radius:50%; filter:blur(110px); opacity:0.32; }
+.au-glow-1{ width:420px; height:420px; background:var(--accent); top:-100px; left:-90px; animation:auDrift1 18s ease-in-out infinite; }
+.au-glow-2{ width:360px; height:360px; background:var(--accent-2); bottom:-120px; right:-70px; animation:auDrift2 22s ease-in-out infinite; }
+@keyframes auDrift1{ 0%,100%{ transform:translate(0,0); } 50%{ transform:translate(40px,30px); } }
+@keyframes auDrift2{ 0%,100%{ transform:translate(0,0); } 50%{ transform:translate(-30px,-24px); } }
+
+.au-visual-top{ position:relative; z-index:2; display:flex; align-items:center; gap:9px; font-family:var(--font-display); font-weight:700; font-size:1.25rem; }
+.au-visual-top i{ color:var(--accent); font-size:1.15rem; }
+
+.au-orbit-scene{ position:relative; z-index:1; width:min(300px,72%); aspect-ratio:1/1; margin:20px auto; }
+.au-ring{ position:absolute; inset:0; border-radius:50%; border:1px solid var(--line); }
+.au-ring-1{ inset:6%; }
+.au-ring-2{ inset:20%; border-style:dashed; border-color:var(--line-soft); animation:auSpin 30s linear infinite reverse; }
+
+.au-orbit-core{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:74px; height:74px; border-radius:50%; background:linear-gradient(135deg, var(--accent), var(--accent-2)); display:flex; align-items:center; justify-content:center; font-size:1.5rem; box-shadow:0 0 60px rgba(78,91,255,0.5); z-index:2; }
+
+.au-orbit-track{ position:absolute; inset:6%; animation:auSpin 22s linear infinite; z-index:1; }
+@keyframes auSpin{ to{ transform:rotate(360deg); } }
+.au-orbit-sat{ position:absolute; top:-22px; left:50%; margin-left:-22px; width:44px; height:44px; border-radius:50%; background:var(--black-elev); border:1.5px solid var(--accent-2); color:var(--accent-2); display:flex; align-items:center; justify-content:center; font-size:1rem; box-shadow:0 10px 26px rgba(0,0,0,0.5); animation:auSpinReverse 22s linear infinite; transition:border-color .4s var(--ease), color .4s var(--ease), box-shadow .4s var(--ease); }
+@keyframes auSpinReverse{ from{ transform:rotate(0deg); } to{ transform:rotate(-360deg); } }
+.au-orbit-sat.role-admin{ border-color:#ffb84d; color:#ffb84d; box-shadow:0 0 26px rgba(255,184,77,0.45); }
+.au-orbit-sat i{ transition:transform .3s var(--ease); }
+.au-orbit-sat.icon-pop i{ transform:scale(0); }
+
+.au-visual-copy{ position:relative; z-index:2; }
+.au-visual-copy h2{ font-size:clamp(1.4rem,2.4vw,1.9rem); line-height:1.28; margin-bottom:12px; max-width:400px; }
+.au-visual-copy p{ color:var(--white-dim); font-size:0.92rem; line-height:1.7; max-width:380px; margin-bottom:22px; }
+.au-visual-points{ display:flex; flex-direction:column; gap:11px; }
+.au-visual-points li{ display:flex; align-items:center; gap:10px; color:var(--white-dim); font-size:0.86rem; }
+.au-visual-points i{ color:var(--accent-2); width:16px; font-size:0.85rem; }
+
+/* ---------- Form panel (right) ---------- */
+.au-form-panel{ display:flex; align-items:center; justify-content:center; padding:60px 6vw; background:var(--black); }
+.au-form-wrap{ width:100%; max-width:420px; }
+
+.au-mobile-logo{ display:none; align-items:center; gap:8px; font-family:var(--font-display); font-weight:700; font-size:1.2rem; margin-bottom:30px; }
+.au-mobile-logo i{ color:var(--accent); }
+
+.au-role-toggle{ position:relative; display:flex; background:var(--black-elev); border:1px solid var(--line); border-radius:100px; padding:4px; margin-bottom:30px; }
+.au-role-indicator{ position:absolute; top:4px; left:4px; bottom:4px; width:calc(50% - 4px); border-radius:100px; background:var(--accent); transition:transform .4s var(--ease), background .4s var(--ease); z-index:0; }
+.au-role-indicator.role-admin{ background:#c98a2e; }
+.au-role-btn{ position:relative; z-index:1; flex:1; display:flex; align-items:center; justify-content:center; gap:8px; padding:11px 10px; border-radius:100px; font-size:0.85rem; font-weight:600; color:var(--white-dim); transition:color .3s; }
+.au-role-btn.active{ color:var(--white); }
+
+.au-form-wrap h1{ font-size:clamp(1.55rem,2.8vw,2rem); margin-bottom:8px; }
+.au-sub{ color:var(--white-dim); font-size:0.92rem; margin-bottom:28px; }
+.au-sub #auRoleLabel, .au-sub .au-role-label{ color:var(--accent-2); font-weight:600; }
+
+.au-field{ position:relative; margin-bottom:18px; }
+.au-field input{ width:100%; padding:20px 18px 10px; border-radius:14px; border:1px solid var(--line); background:var(--black-elev); color:var(--white); font-size:0.95rem; font-family:inherit; transition:border-color .3s; }
+.au-field input:focus{ outline:none; border-color:var(--accent); }
+.au-field label{ position:absolute; left:18px; top:19px; color:var(--white-dim); font-size:0.95rem; pointer-events:none; transition:transform .25s var(--ease), font-size .25s var(--ease), color .25s var(--ease); transform-origin:left top; }
+.au-field input:focus + label, .au-field input:not(:placeholder-shown) + label{ transform:translateY(-10px) scale(0.78); color:var(--accent-2); }
+.au-field-row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+
+.au-field-password input{ padding-right:46px; }
+.au-pass-toggle{ position:absolute; right:14px; top:16px; color:var(--white-dim); font-size:1rem; transition:color .3s; }
+.au-pass-toggle:hover{ color:var(--white); }
+
+.au-field-error input{ border-color:#ff6b6b; animation:auShake .4s; }
+@keyframes auShake{ 0%,100%{ transform:translateX(0); } 25%{ transform:translateX(-6px); } 75%{ transform:translateX(6px); } }
+.au-field-hint{ font-size:0.78rem; color:#ff8b8b; margin:-10px 0 16px; display:none; }
+.au-field-error + .au-field-hint{ display:block; }
+
+.au-form-row{ display:flex; align-items:center; justify-content:space-between; margin-bottom:26px; font-size:0.85rem; flex-wrap:wrap; gap:10px; }
+.au-checkbox{ display:flex; align-items:center; gap:8px; color:var(--white-dim); cursor:pointer; }
+.au-checkbox input{ accent-color:var(--accent); width:16px; height:16px; }
+.au-forgot, .au-terms a{ color:var(--accent-2); font-weight:600; transition:color .3s; }
+.au-forgot:hover, .au-terms a:hover{ color:var(--white); }
+.au-terms{ color:var(--white-dim); }
+
+.au-submit-btn{ position:relative; width:100%; padding:17px; border-radius:100px; background:var(--accent); color:var(--white); font-weight:600; font-size:0.95rem; overflow:hidden; transition:background .3s, transform .3s var(--ease); }
+.au-submit-btn:hover{ transform:translateY(-2px); }
+.au-submit-label{ display:flex; align-items:center; justify-content:center; gap:10px; transition:opacity .25s; }
+.au-submit-loader{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .25s; }
+.au-submit-loader::after{ content:''; width:20px; height:20px; border-radius:50%; border:2px solid rgba(246,246,244,0.35); border-top-color:#fff; animation:auSpin .7s linear infinite; }
+.au-submit-btn.is-loading .au-submit-label{ opacity:0; }
+.au-submit-btn.is-loading .au-submit-loader{ opacity:1; }
+
+.au-divider{ display:flex; align-items:center; gap:14px; margin:28px 0; color:var(--white-dim); font-size:0.78rem; }
+.au-divider::before, .au-divider::after{ content:''; flex:1; height:1px; background:var(--line); }
+
+.au-social-row{ display:flex; gap:14px; margin-bottom:30px; }
+.au-social-btn{ flex:1; display:flex; align-items:center; justify-content:center; gap:10px; padding:13px; border-radius:14px; border:1px solid var(--line); font-weight:600; font-size:0.88rem; transition:border-color .3s, background .3s; }
+.au-social-btn:hover{ border-color:var(--accent-2); background:var(--black-elev); }
+
+.au-switch{ text-align:center; color:var(--white-dim); font-size:0.9rem; }
+.au-switch a{ color:var(--accent-2); font-weight:600; }
+.au-switch a:hover{ color:var(--white); }
+
+/* ---------- Entrance stagger ---------- */
+.au-visual-top, .au-orbit-scene, .au-visual-copy,
+.au-form-wrap > *{ opacity:0; animation:auRise .7s var(--ease) forwards; }
+@keyframes auRise{ from{ opacity:0; transform:translateY(18px); } to{ opacity:1; transform:translateY(0); } }
+.au-visual-top{ animation-delay:.05s; }
+.au-orbit-scene{ animation-delay:.15s; }
+.au-visual-copy{ animation-delay:.3s; }
+.au-form-wrap > *:nth-child(1){ animation-delay:.1s; }
+.au-form-wrap > *:nth-child(2){ animation-delay:.18s; }
+.au-form-wrap > *:nth-child(3){ animation-delay:.26s; }
+.au-form-wrap > *:nth-child(4){ animation-delay:.34s; }
+.au-form-wrap > *:nth-child(5){ animation-delay:.42s; }
+.au-form-wrap > *:nth-child(6){ animation-delay:.5s; }
+.au-form-wrap > *:nth-child(7){ animation-delay:.58s; }
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  .au-page{ grid-template-columns:1fr 1fr; }
+  .au-visual{ padding:36px 4vw 40px; }
+  .au-visual-copy p{ margin-bottom:16px; }
+}
+@media (max-width:900px){
+  .au-page{ grid-template-columns:1fr; }
+  .au-visual{ min-height:auto; padding:36px 6vw 34px; }
+  .au-visual-points{ display:none; }
+  .au-orbit-scene{ width:190px; margin:14px auto; }
+  .au-visual-copy p{ margin-bottom:0; }
+  .au-form-panel{ padding:44px 6vw 60px; }
+}
+@media (max-width:600px){
+  .au-visual{ display:none; }
+  .au-mobile-logo{ display:flex; }
+  .au-form-panel{ min-height:100vh; align-items:flex-start; padding:56px 6vw; }
+}
+@media (prefers-reduced-motion:reduce){
+  .au-orbit-track, .au-ring-2, .au-visual-grid, .au-glow-1, .au-glow-2, .au-orbit-sat{ animation:none; }
+  .au-visual-top, .au-orbit-scene, .au-visual-copy, .au-form-wrap > *{ animation:none; opacity:1; transform:none; }
+}

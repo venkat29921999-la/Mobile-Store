@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Page Not Found — STACKLY</title>
+<meta name="description" content="This page has drifted off orbit. Head back to STACKLY home or return to where you came from.">
+<meta name="robots" content="noindex">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="404.css">
+</head>
+<body class="nf-page">
+
+<!-- Standalone page: no shared header/footer, no script.js — everything
+     this page needs (cursor glow, starfield, back button) is self
+     contained below so nothing depends on nav markup that isn't here. -->
+
+<!-- ================= CURSOR GLOW (desktop) ================= -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ================= 404 — LOST IN ORBIT (single fixed screen) ================= -->
+<section class="nf-hero" id="nf-hero">
+
+  <div class="nf-bg" aria-hidden="true">
+    <div class="nf-grid-lines"></div>
+    <div class="nf-glow nf-glow-1"></div>
+    <div class="nf-glow nf-glow-2"></div>
+    <div class="nf-stars" id="nfStars"></div>
+  </div>
+
+  <a href="index.html#home" class="nf-logo">
+        <img src="Assest/stackly-logo.webp" alt="Stackly" class="logo-img">
+  </a>
+
+  <div class="nf-inner">
+
+    <div class="nf-orbit-stage" id="nfOrbitStage">
+      <div class="nf-orbit-path nf-orbit-path-1" aria-hidden="true"></div>
+      <div class="nf-orbit-path nf-orbit-path-2" aria-hidden="true"></div>
+
+      <h1 class="nf-code" aria-label="404">
+        <span class="nf-digit">4</span><span class="nf-digit nf-digit-mid">0</span><span class="nf-digit">4</span>
+      </h1>
+
+      <div class="nf-orbit-track nf-orbit-track-1" aria-hidden="true">
+        <span class="nf-debris"><img src="Assest/m6.webp" alt=""></span>
+      </div>
+      <div class="nf-orbit-track nf-orbit-track-2" aria-hidden="true">
+        <span class="nf-debris nf-debris-icon"><i class="fa-solid fa-magnet"></i></span>
+      </div>
+      <div class="nf-orbit-track nf-orbit-track-3" aria-hidden="true">
+        <span class="nf-debris nf-debris-icon"><i class="fa-solid fa-bolt"></i></span>
+      </div>
+    </div>
+
+    <p class="eyebrow"><i class="fa-solid fa-satellite-dish"></i> Error 404</p>
+    <h2 class="nf-title">This orbit doesn't exist.</h2>
+    <p class="nf-sub">The page you were looking for has drifted off somewhere between the shop and the stars.</p>
+
+    <div class="nf-cta">
+      <a href="index.html#home" class="btn btn-primary"><i class="fa-solid fa-house"></i> Back to Home</a>
+      <button type="button" class="btn btn-ghost" id="nfBackBtn"><i class="fa-solid fa-arrow-left"></i> Go to Previous Page</button>
+    </div>
+
+    <div class="nf-links">
+      <span>Or try:</span>
+      <a href="shop.html">Shop</a>
+      <a href="feature.html">Features</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    /* ---------- Starfield — generate scattered twinkling dots ---------- */
+    var starField = document.getElementById('nfStars');
+    if (starField) {
+      var short = window.matchMedia('(max-height:680px)').matches;
+      var narrow = window.matchMedia('(max-width:640px)').matches;
+      var starCount = (narrow || short) ? 26 : 55;
+      var starsHtml = '';
+      for (var i = 0; i < starCount; i++) {
+        var top = Math.random() * 100;
+        var left = Math.random() * 100;
+        var size = (Math.random() * 2 + 1).toFixed(1);
+        var delay = (Math.random() * 5).toFixed(2);
+        var duration = (Math.random() * 3 + 2.5).toFixed(2);
+        starsHtml += '<span class="nf-star" style="top:' + top + '%; left:' + left + '%; width:' + size + 'px; height:' + size + 'px; animation-delay:' + delay + 's; animation-duration:' + duration + 's;"></span>';
+      }
+      starField.innerHTML = starsHtml;
+    }
+
+    /* ---------- Cursor glow — desktop only ---------- */
+    var glow = document.getElementById('cursorGlow');
+    if (glow && window.matchMedia('(min-width:901px)').matches) {
+      window.addEventListener('mousemove', function (e) {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+      });
+    }
+
+    /* ---------- Back button — go to previous page, fall back to home ---------- */
+    var backBtn = document.getElementById('nfBackBtn');
+    if (backBtn) {
+      backBtn.addEventListener('click', function () {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = 'index.html#home';
+        }
+      });
+    }
+
+    /* ---------- Orbit stage — subtle cursor parallax, desktop only ---------- */
+    var stage = document.getElementById('nfOrbitStage');
+    var hero = document.getElementById('nf-hero');
+    if (stage && hero && window.matchMedia('(min-width:901px)').matches) {
+      hero.addEventListener('mousemove', function (e) {
+        var rect = stage.getBoundingClientRect();
+        var px = (e.clientX - rect.left - rect.width / 2) / rect.width;
+        var py = (e.clientY - rect.top - rect.height / 2) / rect.height;
+        stage.style.transform = 'translate(' + (px * 14) + 'px,' + (py * 14) + 'px)';
+      });
+      hero.addEventListener('mouseleave', function () {
+        stage.style.transform = 'translate(0,0)';
+      });
+    }
+
+  });
+</script>
+</body>
+</html>

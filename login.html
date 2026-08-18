@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — STACKLY</title>
+<meta name="description" content="Sign in to your STACKLY account to track orders, manage returns and access member pricing.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+<div class="au-page">
+
+  <!-- ================= VISUAL PANEL ================= -->
+  <div class="au-visual">
+    <div class="au-visual-grid" aria-hidden="true"></div>
+    <div class="au-glow au-glow-1" aria-hidden="true"></div>
+    <div class="au-glow au-glow-2" aria-hidden="true"></div>
+
+    <a href="index.html#home" class="au-visual-top">
+      <i class="fa-solid fa-atom"></i><span>STACKLY</span>
+    </a>
+
+    <div class="au-orbit-scene" aria-hidden="true">
+      <div class="au-ring au-ring-1"></div>
+      <div class="au-ring au-ring-2"></div>
+      <div class="au-orbit-core"><i class="fa-solid fa-atom"></i></div>
+      <div class="au-orbit-track">
+        <div class="au-orbit-sat" id="auOrbitSat"><i class="fa-solid fa-user" id="auSatIcon"></i></div>
+      </div>
+    </div>
+
+    <div class="au-visual-copy">
+      <h2>Track orders, manage returns, and unlock member pricing.</h2>
+      <p>One account for everything STACKLY — from order status to early access on new drops.</p>
+      <ul class="au-visual-points">
+        <li><i class="fa-solid fa-truck-fast"></i> Real-time order tracking</li>
+        <li><i class="fa-solid fa-shield-heart"></i> Faster warranty claims</li>
+        <li><i class="fa-solid fa-tag"></i> Member-only pricing</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ================= FORM PANEL ================= -->
+  <div class="au-form-panel">
+    <div class="au-form-wrap">
+
+      <a href="index.html#home" class="au-mobile-logo">
+        <i class="fa-solid fa-atom"></i><span>STACKLY</span>
+      </a>
+
+      <div class="au-role-toggle" id="auRoleToggle">
+        <div class="au-role-indicator" id="auRoleIndicator"></div>
+        <button type="button" class="au-role-btn active" data-role="customer"><i class="fa-solid fa-user"></i> Customer</button>
+        <button type="button" class="au-role-btn" data-role="admin"><i class="fa-solid fa-shield-halved"></i> Admin</button>
+      </div>
+
+      <h1>Welcome back</h1>
+      <p class="au-sub">Sign in to continue to your <span class="au-role-label">customer</span> account.</p>
+
+      <form class="au-form" id="auLoginForm">
+        <input type="hidden" id="auRoleField" value="customer">
+
+        <div class="au-field">
+          <input type="email" id="auEmail" placeholder=" " required>
+          <label for="auEmail">Email address</label>
+        </div>
+
+        <div class="au-field au-field-password">
+          <input type="password" id="auPassword" placeholder=" " required>
+          <label for="auPassword">Password</label>
+          <button type="button" class="au-pass-toggle" aria-label="Show password"><i class="fa-regular fa-eye"></i></button>
+        </div>
+
+        <div class="au-form-row">
+          <label class="au-checkbox">
+            <input type="checkbox">
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="au-forgot">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="au-submit-btn">
+          <span class="au-submit-label">Sign In <i class="fa-solid fa-arrow-right"></i></span>
+          <span class="au-submit-loader"></span>
+        </button>
+      </form>
+
+      <div class="au-divider"><span>or continue with</span></div>
+      <div class="au-social-row">
+        <button type="button" class="au-social-btn"><i class="fa-brands fa-google"></i> Google</button>
+        <button type="button" class="au-social-btn"><i class="fa-brands fa-apple"></i> Apple</button>
+      </div>
+
+      <p class="au-switch">Don't have an account? <a href="signup.html">Create one</a></p>
+    </div>
+  </div>
+
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>

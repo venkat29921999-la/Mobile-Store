@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STACKLY — Premium Mobile Accessories</title>
+<meta name="description" content="STACKLY — premium mobile accessories. Cases, earbuds, chargers & cables engineered for every device.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= CUSTOM CURSOR GLOW ================= -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ================= PRELOADER ================= -->
+<div class="preloader" id="preloader">
+  <div class="preloader-logo">STACKLY</div>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+
+    <a href="#home" class="logo">
+      <img src="Assest/stackly-logo.webp" alt="Stackly" class="logo-img">
+    </a>
+
+    <nav class="nav-center">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="feature.html" class="nav-link">Features</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-right-group">
+      <a href="login.html" class="login-btn">
+        <i class="fa-regular fa-user"></i><span>Login</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-link"><i class="fa-solid fa-house"></i>Home</a>
+      <a href="about.html" class="mobile-link"><i class="fa-solid fa-book-open"></i>About</a>
+      <a href="shop.html" class="mobile-link"><i class="fa-solid fa-layer-group"></i>Shop</a>
+      <a href="feature.html" class="mobile-link"><i class="fa-solid fa-gears"></i>Features</a>
+      <a href="contact.html" class="mobile-link"><i class="fa-solid fa-envelope"></i>Contact</a>
+      <a href="login.html" class="mobile-link login"><i class="fa-regular fa-user"></i>Login</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= 1. HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="aurora-sweep"></div>
+    <div class="grid-overlay"></div>
+
+    <div class="hero-particle-scene" id="heroParticleScene" aria-hidden="true">
+      <span class="particle p-1"></span>
+      <span class="particle p-2"></span>
+      <span class="particle p-3"></span>
+      <span class="particle p-4"></span>
+      <span class="particle p-5"></span>
+      <span class="particle p-6"></span>
+      <span class="particle p-7"></span>
+      <span class="particle p-8"></span>
+
+      <span class="spark sp-1"></span>
+      <span class="spark sp-2"></span>
+      <span class="spark sp-3"></span>
+      <span class="spark sp-4"></span>
+
+      <svg class="orbit-path" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M -50 500 C 200 350, 350 620, 620 420 S 950 200, 1050 260" />
+      </svg>
+    </div>
+  </div>
+  <div class="hero-vignette"></div>
+
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-bolt"></i> New Season Drop</p>
+      <h1 data-aos="fade-up" data-aos-delay="100">
+        Gear that moves <span class="text-accent">as fast</span> as you do.
+      </h1>
+      <p class="hero-sub" data-aos="fade-up" data-aos-delay="200">
+        Cases, earbuds, chargers and cables engineered to keep every device
+        protected, powered and perfectly in sync with your life.
+      </p>
+      <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+        <a href="404.html" class="btn btn-primary"><span>Shop the Range</span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="404.html" class="btn btn-ghost"><i class="fa-solid fa-circle-play"></i><span>Watch Story</span></a>
+      </div>
+      <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+        <div><strong data-count="1200">0</strong><span>K+ Customers</span></div>
+        <div><strong data-count="98">0</strong><span>% Satisfaction</span></div>
+        <div><strong data-count="24">0</strong><span>Month Warranty</span></div>
+      </div>
+    </div>
+
+    <div class="hero-orbit" id="heroOrbit">
+      <div class="orbit-ring ring-1"></div>
+      <div class="orbit-ring ring-2"></div>
+
+      <div class="orbit-center">
+        <img src="Assest/m1.webp" alt="Premium smartphone with STACKLY case" loading="eager">
+      </div>
+
+      <div class="orbit-item item-1">
+        <img src="Assest/m2.webp" alt="Wireless earbuds">
+      </div>
+      <div class="orbit-item item-2">
+        <img src="Assest/m3.webp" alt="Phone case">
+      </div>
+      <div class="orbit-item item-3">
+        <img src="Assest/m4.webp" alt="USB-C cable">
+      </div>
+      <div class="orbit-item item-4">
+        <img src="Assest/m5.webp" alt="Power bank">
+      </div>
+
+      <div class="float-card card-a">
+        <i class="fa-solid fa-bolt-lightning"></i>
+        <div><strong>65W</strong><span>Fast Charge</span></div>
+      </div>
+      <div class="float-card card-b">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div><strong>MIL-STD</strong><span>Drop Tested</span></div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#marquee" class="scroll-cue"><span></span> Scroll</a>
+</section>
+
+<!-- ================= 2. MARQUEE ================= -->
+<section class="marquee-section" id="marquee">
+  <div class="marquee-track">
+    <div class="marquee-group">
+      <span><i class="fa-solid fa-truck-fast"></i> Free Worldwide Shipping</span>
+      <span><i class="fa-solid fa-shield-halved"></i> 24-Month Warranty</span>
+      <span><i class="fa-solid fa-rotate-left"></i> 30-Day Free Returns</span>
+      <span><i class="fa-solid fa-star"></i> 1.2M+ Happy Customers</span>
+      <span><i class="fa-solid fa-lock"></i> Secure Checkout</span>
+      <span><i class="fa-solid fa-leaf"></i> Eco Friendly Packaging</span>
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      <span><i class="fa-solid fa-truck-fast"></i> Free Worldwide Shipping</span>
+      <span><i class="fa-solid fa-shield-halved"></i> 24-Month Warranty</span>
+      <span><i class="fa-solid fa-rotate-left"></i> 30-Day Free Returns</span>
+      <span><i class="fa-solid fa-star"></i> 1.2M+ Happy Customers</span>
+      <span><i class="fa-solid fa-lock"></i> Secure Checkout</span>
+      <span><i class="fa-solid fa-leaf"></i> Eco Friendly Packaging</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. BENTO GRID — CATEGORIES ================= -->
+<section class="section categories" id="categories">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-layer-group"></i> Shop by Category</p>
+    <h2>Everything your device needs, in one orbit.</h2>
+    <p class="cat-scroll-hint"><i class="fa-solid fa-arrow-left"></i><i class="fa-solid fa-arrow-right"></i> Keep scrolling — this row moves with you</p>
+  </div>
+
+  <div class="cat-pin" id="catPin">
+    <div class="cat-viewport">
+      <div class="cat-track" id="catTrack">
+
+        <a href="404.html" class="cat-card cat-card-big">
+          <span class="cat-num">01</span>
+          <div class="cat-card-media"><img src="Assest/m6.webp" alt="Phone cases collection"></div>
+          <div class="cat-card-info">
+            <span class="tag">40+ Designs</span>
+            <h3>Phone Cases</h3>
+            <p>Slim armor, clear guard & leather finishes</p>
+          </div>
+        </a>
+
+        <a href="404.html" class="cat-card">
+          <span class="cat-num">02</span>
+          <div class="cat-card-media"><img src="Assest/m2.webp" alt="Wireless earbuds"></div>
+          <div class="cat-card-info">
+            <h3>Earbuds</h3>
+            <p>ANC wireless audio</p>
+          </div>
+        </a>
+
+        <a href="404.html" class="cat-card">
+          <span class="cat-num">03</span>
+          <div class="cat-card-media"><img src="Assest/m5.webp" alt="Fast chargers"></div>
+          <div class="cat-card-info">
+            <h3>Chargers</h3>
+            <p>GaN fast-charge tech</p>
+          </div>
+        </a>
+
+        <a href="404.html" class="cat-card">
+          <span class="cat-num">04</span>
+          <div class="cat-card-media"><img src="Assest/m4.webp" alt="Braided USB cables"></div>
+          <div class="cat-card-info">
+            <h3>Cables</h3>
+            <p>Braided, tangle-free</p>
+          </div>
+        </a>
+
+        <a href="404.html" class="cat-card cat-card-big">
+          <span class="cat-num">05</span>
+          <div class="cat-card-media"><img src="Assest/m11.webp" alt="Power banks"></div>
+          <div class="cat-card-info">
+            <span class="tag">20,000mAh</span>
+            <h3>Power Banks</h3>
+            <p>Charge on the move, all day long</p>
+          </div>
+        </a>
+
+        <a href="404.html" class="cat-card">
+          <span class="cat-num">06</span>
+          <div class="cat-card-media"><img src="Assest/m1.webp" alt="Screen protectors"></div>
+          <div class="cat-card-info">
+            <h3>Screen Guards</h3>
+            <p>Tempered 9H glass</p>
+          </div>
+        </a>
+
+        <div class="cat-card cat-card-end">
+          <div class="cat-end-inner">
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>See the full range</h3>
+            <a href="404.html" class="btn btn-primary">Shop All <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="cat-progress"><span id="catProgressBar"></span></div>
+  </div>
+</section>
+
+<!-- ================= 4. HORIZONTAL SCROLL — BEST SELLERS ================= -->
+<section class="section bestsellers" id="bestsellers">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-fire"></i> Best Sellers</p>
+    <h2>Swipe through the favorites.</h2>
+  </div>
+
+  <div class="coverflow-wrap">
+    <div class="coverflow-stage" id="coverflowStage">
+      <div class="coverflow-track" id="coverflowTrack">
+
+        <article class="cf-card">
+          <div class="product-img">
+            <img src="Assest/m2.webp" alt="STACKLY Pro Earbuds">
+            <span class="badge">New</span>
+          </div>
+          <div class="product-info">
+            <h4>STACKLY Pro Earbuds</h4>
+            <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> 4.8</p>
+            <div class="price-row"><span class="price">$79</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+          </div>
+        </article>
+
+        <article class="cf-card">
+          <div class="product-img">
+            <img src="Assest/m6.webp" alt="Aramid Shield Case">
+            <span class="badge sale">-20%</span>
+          </div>
+          <div class="product-info">
+            <h4>Aramid Shield Case</h4>
+            <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0</p>
+            <div class="price-row"><span class="price">$39</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+          </div>
+        </article>
+
+        <article class="cf-card">
+          <div class="product-img">
+            <img src="Assest/m5.webp" alt="65W GaN Charger">
+          </div>
+          <div class="product-info">
+            <h4>65W GaN Charger</h4>
+            <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> 4.7</p>
+            <div class="price-row"><span class="price">$49</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+          </div>
+        </article>
+
+        <article class="cf-card">
+          <div class="product-img">
+            <img src="Assest/m11.webp" alt="20K Power Bank">
+            <span class="badge">New</span>
+          </div>
+          <div class="product-info">
+            <h4>20K Power Bank</h4>
+            <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 4.9</p>
+            <div class="price-row"><span class="price">$59</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+          </div>
+        </article>
+
+        <article class="cf-card">
+          <div class="product-img">
+            <img src="Assest/m4.webp" alt="Braided USB-C Cable">
+          </div>
+          <div class="product-info">
+            <h4>Braided USB-C Cable</h4>
+            <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> 4.6</p>
+            <div class="price-row"><span class="price">$19</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+          </div>
+        </article>
+
+        <article class="cf-card">
+          <div class="product-img">
+            <img src="Assest/m5.webp" alt="MagSnap Wireless Charger">
+            <span class="badge sale">-15%</span>
+          </div>
+          <div class="product-info">
+            <h4>MagSnap Charger</h4>
+            <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> 4.8</p>
+            <div class="price-row"><span class="price">$45</span><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="coverflow-controls">
+      <button class="cf-btn cf-prev" aria-label="Previous product"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="cf-dots" id="cfDots"></div>
+      <button class="cf-btn cf-next" aria-label="Next product"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. STICKY SCROLL — ENGINEERED ================= -->
+<section class="section sticky-section" id="engineered">
+  <div class="sticky-visual">
+    <div class="sticky-img-wrap">
+      <img src="Assest/m1.webp" alt="Device protection" class="sticky-img active" data-step="0">
+      <img src="Assest/m2.webp" alt="Fast charging" class="sticky-img" data-step="1">
+      <img src="Assest/m5.webp" alt="Wireless freedom" class="sticky-img" data-step="2">
+      <img src="Assest/m4.webp" alt="Precision engineering" class="sticky-img" data-step="3">
+    </div>
+  </div>
+  <div class="sticky-content">
+    <p class="eyebrow" data-aos="fade-up"><i class="fa-solid fa-microchip"></i> Engineered for Every Device</p>
+    <div class="sticky-step active" data-step="0">
+      <span class="step-num">01</span>
+      <h3>Drop-Tested Protection</h3>
+      <p>Every case survives a 3-meter military-grade drop test before it ever reaches your pocket.</p>
+    </div>
+    <div class="sticky-step" data-step="1">
+      <span class="step-num">02</span>
+      <h3>65W Fast Charging</h3>
+      <p>GaN-powered chargers refill your battery to 50% in under 20 minutes, without the heat.</p>
+    </div>
+    <div class="sticky-step" data-step="2">
+      <span class="step-num">03</span>
+      <h3>True Wireless Freedom</h3>
+      <p>MagSafe-compatible mounts and chargers snap into place with a satisfying, precise click.</p>
+    </div>
+    <div class="sticky-step" data-step="3">
+      <span class="step-num">04</span>
+      <h3>Precision Engineering</h3>
+      <p>Every port, seam and button is milled to a 0.1mm tolerance for a flawless fit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. FLIP CARDS — WHY STACKLY ================= -->
+<section class="section why-us" id="why-us">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-circle-check"></i> Why STACKLY</p>
+    <h2>Built different. Click to find out how.</h2>
+  </div>
+
+  <div class="flip-grid">
+    <div class="flip-card" data-aos="fade-up">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Military-Grade Shell</h3>
+          <span class="flip-hint"><i class="fa-solid fa-rotate"></i> tap / hover</span>
+        </div>
+        <div class="flip-back">
+          <p>Reinforced corners absorb impact from drops up to 3 meters, tested to MIL-STD-810G standards.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <i class="fa-solid fa-bolt"></i>
+          <h3>Rapid Charge Tech</h3>
+          <span class="flip-hint"><i class="fa-solid fa-rotate"></i> tap / hover</span>
+        </div>
+        <div class="flip-back">
+          <p>GaN chipsets deliver up to 65W safely, with smart thermal control on every charger and cable.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <i class="fa-solid fa-leaf"></i>
+          <h3>Eco Materials</h3>
+          <span class="flip-hint"><i class="fa-solid fa-rotate"></i> tap / hover</span>
+        </div>
+        <div class="flip-back">
+          <p>Recycled aluminium, plant-based leather and 100% plastic-free packaging on every order.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="300">
+      <div class="flip-inner">
+        <div class="flip-front">
+          <i class="fa-solid fa-award"></i>
+          <h3>Lifetime Warranty</h3>
+          <span class="flip-hint"><i class="fa-solid fa-rotate"></i> tap / hover</span>
+        </div>
+        <div class="flip-back">
+          <p>Register your product and we'll replace it, free, for as long as you own the device it protects.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7. TIMELINE — OUR PROCESS ================= -->
+<section class="section timeline-section" id="story">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-timeline"></i> Our Story</p>
+    <h2>From concept to your pocket.</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-line"><span id="timelineFill"></span></div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="fa-solid fa-pen-ruler"></i></div>
+      <div class="timeline-card">
+        <span class="timeline-year">Phase 01</span>
+        <h3>Design</h3>
+        <p>Our studio sketches hundreds of variants before one earns a prototype.</p>
+        <div class="timeline-img-wrap"><img src="Assest/m6.webp" alt="Design phase"></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="fa-solid fa-cube"></i></div>
+      <div class="timeline-card">
+        <span class="timeline-year">Phase 02</span>
+        <h3>Prototype</h3>
+        <p>3D-printed samples are stress-tested in-house before tooling begins.</p>
+        <div class="timeline-img-wrap"><img src="Assest/m2.webp" alt="Prototype phase"></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div class="timeline-card">
+        <span class="timeline-year">Phase 03</span>
+        <h3>Quality Test</h3>
+        <p>Every batch passes drop, water and charge-cycle testing before approval.</p>
+        <div class="timeline-img-wrap"><img src="Assest/m5.webp" alt="Quality testing phase"></div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="fa-solid fa-box-open"></i></div>
+      <div class="timeline-card">
+        <span class="timeline-year">Phase 04</span>
+        <h3>Ship</h3>
+        <p>Packed in recyclable materials and on its way to you within 24 hours.</p>
+        <div class="timeline-img-wrap"><img src="Assest/m4.webp" alt="Shipping phase"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8. SWIPE STACK — TESTIMONIALS ================= -->
+<section class="section testimonials" id="testimonials">
+  <div class="section-head light" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-quote-left"></i> Loved by Thousands</p>
+    <h2>Real people, real devices.</h2>
+  </div>
+
+  <div class="swap-wrap" data-aos="fade-up">
+    <div class="swap-stack" id="swapStack">
+      <div class="swap-card">
+        <i class="fa-solid fa-quote-right quote-mark"></i>
+        <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+        <p>"Dropped my phone off a bike — the case didn't even scratch. Genuinely shocked."</p>
+        <div class="reviewer">
+          <img src="Assest/m7.webp" alt="Customer photo">
+          <div><strong>Aarav Mehta</strong><span>Verified Buyer</span></div>
+        </div>
+      </div>
+
+      <div class="swap-card">
+        <i class="fa-solid fa-quote-right quote-mark"></i>
+        <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+        <p>"The earbuds' noise cancellation is unreal for the price. My commute is silent now."</p>
+        <div class="reviewer">
+          <img src="Assest/m8.webp" alt="Customer photo">
+          <div><strong>Priya Nair</strong><span>Verified Buyer</span></div>
+        </div>
+      </div>
+
+      <div class="swap-card">
+        <i class="fa-solid fa-quote-right quote-mark"></i>
+        <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+        <p>"Charger got my laptop and phone full in one sitting. Packaging felt genuinely premium."</p>
+        <div class="reviewer">
+          <img src="Assest/m9.webp" alt="Customer photo">
+          <div><strong>Rohan Iyer</strong><span>Verified Buyer</span></div>
+        </div>
+      </div>
+
+      <div class="swap-card">
+        <i class="fa-solid fa-quote-right quote-mark"></i>
+        <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+        <p>"Ordered the cable on a Tuesday, it showed up next day. Still going strong months later."</p>
+        <div class="reviewer">
+          <img src="Assest/m10.webp" alt="Customer photo">
+          <div><strong>Meera Shah</strong><span>Verified Buyer</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="swap-controls">
+      <button class="swap-btn swap-prev" aria-label="Previous testimonial"><i class="fa-solid fa-arrow-left"></i></button>
+      <div class="swap-dots" id="swapDots"></div>
+      <button class="swap-btn swap-next" aria-label="Next testimonial"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+    <p class="swap-hint"><i class="fa-solid fa-hand-pointer"></i> Drag the card to browse</p>
+  </div>
+</section>
+
+<!-- ================= 9. EXPANDABLE CARDS — FAQ ================= -->
+<section class="section faq-section" id="faq">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-circle-question"></i> Support</p>
+    <h2>Questions, answered.</h2>
+  </div>
+
+  <div class="faq-explorer" data-aos="fade-up">
+    <div class="faq-list" id="faqList">
+      <button class="faq-tab active" data-icon="fa-truck" data-title="How fast is shipping?" data-text="Orders ship within 24 hours and arrive in 2–5 business days domestically, or 7–12 days internationally, with tracking on every order.">
+        <i class="fa-solid fa-truck"></i>
+        <span>How fast is shipping?</span>
+        <i class="fa-solid fa-chevron-right faq-tab-arrow"></i>
+      </button>
+
+      <button class="faq-tab" data-icon="fa-shield-halved" data-title="What does the warranty cover?" data-text="All electronics carry a 24-month warranty against manufacturing defects. Cases and accessories are covered for lifetime replacement.">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>What does the warranty cover?</span>
+        <i class="fa-solid fa-chevron-right faq-tab-arrow"></i>
+      </button>
+
+      <button class="faq-tab" data-icon="fa-rotate-left" data-title="Can I return an item?" data-text="Yes — unused items can be returned within 30 days for a full refund. Start a return from your order confirmation email.">
+        <i class="fa-solid fa-rotate-left"></i>
+        <span>Can I return an item?</span>
+        <i class="fa-solid fa-chevron-right faq-tab-arrow"></i>
+      </button>
+
+      <button class="faq-tab" data-icon="fa-mobile-screen" data-title="Will this fit my phone model?" data-text="Every product page has a compatibility checker covering 200+ device models — cases and chargers are fit-verified before you buy.">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <span>Will this fit my phone model?</span>
+        <i class="fa-solid fa-chevron-right faq-tab-arrow"></i>
+      </button>
+    </div>
+
+    <div class="faq-panel">
+      <span class="faq-panel-bg-icon" id="faqBgIcon"><i class="fa-solid fa-truck"></i></span>
+      <div class="faq-panel-content" id="faqPanelContent">
+        <span class="faq-step" id="faqStep">01 / 04</span>
+        <h3 id="faqAnswerTitle">How fast is shipping?</h3>
+        <p id="faqAnswerText">Orders ship within 24 hours and arrive in 2–5 business days domestically, or 7–12 days internationally, with tracking on every order.</p>
+      </div>
+      <div class="faq-nav">
+        <button class="faq-nav-btn" id="faqPrevBtn" aria-label="Previous question"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="faq-nav-btn" id="faqNextBtn" aria-label="Next question"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10. NEWSLETTER CTA ================= -->
+<section class="section newsletter" id="newsletter">
+  <div class="newsletter-bg">
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="newsletter-inner" data-aos="zoom-in">
+    <i class="fa-solid fa-envelope-open-text"></i>
+    <h2>Join the STACKLY Circle</h2>
+    <p>Get early access to drops, member-only pricing and a 10% welcome code.</p>
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" placeholder="you@example.com" required>
+      <button type="submit"><span>Subscribe</span><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+    <span class="form-msg" id="formMsg"></span>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer" id="contact">
+  <div class="footer-marquee" aria-hidden="true">
+    <div class="footer-marquee-track">
+      <span>Free Worldwide Shipping</span><span class="dot">•</span>
+      <span>30-Day Easy Returns</span><span class="dot">•</span>
+      <span>24/7 Customer Support</span><span class="dot">•</span>
+      <span>2-Year Warranty</span><span class="dot">•</span>
+      <span>Free Worldwide Shipping</span><span class="dot">•</span>
+      <span>30-Day Easy Returns</span><span class="dot">•</span>
+      <span>24/7 Customer Support</span><span class="dot">•</span>
+      <span>2-Year Warranty</span><span class="dot">•</span>
+    </div>
+  </div>
+
+  <div class="footer-bg" aria-hidden="true">
+    <div class="footer-blob"></div>
+    <div class="footer-blob footer-blob-2"></div>
+    <i class="fa-solid fa-atom footer-watermark"></i>
+  </div>
+
+  <div class="footer-top">
+    <div class="footer-brand">
+       <a href="index.html#home" class="logo"><img src="Assest/stackly-logo.webp" alt="Stackly" class="logo-img"></a>
+      <p>Premium mobile accessories engineered for how you actually live — protected, powered, connected.</p>
+      <div class="socials">
+        <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="404.html" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="404.html">Phone Cases</a>
+      <a href="404.html">Earbuds</a>
+      <a href="404.html">Chargers</a>
+      <a href="404.html">Cables</a>
+      <a href="404.html">Power Banks</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="404.html">Our Story</a>
+      <a href="404.html">Sustainability</a>
+      <a href="404.html">Careers</a>
+      <a href="404.html">Press</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="404.html">FAQ</a>
+      <a href="404.html">Track Order</a>
+      <a href="404.html">Returns</a>
+      <a href="404.html">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 STACKLY Accessories. All rights reserved.</p>
+    <div class="pay-icons">
+      <i class="fa-brands fa-cc-visa"></i>
+      <i class="fa-brands fa-cc-mastercard"></i>
+      <i class="fa-brands fa-cc-paypal"></i>
+      <i class="fa-brands fa-cc-apple-pay"></i>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

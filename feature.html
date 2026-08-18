@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features — STACKLY</title>
+<meta name="description" content="STACKLY Features — Titan Shell protection, 65W GaN charging, MagLock precision and the materials science behind every accessory we build.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="feature.css">
+</head>
+<body>
+
+<!-- ================= CUSTOM CURSOR GLOW ================= -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ================= PRELOADER ================= -->
+<div class="preloader" id="preloader">
+  <div class="preloader-logo">STACKLY</div>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+<!-- ================= HEADER (same as home) ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+
+    <a href="index.html#home" class="logo">
+      <img src="Assest/stackly-logo.webp" alt="Stackly" class="logo-img">
+    </a>
+
+    <nav class="nav-center">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="feature.html" class="nav-link active">Features</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-right-group">
+      <a href="login.html" class="login-btn">
+        <i class="fa-regular fa-user"></i><span>Login</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <nav class="mobile-nav">
+      <a href="index.html#home" class="mobile-link"><i class="fa-solid fa-house"></i>Home</a>
+      <a href="about.html" class="mobile-link"><i class="fa-solid fa-book-open"></i>About</a>
+      <a href="shop.html" class="mobile-link"><i class="fa-solid fa-layer-group"></i>Shop</a>
+      <a href="feature.html" class="mobile-link active"><i class="fa-solid fa-gears"></i>Features</a>
+      <a href="contact.html" class="mobile-link"><i class="fa-solid fa-envelope"></i>Contact</a>
+      <a href="login.html" class="mobile-link login"><i class="fa-regular fa-user"></i>Login</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= 1. FEATURES HERO — SPOTLIGHT TITLE + ORBIT STAGE ================= -->
+<section class="ft-hero" id="ft-hero">
+  <div class="ft-hero-bg" aria-hidden="true">
+    <div class="ft-hero-grid-lines"></div>
+    <div class="ft-glow ft-glow-1"></div>
+    <div class="ft-glow ft-glow-2"></div>
+  </div>
+
+  <div class="ft-hero-grid-layout">
+    <div class="ft-hero-copy">
+      <p class="ft-crumb"><a href="index.html#home">Home</a><i class="fa-solid fa-chevron-right"></i><span>Features</span></p>
+      <p class="eyebrow"><i class="fa-solid fa-bolt"></i> The Technology</p>
+
+      <h1 class="ft-hero-title" id="ftHeroTitle">
+        <span class="ft-title-base">Every feature, by design.</span>
+        <span class="ft-title-glow" aria-hidden="true">Every feature, by design.</span>
+      </h1>
+
+      <p class="ft-hero-sub">Six years of drop tests, thermal benchmarks and materials research — distilled into details you feel every single day, not just read about on a spec sheet.</p>
+
+      <div class="ft-hero-cta">
+        <a href="404.html" class="btn btn-primary">Explore Features <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="404.html" class="btn btn-ghost">Shop the Range</a>
+      </div>
+
+      <div class="ft-hero-trust">
+        <div class="ft-trust-item"><strong>6</strong><span>Years in R&amp;D</span></div>
+        <div class="ft-trust-divider"></div>
+        <div class="ft-trust-item"><strong>42</strong><span>Lab Stress Tests</span></div>
+        <div class="ft-trust-divider"></div>
+        <div class="ft-trust-item"><strong>IP54</strong><span>Dust &amp; Splash Rated</span></div>
+      </div>
+    </div>
+
+    <div class="ft-hero-visual">
+      <div class="ft-orbit-stage" id="ftOrbitStage">
+        <div class="ft-orbit-path ft-orbit-path-1" aria-hidden="true"></div>
+        <div class="ft-orbit-path ft-orbit-path-2" aria-hidden="true"></div>
+
+        <div class="ft-orbit-core">
+          <img src="Assest/m6.webp" alt="STACKLY phone case — flagship product">
+        </div>
+
+        <div class="ft-orbit-track ft-orbit-track-1" aria-hidden="true">
+          <span class="ft-orbit-chip"><i class="fa-solid fa-shield-halved"></i> Drop-Tested 3m</span>
+        </div>
+        <div class="ft-orbit-track ft-orbit-track-2" aria-hidden="true">
+          <span class="ft-orbit-chip"><i class="fa-solid fa-bolt"></i> 65W GaN</span>
+        </div>
+        <div class="ft-orbit-track ft-orbit-track-3" aria-hidden="true">
+          <span class="ft-orbit-chip"><i class="fa-solid fa-magnet"></i> MagLock</span>
+        </div>
+        <div class="ft-orbit-track ft-orbit-track-4" aria-hidden="true">
+          <span class="ft-orbit-chip"><i class="fa-solid fa-droplet"></i> IP54</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ft-scroll-cue" aria-hidden="true"><span></span>Scroll</div>
+</section>
+
+<!-- ================= 2. FLAGSHIP FEATURES — BENTO GRID ================= -->
+<section class="section ft-bento" id="ft-bento">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-cube"></i> Flagship Features</p>
+    <h2>Six systems, one obsession with detail.</h2>
+  </div>
+
+  <div class="ft-bento-grid">
+
+    <div class="ft-bento-card ft-bento-a" data-aos="fade-up">
+      <div class="ft-bento-media"><img src="Assest/m4.webp" alt="Titan Shell raw material"></div>
+      <div class="ft-bento-shine" aria-hidden="true"></div>
+      <div class="ft-bento-body">
+        <svg class="ft-bento-icon" viewBox="0 0 64 64" fill="none"><path d="M32 6 L54 16 V32 C54 46 44 54 32 58 C20 54 10 46 10 32 V16 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M22 32 L29 39 L44 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Titan Shell</h3>
+        <p>MIL-STD-810G tested to survive a 3-meter drop onto concrete — every single unit, not just the sample batch.</p>
+      </div>
+    </div>
+
+    <div class="ft-bento-card ft-bento-b" data-aos="fade-up" data-aos-delay="80">
+      <div class="ft-bento-media"><img src="Assest/m5.webp" alt="ChargeFlow GaN charger"></div>
+      <div class="ft-bento-shine" aria-hidden="true"></div>
+      <div class="ft-bento-body">
+        <svg class="ft-bento-icon" viewBox="0 0 64 64" fill="none"><path d="M34 6 L14 36 H30 L26 58 L50 26 H34 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
+        <h3>ChargeFlow GaN</h3>
+        <p>65W of gallium-nitride power refills 50% battery in under 20 minutes, without the heat.</p>
+      </div>
+    </div>
+
+    <div class="ft-bento-card ft-bento-c" data-aos="fade-up" data-aos-delay="140">
+      <div class="ft-bento-shine" aria-hidden="true"></div>
+      <div class="ft-bento-body">
+        <svg class="ft-bento-icon" viewBox="0 0 64 64" fill="none"><rect x="16" y="8" width="32" height="48" rx="10" stroke="currentColor" stroke-width="3"/><path d="M16 24 H8 M16 40 H8 M48 24 H56 M48 40 H56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3>MagLock Precision</h3>
+        <p>52 N45 magnets align to within 0.2mm for a snap that just feels right.</p>
+      </div>
+    </div>
+
+    <div class="ft-bento-card ft-bento-d" data-aos="fade-up" data-aos-delay="200">
+      <div class="ft-bento-shine" aria-hidden="true"></div>
+      <div class="ft-bento-body">
+        <svg class="ft-bento-icon" viewBox="0 0 64 64" fill="none"><path d="M20 26 V38 C20 46 26 52 32 52 C38 52 44 46 44 38 V26" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M32 8 V22 M24 14 L32 8 L40 14" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>EchoClear Audio</h3>
+        <p>Hybrid ANC cancels up to 32dB of ambient noise across three adaptive modes.</p>
+      </div>
+    </div>
+
+    <div class="ft-bento-card ft-bento-e" data-aos="fade-up" data-aos-delay="260">
+      <div class="ft-bento-media"><img src="Assest/m2.webp" alt="AquaSeal water resistance test"></div>
+      <div class="ft-bento-shine" aria-hidden="true"></div>
+      <div class="ft-bento-body">
+        <svg class="ft-bento-icon" viewBox="0 0 64 64" fill="none"><path d="M32 8 C32 8 16 28 16 40 C16 50 23 58 32 58 C41 58 48 50 48 40 C48 28 32 8 32 8 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
+        <h3>AquaSeal IP54</h3>
+        <p>Sealed against splashes, sweat and dust — built for gym bags and rainy commutes alike.</p>
+      </div>
+    </div>
+
+    <div class="ft-bento-card ft-bento-f" data-aos="fade-up" data-aos-delay="320">
+      <div class="ft-bento-media"><img src="Assest/m17.webp" alt="Recycled EcoAlloy material"></div>
+      <div class="ft-bento-shine" aria-hidden="true"></div>
+      <div class="ft-bento-body">
+        <svg class="ft-bento-icon" viewBox="0 0 64 64" fill="none"><path d="M32 8 C18 8 10 20 10 30 C10 42 20 50 32 56 C44 50 54 42 54 30 C54 20 46 8 32 8 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M32 22 V38 M24 30 H40" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3>EcoAlloy Build</h3>
+        <p>70% recycled aluminum in every frame, without giving up an ounce of rigidity.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 3. DEEP DIVE — INTERACTIVE TABS ================= -->
+<section class="section ft-tabs" id="ft-tabs">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-layer-group"></i> Deep Dive</p>
+    <h2>Pick a system. See what's inside.</h2>
+  </div>
+
+  <div class="ft-tabs-wrap">
+    <div class="ft-tabs-nav" id="ftTabsNav" role="tablist">
+      <button class="ft-tab-btn active" data-tab="shell" role="tab" aria-selected="true"><i class="fa-solid fa-shield-halved"></i><span>Shell &amp; Protection</span></button>
+      <button class="ft-tab-btn" data-tab="charge" role="tab" aria-selected="false"><i class="fa-solid fa-bolt"></i><span>Charging</span></button>
+      <button class="ft-tab-btn" data-tab="audio" role="tab" aria-selected="false"><i class="fa-solid fa-headphones"></i><span>Wireless &amp; Audio</span></button>
+      <button class="ft-tab-btn" data-tab="material" role="tab" aria-selected="false"><i class="fa-solid fa-leaf"></i><span>Materials</span></button>
+      <div class="ft-tab-indicator" id="ftTabIndicator"></div>
+    </div>
+
+    <div class="ft-tab-panels" id="ftTabPanels">
+
+      <div class="ft-tab-panel active" data-panel="shell">
+        <div class="ft-tab-media"><img src="Assest/m4.webp" alt="Shell protection close-up"></div>
+        <div class="ft-tab-info">
+          <span class="ft-tab-kicker">01 — Shell &amp; Protection</span>
+          <h3>Built to take the hit, so your phone doesn't.</h3>
+          <p>A dual-layer polycarbonate core wrapped in a shock-dispersing TPU bumper, with reinforced air-pocket corners that absorb impact before it ever reaches the glass.</p>
+          <div class="ft-spec-bar"><span>Drop Height</span><div class="ft-bar-track"><div class="ft-bar-fill" data-pct="90"></div></div><strong>3.0m</strong></div>
+          <div class="ft-spec-bar"><span>Impact Standard</span><div class="ft-bar-track"><div class="ft-bar-fill" data-pct="96"></div></div><strong>MIL-STD-810G</strong></div>
+          <div class="ft-spec-bar"><span>Corner Thickness</span><div class="ft-bar-track"><div class="ft-bar-fill" data-pct="70"></div></div><strong>2.4mm</strong></div>
+        </div>
+      </div>
+
+      <div class="ft-tab-panel" data-panel="charge">
+        <div class="ft-tab-media"><img src="Assest/m5.webp" alt="ChargeFlow charger detail"></div>
+        <div class="ft-tab-info">
+          <span class="ft-tab-kicker">02 — Charging</span>
+          <h3>Full power, without the full heat.</h3>
+          <p>Gallium-nitride semiconductors switch faster and run cooler than silicon, packing desktop-charger output into a case that fits in your palm.</p>
+          <div class="ft-spec-bar"><span>Max Output</span><div class="ft-bar-track"><div class="ft-bar-fill" data-pct="85"></div></div><strong>65W</strong></div>
+          <div class="ft-spec-bar"><span>0–50% Time</span><div class="ft-bar-track"><div class="ft-bar-fill" data-pct="92"></div></div><strong>20 min</strong></div>
+          <div class="ft-spec-bar"><span>Thermal Cutoff</span><div class="ft-bar-track"><div class="ft-bar-fill" data-pct="98"></div></div><strong>Smart</strong></div>
+        </div>
+      </div>
+
+      <div class="ft-tab-panel" data-panel="audio">
+        <div class="ft-tab-media"><img src="Assest/m2.webp" alt="Wireless earbuds and MagLock detail"></div>
+        <div class="ft-tab-info">
+          <span class="ft-tab-kicker">03 — Wireless &amp; Audio</span>
+          <h3>Clean audio, effortless connection.</h3>
+          <p>MagSafe-compatible mounts snap into place with a satisfying click, while hybrid ANC drivers filter out the world around you.</p>
+          <div class="ft-spec-bar"><span>Noise Cancelling</span><div class="ft-bar-track"><div class="ft-bar-fill" data-pct="80"></div></div><strong>32dB</strong></div>
+          <div class="ft-spec-bar"><span>Wireless Range</span><div class="ft-bar-track"><div class="ft-bar-fill" data-pct="65"></div></div><strong>10m</strong></div>
+          <div class="ft-spec-bar"><span>Alignment Accuracy</span><div class="ft-bar-track"><div class="ft-bar-fill" data-pct="97"></div></div><strong>±0.2mm</strong></div>
+        </div>
+      </div>
+
+      <div class="ft-tab-panel" data-panel="material">
+        <div class="ft-tab-media"><img src="Assest/m17.webp" alt="Recycled materials close-up"></div>
+        <div class="ft-tab-info">
+          <span class="ft-tab-kicker">04 — Materials</span>
+          <h3>Premium doesn't have to mean wasteful.</h3>
+          <p>Recycled aluminum, ocean-bound plastics and vegan leather alternatives — chosen for how they perform, not just how they photograph.</p>
+          <div class="ft-spec-bar"><span>Recycled Content</span><div class="ft-bar-track"><div class="ft-bar-fill" data-pct="70"></div></div><strong>70%</strong></div>
+          <div class="ft-spec-bar"><span>Packaging</span><div class="ft-bar-track"><div class="ft-bar-fill" data-pct="100"></div></div><strong>Plastic-Free</strong></div>
+          <div class="ft-spec-bar"><span>Take-Back Program</span><div class="ft-bar-track"><div class="ft-bar-fill" data-pct="100"></div></div><strong>Included</strong></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. UNDER THE HOOD — PINNED HORIZONTAL SHOWCASE ================= -->
+<section class="ft-horizontal" id="ftHorizontal">
+  <div class="ft-horizontal-pin" id="ftHorizontalPin">
+    <div class="section-head ft-horizontal-head" data-aos="fade-up">
+      <p class="eyebrow"><i class="fa-solid fa-microscope"></i> Under The Hood</p>
+      <h2>Five materials. Zero compromises.</h2>
+    </div>
+
+    <div class="ft-h-viewport" id="ftHViewport">
+      <div class="ft-h-track" id="ftHTrack">
+        <div class="ft-h-panel">
+          <div class="ft-h-media"><img src="Assest/m4.webp" alt="Aerospace-grade aluminum frame"></div>
+          <div class="ft-h-cap"><span class="ft-h-tag">Frame</span><h3>Aerospace Aluminum</h3><p>CNC-milled from a single billet, then anodized for scratch resistance that outlasts the phone inside it.</p></div>
+        </div>
+        <div class="ft-h-panel">
+          <div class="ft-h-media"><img src="Assest/m6.webp" alt="Kevlar reinforced corner"></div>
+          <div class="ft-h-cap"><span class="ft-h-tag">Corners</span><h3>Kevlar Reinforcement</h3><p>Woven aramid fiber at every impact point — the same material stopping power in a case-sized dose.</p></div>
+        </div>
+        <div class="ft-h-panel">
+          <div class="ft-h-media"><img src="Assest/m5.webp" alt="GaN semiconductor core"></div>
+          <div class="ft-h-cap"><span class="ft-h-tag">Core</span><h3>GaN Semiconductor</h3><p>Smaller, cooler and more efficient than silicon — the reason 65W fits in something this compact.</p></div>
+        </div>
+        <div class="ft-h-panel">
+          <div class="ft-h-media"><img src="Assest/m18.webp" alt="Graphene thermal layer"></div>
+          <div class="ft-h-cap"><span class="ft-h-tag">Cooling</span><h3>Graphene Thermal Layer</h3><p>A hair-thin sheet that pulls heat away from your device faster than the metal around it.</p></div>
+        </div>
+        <div class="ft-h-panel">
+          <div class="ft-h-media"><img src="Assest/m17.webp" alt="Recycled ocean plastic"></div>
+          <div class="ft-h-cap"><span class="ft-h-tag">Shell</span><h3>Recycled Ocean Plastic</h3><p>Reclaimed marine waste, re-engineered into a shell as tough as anything made from scratch.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ft-h-progress"><span class="ft-h-progress-fill" id="ftHProgressFill"></span></div>
+    <p class="ft-h-hint"><i class="fa-solid fa-arrows-left-right"></i> <span class="ft-h-hint-desktop">Keep scrolling</span><span class="ft-h-hint-mobile">Swipe to explore</span></p>
+  </div>
+</section>
+
+<!-- ================= 5. FULL SPEC SHEET — ACCORDION ================= -->
+<section class="section ft-accordion" id="ft-accordion">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-clipboard-list"></i> Full Spec Sheet</p>
+    <h2>Every detail, if you want to go that deep.</h2>
+  </div>
+
+  <div class="ft-acc-list" id="ftAccList">
+
+    <div class="ft-acc-item active">
+      <button class="ft-acc-head" aria-expanded="true">
+        <span class="ft-acc-num">01</span>
+        <span class="ft-acc-title">Materials &amp; Build</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="ft-acc-body">
+        <div class="ft-acc-body-inner">
+          <p>Aerospace-grade recycled aluminum frames, polycarbonate shells and vegan-leather alternatives — every material chosen for a decade of daily use, not a single unboxing photo.</p>
+          <div class="ft-acc-gauge" data-pct="70">
+            <svg viewBox="0 0 100 100"><circle class="ft-gauge-track" cx="50" cy="50" r="42"></circle><circle class="ft-gauge-fill" cx="50" cy="50" r="42"></circle></svg>
+            <div class="ft-acc-gauge-label"><strong>70%</strong><span>Recycled Content</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ft-acc-item">
+      <button class="ft-acc-head" aria-expanded="false">
+        <span class="ft-acc-num">02</span>
+        <span class="ft-acc-title">Charging &amp; Power</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="ft-acc-body">
+        <div class="ft-acc-body-inner">
+          <p>GaN-based chargers deliver up to 65W with active thermal throttling, USB-C PD 3.0 support and pass-through safety certified for over-current, over-voltage and short-circuit protection.</p>
+          <div class="ft-acc-gauge" data-pct="85">
+            <svg viewBox="0 0 100 100"><circle class="ft-gauge-track" cx="50" cy="50" r="42"></circle><circle class="ft-gauge-fill" cx="50" cy="50" r="42"></circle></svg>
+            <div class="ft-acc-gauge-label"><strong>65W</strong><span>Peak Output</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ft-acc-item">
+      <button class="ft-acc-head" aria-expanded="false">
+        <span class="ft-acc-num">03</span>
+        <span class="ft-acc-title">Durability &amp; Certification</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="ft-acc-body">
+        <div class="ft-acc-body-inner">
+          <p>Every case passes MIL-STD-810G drop testing from 3 meters, IP54 dust and splash resistance, and a 10,000-cycle button and port fatigue test before it's approved for production.</p>
+          <div class="ft-acc-gauge" data-pct="96">
+            <svg viewBox="0 0 100 100"><circle class="ft-gauge-track" cx="50" cy="50" r="42"></circle><circle class="ft-gauge-fill" cx="50" cy="50" r="42"></circle></svg>
+            <div class="ft-acc-gauge-label"><strong>3m</strong><span>Drop Rating</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ft-acc-item">
+      <button class="ft-acc-head" aria-expanded="false">
+        <span class="ft-acc-num">04</span>
+        <span class="ft-acc-title">Compatibility</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="ft-acc-body">
+        <div class="ft-acc-body-inner">
+          <p>MagSafe-compatible across our case and charger lines, USB-C standard on every cable and power bank, and Qi2 wireless charging support for non-MagSafe devices.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ft-acc-item">
+      <button class="ft-acc-head" aria-expanded="false">
+        <span class="ft-acc-num">05</span>
+        <span class="ft-acc-title">Warranty &amp; Support</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="ft-acc-body">
+        <div class="ft-acc-body-inner">
+          <p>Every STACKLY product ships with a 2-year manufacturer warranty, 30-day no-questions returns, and 24/7 chat support from a team that actually uses the gear.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 6. STACKLY VS STANDARD — COMPARISON TABLE ================= -->
+<section class="section ft-compare-table" id="ft-compare-table">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-scale-balanced"></i> The Difference</p>
+    <h2>STACKLY vs. the accessory drawer you already have.</h2>
+  </div>
+
+  <div class="ft-table-wrap">
+    <table class="ft-table" id="ftTable">
+      <thead>
+        <tr>
+          <th class="ft-th-feature">Feature</th>
+          <th class="ft-th-standard">Standard Brands</th>
+          <th class="ft-th-stackly"><i class="fa-solid fa-atom"></i> STACKLY</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ft-row" data-aos="fade-up">
+          <td>Drop Protection</td>
+          <td><i class="fa-solid fa-xmark ft-x"></i> ~1m average</td>
+          <td class="ft-td-stackly"><i class="fa-solid fa-check ft-check"></i> 3m, MIL-STD-810G</td>
+        </tr>
+        <tr class="ft-row" data-aos="fade-up">
+          <td>Charging Speed</td>
+          <td><i class="fa-solid fa-xmark ft-x"></i> 18–20W typical</td>
+          <td class="ft-td-stackly"><i class="fa-solid fa-check ft-check"></i> 65W GaN</td>
+        </tr>
+        <tr class="ft-row" data-aos="fade-up">
+          <td>Wireless Alignment</td>
+          <td><i class="fa-solid fa-xmark ft-x"></i> Loose / manual</td>
+          <td class="ft-td-stackly"><i class="fa-solid fa-check ft-check"></i> MagLock ±0.2mm</td>
+        </tr>
+        <tr class="ft-row" data-aos="fade-up">
+          <td>Water &amp; Dust</td>
+          <td><i class="fa-solid fa-xmark ft-x"></i> Rarely rated</td>
+          <td class="ft-td-stackly"><i class="fa-solid fa-check ft-check"></i> IP54 Certified</td>
+        </tr>
+        <tr class="ft-row" data-aos="fade-up">
+          <td>Materials</td>
+          <td><i class="fa-solid fa-xmark ft-x"></i> Virgin plastic</td>
+          <td class="ft-td-stackly"><i class="fa-solid fa-check ft-check"></i> 70% Recycled</td>
+        </tr>
+        <tr class="ft-row" data-aos="fade-up">
+          <td>Warranty</td>
+          <td><i class="fa-solid fa-xmark ft-x"></i> 90 days, if any</td>
+          <td class="ft-td-stackly"><i class="fa-solid fa-check ft-check"></i> 2 full years</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= 7. SEE IT FROM EVERY ANGLE — PINNED 360 REEL ================= -->
+<section class="ft-reel" id="ftReel">
+  <div class="ft-reel-pin" id="ftReelPin">
+    <div class="section-head ft-reel-head" data-aos="fade-up">
+      <p class="eyebrow"><i class="fa-solid fa-arrows-spin"></i> 360° View</p>
+      <h2>See it from every angle.</h2>
+    </div>
+
+    <div class="ft-reel-stage" id="ftReelStage">
+      <div class="ft-reel-ring" aria-hidden="true"></div>
+      <div class="ft-reel-ring ft-reel-ring-2" aria-hidden="true"></div>
+
+      <div class="ft-reel-frames" id="ftReelFrames">
+        <img src="Assest/m1.webp"  class="ft-reel-frame active" data-frame="0" alt="STACKLY product, angle 1" draggable="false">
+        <img src="Assest/m6.webp"  class="ft-reel-frame" data-frame="1" alt="STACKLY product, angle 2" draggable="false">
+        <img src="Assest/m2.webp"  class="ft-reel-frame" data-frame="2" alt="STACKLY product, angle 3" draggable="false">
+        <img src="Assest/m12.webp" class="ft-reel-frame" data-frame="3" alt="STACKLY product, angle 4" draggable="false">
+        <img src="Assest/m5.webp"  class="ft-reel-frame" data-frame="4" alt="STACKLY product, angle 5" draggable="false">
+        <img src="Assest/m4.webp"  class="ft-reel-frame" data-frame="5" alt="STACKLY product, angle 6" draggable="false">
+      </div>
+
+      <div class="ft-reel-deg" id="ftReelDeg">0°</div>
+      <span class="ft-reel-drag-hint" id="ftReelDragHint"><i class="fa-solid fa-arrows-left-right"></i> Drag to rotate</span>
+
+      <div class="ft-reel-callout ft-callout-1" data-at="0"><i class="fa-solid fa-plug"></i> USB-C PD Port</div>
+      <div class="ft-reel-callout ft-callout-2" data-at="2"><i class="fa-solid fa-shield-halved"></i> Reinforced Corner</div>
+      <div class="ft-reel-callout ft-callout-3" data-at="4"><i class="fa-solid fa-magnet"></i> MagLock Ring</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8. CLOSING CTA — MESH GRADIENT + MARQUEE + MAGNETIC BTN ================= -->
+<section class="ft-cta" id="ft-cta">
+  <div class="ft-cta-mesh" aria-hidden="true">
+    <div class="ft-mesh-blob ft-mesh-1"></div>
+    <div class="ft-mesh-blob ft-mesh-2"></div>
+    <div class="ft-mesh-blob ft-mesh-3"></div>
+  </div>
+
+  <div class="ft-cta-marquee" aria-hidden="true">
+    <div class="ft-cta-marquee-track">
+      <span>65W GaN Charging</span><span class="dot">•</span>
+      <span>MIL-STD-810G Tested</span><span class="dot">•</span>
+      <span>MagLock Precision</span><span class="dot">•</span>
+      <span>70% Recycled Alloy</span><span class="dot">•</span>
+      <span>IP54 Sealed</span><span class="dot">•</span>
+      <span>65W GaN Charging</span><span class="dot">•</span>
+      <span>MIL-STD-810G Tested</span><span class="dot">•</span>
+      <span>MagLock Precision</span><span class="dot">•</span>
+      <span>70% Recycled Alloy</span><span class="dot">•</span>
+      <span>IP54 Sealed</span><span class="dot">•</span>
+    </div>
+  </div>
+
+  <div class="ft-cta-content">
+    <p class="eyebrow"><i class="fa-solid fa-hand-sparkles"></i> Ready When You Are</p>
+    <h2>Feel the difference in your hand.</h2>
+    <p>Every feature on this page ships standard — no upsells, no "pro" tier. Just gear built the way it should have been from the start.</p>
+    <div class="ft-magnetic-wrap" id="ftMagWrap">
+      <a href="404.html"" class="btn btn-primary ft-magnetic-btn" id="ftMagBtn">Shop the Range <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="ft-cta-badges">
+      <span class="ft-cta-badge"><i class="fa-solid fa-truck-fast"></i> Free Shipping</span>
+      <span class="ft-cta-badge"><i class="fa-solid fa-rotate-left"></i> 30-Day Returns</span>
+      <span class="ft-cta-badge"><i class="fa-solid fa-award"></i> 2-Year Warranty</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER (same as home) ================= -->
+<footer class="site-footer" id="contact">
+  <div class="footer-marquee" aria-hidden="true">
+    <div class="footer-marquee-track">
+      <span>Free Worldwide Shipping</span><span class="dot">•</span>
+      <span>30-Day Easy Returns</span><span class="dot">•</span>
+      <span>24/7 Customer Support</span><span class="dot">•</span>
+      <span>2-Year Warranty</span><span class="dot">•</span>
+      <span>Free Worldwide Shipping</span><span class="dot">•</span>
+      <span>30-Day Easy Returns</span><span class="dot">•</span>
+      <span>24/7 Customer Support</span><span class="dot">•</span>
+      <span>2-Year Warranty</span><span class="dot">•</span>
+    </div>
+  </div>
+
+  <div class="footer-bg" aria-hidden="true">
+    <div class="footer-blob"></div>
+    <div class="footer-blob footer-blob-2"></div>
+    <i class="fa-solid fa-atom footer-watermark"></i>
+  </div>
+
+  <div class="footer-top">
+    <div class="footer-brand">
+       <a href="index.html#home" class="logo"><img src="Assest/stackly-logo.webp" alt="Stackly" class="logo-img"></a>
+      <p>Premium mobile accessories engineered for how you actually live — protected, powered, connected.</p>
+      <div class="socials">
+        <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="404.html" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="404.html">Phone Cases</a>
+      <a href="404.html">Earbuds</a>
+      <a href="404.html">Chargers</a>
+      <a href="404.html">Cables</a>
+      <a href="404.html">Power Banks</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="404.html">Our Story</a>
+      <a href="404.html">Features</a>
+      <a href="404.html">Careers</a>
+      <a href="404.html">Press</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="404.html">FAQ</a>
+      <a href="404.html">Track Order</a>
+      <a href="404.html">Returns</a>
+      <a href="404.html">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 STACKLY Accessories. All rights reserved.</p>
+    <div class="pay-icons">
+      <i class="fa-brands fa-cc-visa"></i>
+      <i class="fa-brands fa-cc-mastercard"></i>
+      <i class="fa-brands fa-cc-paypal"></i>
+      <i class="fa-brands fa-cc-apple-pay"></i>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+<script src="feature.js"></script>
+</body>
+</html>

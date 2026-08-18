@@ -1,0 +1,166 @@
+/* =========================================================
+   STACKLY — 404.css
+   Standalone styles for 404.html. No header/footer classes
+   are used here — this page reuses only the base tokens and
+   .btn / .eyebrow / .cursor-glow utilities from style.css.
+   The whole page is locked to one fixed screen: no scrolling,
+   content compresses to fit any viewport height.
+   ========================================================= */
+
+html, body{ height:100%; }
+body.nf-page{
+  height:100dvh;
+  overflow:hidden;
+  overscroll-behavior:none;
+}
+
+.nf-hero{
+  position:relative;
+  height:100dvh;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:3.5vh 6vw;
+  overflow:hidden;
+  text-align:center;
+  box-sizing:border-box;
+}
+
+/* ---------- Small fixed logo, top-left ---------- */
+.nf-logo{
+  position:absolute; top:max(20px, 3vh); left:6vw; z-index:3;
+  display:inline-flex; align-items:center; gap:9px;
+  font-family:var(--font-display); font-size:1.1rem; font-weight:700; letter-spacing:0.02em; color:var(--white);
+}
+.nf-logo i{ color:var(--accent-2); font-size:1.15rem; }
+
+/* ---------- Background: grid, glows, starfield ---------- */
+.nf-bg{ position:absolute; inset:0; z-index:0; }
+.nf-grid-lines{
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(246,246,244,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(246,246,244,0.035) 1px, transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(ellipse 60% 55% at 50% 46%, #000 25%, transparent 75%);
+  mask-image:radial-gradient(ellipse 60% 55% at 50% 46%, #000 25%, transparent 75%);
+}
+.nf-glow{ position:absolute; border-radius:50%; filter:blur(120px); opacity:0.32; }
+.nf-glow-1{ width:440px; height:440px; background:var(--accent); top:-90px; left:6%; animation:nfDrift1 19s ease-in-out infinite; }
+.nf-glow-2{ width:380px; height:380px; background:var(--accent-2); bottom:-100px; right:8%; animation:nfDrift2 23s ease-in-out infinite; }
+@keyframes nfDrift1{ 0%,100%{ transform:translate(0,0); } 50%{ transform:translate(40px,28px); } }
+@keyframes nfDrift2{ 0%,100%{ transform:translate(0,0); } 50%{ transform:translate(-36px,-24px); } }
+
+.nf-stars{ position:absolute; inset:0; }
+.nf-star{
+  position:absolute; border-radius:50%; background:var(--white); opacity:0.15;
+  animation-name:nfTwinkle; animation-iteration-count:infinite; animation-timing-function:ease-in-out;
+}
+@keyframes nfTwinkle{ 0%,100%{ opacity:0.1; } 50%{ opacity:0.7; } }
+
+/* ---------- Content ---------- */
+.nf-inner{ position:relative; z-index:2; max-width:640px; display:flex; flex-direction:column; align-items:center; }
+
+/* ---------- Orbit stage with glitching 404 code ---------- */
+.nf-orbit-stage{
+  position:relative;
+  width:min(300px, 46vh, 62vw);
+  aspect-ratio:1/1;
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:1.6vh;
+  transition:transform .3s var(--ease);
+}
+.nf-orbit-path{ position:absolute; border-radius:50%; border:1px dashed var(--line); }
+.nf-orbit-path-1{ inset:8%; }
+.nf-orbit-path-2{ inset:-4%; border-color:rgba(78,91,255,0.18); }
+
+.nf-code{
+  position:relative; z-index:2; display:flex; gap:4px; font-family:var(--font-display);
+  font-size:clamp(2.6rem, 9vh, 5rem); font-weight:700; line-height:1; letter-spacing:-0.02em;
+}
+.nf-digit{ display:inline-block; color:var(--white); position:relative; animation:nfDigitFloat 4s ease-in-out infinite; }
+.nf-digit-mid{ color:var(--accent-2); animation:nfDigitSpin 6s linear infinite; }
+.nf-digit:first-child{ animation-delay:0s; }
+.nf-digit:last-child{ animation-delay:0.3s; }
+@keyframes nfDigitFloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
+@keyframes nfDigitSpin{ 0%,92%,100%{ transform:rotateY(0deg); } 96%{ transform:rotateY(180deg); } }
+
+/* Glitch flicker layer on the whole code, subtle and occasional */
+.nf-code::before, .nf-code::after{
+  content:'404'; position:absolute; inset:0; opacity:0; mix-blend-mode:screen;
+}
+.nf-code::before{ color:var(--accent); animation:nfGlitchA 5.5s infinite; transform:translate(0,0); }
+.nf-code::after{ color:var(--accent-2); animation:nfGlitchB 5.5s infinite; }
+@keyframes nfGlitchA{ 0%,94%,100%{ opacity:0; transform:translate(0,0); } 95%{ opacity:0.6; transform:translate(-3px,1px); } 96%{ opacity:0; } }
+@keyframes nfGlitchB{ 0%,93%,100%{ opacity:0; transform:translate(0,0); } 94%{ opacity:0.6; transform:translate(3px,-1px); } 95.5%{ opacity:0; } }
+
+/* ---------- Orbiting debris (case fragment + icons) ---------- */
+.nf-orbit-track{ position:absolute; inset:8%; border-radius:50%; animation:nfOrbitSpin 22s linear infinite; }
+.nf-orbit-track-2{ inset:-4%; animation-duration:28s; animation-direction:reverse; }
+.nf-orbit-track-3{ inset:8%; animation-duration:22s; animation-delay:-11s; }
+@keyframes nfOrbitSpin{ to{ transform:rotate(360deg); } }
+
+.nf-debris{
+  position:absolute; top:50%; left:100%; transform:translate(-50%,-50%) rotate(0deg);
+  width:40px; height:40px; border-radius:50%; overflow:hidden; border:1px solid var(--line);
+  background:var(--black-elev); box-shadow:0 10px 26px rgba(0,0,0,0.5);
+  animation:nfDebrisCounter 22s linear infinite;
+}
+.nf-orbit-track-2 .nf-debris{ animation-duration:28s; animation-direction:reverse; }
+.nf-orbit-track-3 .nf-debris{ animation-duration:22s; animation-delay:-11s; }
+.nf-debris img{ width:100%; height:100%; object-fit:cover; }
+@keyframes nfDebrisCounter{ to{ transform:translate(-50%,-50%) rotate(-360deg); } }
+
+.nf-debris-icon{ display:flex; align-items:center; justify-content:center; font-size:0.9rem; color:var(--accent-2); background:rgba(78,91,255,0.14); }
+
+/* ---------- Copy ---------- */
+.nf-hero .eyebrow{ margin-bottom:0.8vh; }
+.nf-title{ font-size:clamp(1.3rem, 3.4vh, 2.1rem); margin-bottom:1.2vh; }
+.nf-sub{ color:var(--white-dim); line-height:1.55; max-width:460px; margin:0 auto 2.6vh; font-size:clamp(0.85rem, 1.9vh, 1rem); }
+
+/* ---------- Buttons ---------- */
+.nf-cta{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:2.4vh; }
+.nf-cta .btn{ padding:14px 24px; font-size:0.9rem; }
+.nf-cta .btn-ghost{ cursor:pointer; }
+
+/* ---------- Quick links ---------- */
+.nf-links{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:center; font-size:0.82rem; }
+.nf-links span{ color:var(--white-dim); }
+.nf-links a{ color:var(--white-dim); position:relative; transition:color .3s var(--ease); }
+.nf-links a::after{ content:''; position:absolute; left:0; bottom:-3px; width:0; height:1px; background:var(--accent-2); transition:width .3s var(--ease); }
+.nf-links a:hover{ color:var(--white); }
+.nf-links a:hover::after{ width:100%; }
+
+/* ---------- Responsive: width ---------- */
+@media (max-width:900px){
+  .nf-logo{ font-size:1rem; }
+  .nf-debris{ width:34px; height:34px; }
+}
+@media (max-width:520px){
+  .nf-cta{ flex-direction:column; width:100%; max-width:280px; }
+  .nf-cta .btn{ justify-content:center; width:100%; }
+  .nf-links{ gap:8px 14px; }
+}
+
+/* ---------- Responsive: short viewports (landscape phones, small laptops) ---------- */
+@media (max-height:700px){
+  .nf-hero{ padding:2vh 6vw; }
+  .nf-orbit-stage{ width:min(190px, 34vh, 50vw); margin-bottom:1vh; }
+  .nf-code{ font-size:clamp(2rem, 7vh, 3.4rem); }
+  .nf-hero .eyebrow{ font-size:0.72rem; margin-bottom:0.4vh; }
+  .nf-title{ font-size:clamp(1.1rem, 2.8vh, 1.6rem); margin-bottom:0.6vh; }
+  .nf-sub{ margin-bottom:1.6vh; font-size:0.8rem; }
+  .nf-cta{ margin-bottom:1.4vh; }
+  .nf-cta .btn{ padding:11px 20px; font-size:0.84rem; }
+  .nf-links{ display:none; }
+}
+@media (max-height:520px){
+  .nf-orbit-stage{ display:none; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .nf-glow-1, .nf-glow-2, .nf-star, .nf-digit, .nf-digit-mid, .nf-code::before, .nf-code::after,
+  .nf-orbit-track, .nf-orbit-track-2, .nf-orbit-track-3, .nf-debris{ animation:none !important; }
+}

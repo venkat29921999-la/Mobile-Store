@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — STACKLY</title>
+<meta name="description" content="STACKLY — the story, the craft, the people and the numbers behind premium mobile accessories engineered for how you actually live.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= CUSTOM CURSOR GLOW ================= -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ================= PRELOADER ================= -->
+<div class="preloader" id="preloader">
+  <div class="preloader-logo">STACKLY</div>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+<!-- ================= HEADER (same as home) ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+
+    <a href="index.html#home" class="logo">
+      <img src="Assest/stackly-logo.webp" alt="Stackly" class="logo-img">
+    </a>
+
+    <nav class="nav-center">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="feature.html" class="nav-link">Features</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-right-group">
+      <a href="login.html" class="login-btn">
+        <i class="fa-regular fa-user"></i><span>Login</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-link"><i class="fa-solid fa-house"></i>Home</a>
+      <a href="about.html" class="mobile-link"><i class="fa-solid fa-book-open"></i>About</a>
+      <a href="shop.html" class="mobile-link"><i class="fa-solid fa-layer-group"></i>Shop</a>
+      <a href="feature.html" class="mobile-link"><i class="fa-solid fa-gears"></i>Features</a>
+      <a href="contact.html" class="mobile-link"><i class="fa-solid fa-envelope"></i>Contact</a>
+      <a href="login.html" class="mobile-link login"><i class="fa-regular fa-user"></i>Login</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= 1. ABOUT HERO — MORPHING BLOB FIELD ================= -->
+<section class="ab-hero" id="ab-hero">
+  <div class="ab-hero-bg" aria-hidden="true">
+    <div class="ab-blob ab-blob-1" id="abBlob1"></div>
+    <div class="ab-blob ab-blob-2" id="abBlob2"></div>
+    <div class="ab-blob ab-blob-3" id="abBlob3"></div>
+    <div class="ab-ring ab-ring-1"></div>
+    <div class="ab-ring ab-ring-2"></div>
+  </div>
+
+  <div class="ab-hero-grid">
+    <div class="ab-hero-copy">
+      <p class="ab-crumb"><a href="index.html#home">Home</a><i class="fa-solid fa-chevron-right"></i><span>About</span></p>
+      <p class="eyebrow"><i class="fa-solid fa-atom"></i> Our Story</p>
+      <h1 class="ab-mask-title" id="abMaskTitle">
+        <span class="ab-mask-line">We build gear that</span>
+        <span class="ab-mask-line">respects how you</span>
+        <span class="ab-mask-line ab-accent">actually live.</span>
+      </h1>
+      <p class="ab-hero-sub">Founded on a simple frustration — every accessory we owned felt like an afterthought — STACKLY exists to make the things that protect and power your devices as considered as the devices themselves.</p>
+      <div class="ab-hero-cta">
+        <a href="404.html" class="btn btn-primary">Shop the Range <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="404.html" class="btn btn-ghost">Our Mission</a>
+      </div>
+
+      <div class="ab-hero-trust">
+        <div class="ab-trust-item"><strong>1.2M+</strong><span>Devices Protected</span></div>
+        <div class="ab-trust-divider"></div>
+        <div class="ab-trust-item"><strong>45</strong><span>Countries Shipped</span></div>
+        <div class="ab-trust-divider"></div>
+        <div class="ab-trust-item"><strong>4.9<i class="fa-solid fa-star"></i></strong><span>Average Rating</span></div>
+      </div>
+    </div>
+
+    <div class="ab-hero-visual">
+      <div class="ab-photo-stack" id="abPhotoStack">
+        <div class="ab-photo ab-photo-1">
+          <img src="Assest/m12.webp" alt="STACKLY product craftsmanship">
+        </div>
+        <div class="ab-photo ab-photo-2">
+          <img src="Assest/m2.webp" alt="STACKLY earbuds detail">
+        </div>
+        <div class="ab-photo ab-photo-3">
+          <img src="Assest/m6.webp" alt="STACKLY phone case in hand">
+        </div>
+      </div>
+      <span class="ab-hero-badge ab-hero-badge-1"><i class="fa-solid fa-award"></i> Est. 2020</span>
+      <span class="ab-hero-badge ab-hero-badge-2"><i class="fa-solid fa-leaf"></i> Sustainably Made</span>
+    </div>
+  </div>
+
+  <div class="ab-scroll-cue" aria-hidden="true"><span></span>Scroll</div>
+</section>
+
+<!-- ================= 2. MISSION — PINNED KEN BURNS ZOOM ================= -->
+<section class="ab-mission" id="ab-mission">
+  <div class="ab-mission-media" id="abMissionMedia">
+    <img src="Assest/m5.webp" alt="STACKLY charger and accessories on a desk">
+  </div>
+  <div class="ab-mission-overlay"></div>
+  <div class="ab-mission-content">
+    <p class="eyebrow"><i class="fa-solid fa-compass"></i> Our Mission</p>
+    <h2>Technology should disappear into your life, not dominate it.</h2>
+    <p>Every STACKLY product is designed to do its job so quietly you forget it's there — until the day you drop your phone, or your charger dies at 4%, and it saves you.</p>
+  </div>
+</section>
+
+<!-- ================= 3. CRAFTSMANSHIP — DRAG COMPARISON SLIDER ================= -->
+<section class="section ab-craft" id="ab-craft">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-hammer"></i> Craftsmanship</p>
+    <h2>From raw material to everyday armor.</h2>
+  </div>
+
+  <div class="ab-compare" id="abCompare">
+    <div class="ab-compare-after">
+      <img src="Assest/m6.webp" alt="Finished STACKLY phone case">
+      <span class="ab-compare-tag ab-tag-after">Finished Product</span>
+    </div>
+    <div class="ab-compare-before" id="abCompareBefore">
+      <img src="Assest/m4.webp" alt="Raw braided material used in STACKLY accessories">
+      <span class="ab-compare-tag ab-tag-before">Raw Material</span>
+    </div>
+    <div class="ab-compare-handle" id="abCompareHandle">
+      <i class="fa-solid fa-arrows-left-right"></i>
+    </div>
+  </div>
+  <p class="ab-compare-hint"><i class="fa-solid fa-hand-pointer"></i> Drag the handle to compare</p>
+</section>
+
+<!-- ================= 4. BY THE NUMBERS — RADIAL PROGRESS RINGS ================= -->
+<section class="section ab-stats" id="ab-stats">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-chart-simple"></i> By The Numbers</p>
+    <h2>Trusted by hundreds of thousands.</h2>
+  </div>
+
+  <div class="ab-ring-grid">
+    <div class="ab-ring-stat" data-value="98" data-suffix="%" data-max="100">
+      <div class="ab-ring-visual">
+        <svg viewBox="0 0 120 120" class="ab-ring-svg"><circle class="ab-ring-track" cx="60" cy="60" r="52"></circle><circle class="ab-ring-fill" cx="60" cy="60" r="52"></circle></svg>
+        <span class="ab-ring-num">0</span>
+      </div>
+      <p>Customer Satisfaction</p>
+    </div>
+    <div class="ab-ring-stat" data-value="1.2" data-suffix="M+" data-max="1.2" data-scale="10">
+      <div class="ab-ring-visual">
+        <svg viewBox="0 0 120 120" class="ab-ring-svg"><circle class="ab-ring-track" cx="60" cy="60" r="52"></circle><circle class="ab-ring-fill" cx="60" cy="60" r="52"></circle></svg>
+        <span class="ab-ring-num">0</span>
+      </div>
+      <p>Devices Protected</p>
+    </div>
+    <div class="ab-ring-stat" data-value="45" data-suffix="" data-max="60">
+      <div class="ab-ring-visual">
+        <svg viewBox="0 0 120 120" class="ab-ring-svg"><circle class="ab-ring-track" cx="60" cy="60" r="52"></circle><circle class="ab-ring-fill" cx="60" cy="60" r="52"></circle></svg>
+        <span class="ab-ring-num">0</span>
+      </div>
+      <p>Countries Shipped</p>
+    </div>
+    <div class="ab-ring-stat" data-value="4.9" data-suffix="/5" data-max="5" data-scale="10">
+      <div class="ab-ring-visual">
+        <svg viewBox="0 0 120 120" class="ab-ring-svg"><circle class="ab-ring-track" cx="60" cy="60" r="52"></circle><circle class="ab-ring-fill" cx="60" cy="60" r="52"></circle></svg>
+        <span class="ab-ring-num">0</span>
+      </div>
+      <p>Average Rating</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. OUR VALUES — SVG DRAW-IN ICON CARDS ================= -->
+<section class="section ab-values" id="ab-values">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-star"></i> What We Stand For</p>
+    <h2>The principles behind every product.</h2>
+  </div>
+
+  <div class="ab-value-grid">
+    <div class="ab-value-card">
+      <svg class="ab-value-icon" viewBox="0 0 64 64" fill="none"><path d="M32 6 L54 16 V32 C54 46 44 54 32 58 C20 54 10 46 10 32 V16 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M22 32 L29 39 L44 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>Durability First</h3>
+      <p>Every product survives a drop-test gauntlet before it ever reaches tooling — if it can't take a fall, it doesn't ship.</p>
+    </div>
+    <div class="ab-value-card">
+      <svg class="ab-value-icon" viewBox="0 0 64 64" fill="none"><path d="M32 8 C18 8 10 20 10 30 C10 42 20 50 32 56 C44 50 54 42 54 30 C54 20 46 8 32 8 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M32 22 V38 M24 30 H40" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      <h3>Sustainability</h3>
+      <p>Recyclable packaging, take-back programs, and materials chosen to outlast trend cycles, not landfills.</p>
+    </div>
+    <div class="ab-value-card">
+      <svg class="ab-value-icon" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="3"/><path d="M32 20 V32 L41 38" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>Radical Simplicity</h3>
+      <p>If a feature needs a manual to explain it, it doesn't belong on an STACKLY product.</p>
+    </div>
+    <div class="ab-value-card">
+      <svg class="ab-value-icon" viewBox="0 0 64 64" fill="none"><rect x="10" y="14" width="44" height="36" rx="6" stroke="currentColor" stroke-width="3"/><path d="M10 24 H54 M20 40 H34" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      <h3>Fair Access</h3>
+      <p>Premium engineering priced so protecting your device is never the thing you skip to save money.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. MEET THE TEAM — MAGNETIC DUOTONE CARDS ================= -->
+<section class="section ab-team" id="ab-team">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-people-group"></i> The People</p>
+    <h2>Small team, obsessive standards.</h2>
+  </div>
+
+  <div class="ab-team-grid">
+    <div class="ab-team-card">
+      <div class="ab-team-img"><img src="Assest/m13.webp" alt="Kabir Anand — Founder & CEO"></div>
+      <div class="ab-team-info">
+        <h3>Kabir Anand</h3>
+        <span>Founder &amp; CEO</span>
+        <div class="ab-team-socials">
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="ab-team-card">
+      <div class="ab-team-img"><img src="Assest/m14.webp" alt="Diya Kapoor — Head of Design"></div>
+      <div class="ab-team-info">
+        <h3>Diya Kapoor</h3>
+        <span>Head of Design</span>
+        <div class="ab-team-socials">
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="ab-team-card">
+      <div class="ab-team-img"><img src="Assest/m15.webp" alt="Vihaan Rao — Head of Engineering"></div>
+      <div class="ab-team-info">
+        <h3>Vihaan Rao</h3>
+        <span>Head of Engineering</span>
+        <div class="ab-team-socials">
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="ab-team-card">
+      <div class="ab-team-img"><img src="Assest/m16.webp" alt="Naina Reddy — Head of Operations"></div>
+      <div class="ab-team-info">
+        <h3>Naina Reddy</h3>
+        <span>Head of Operations</span>
+        <div class="ab-team-socials">
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7. OUR JOURNEY — DIAGONAL WIPE MILESTONES ================= -->
+<section class="section ab-journey" id="ab-journey">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-route"></i> Milestones</p>
+    <h2>Six years, one obsession.</h2>
+  </div>
+
+  <div class="ab-journey-list">
+    <div class="ab-journey-row">
+      <div class="ab-journey-text">
+        <span class="ab-journey-year">2020</span>
+        <h3>The First Prototype</h3>
+        <p>Two co-founders, a 3D printer, and a phone case that survived 40 drop tests in a garage in Bengaluru.</p>
+      </div>
+      <div class="ab-journey-media"><img src="Assest/m2.webp" alt="Early prototype phase"></div>
+    </div>
+    <div class="ab-journey-row ab-journey-reverse">
+      <div class="ab-journey-text">
+        <span class="ab-journey-year">2022</span>
+        <h3>First 100,000 Orders</h3>
+        <p>Word of mouth turned into a waitlist, then a warehouse. Our earbuds line launched to a six-week backorder.</p>
+      </div>
+      <div class="ab-journey-media"><img src="Assest/m17.webp" alt="First scale milestone"></div>
+    </div>
+    <div class="ab-journey-row">
+      <div class="ab-journey-text">
+        <span class="ab-journey-year">2024</span>
+        <h3>Going Global</h3>
+        <p>STACKLY shipped to 45 countries and opened our first fulfillment hub outside India.</p>
+      </div>
+      <div class="ab-journey-media"><img src="Assest/m18.webp" alt="Global expansion milestone"></div>
+    </div>
+    <div class="ab-journey-row ab-journey-reverse">
+      <div class="ab-journey-text">
+        <span class="ab-journey-year">2026</span>
+        <h3>Today</h3>
+        <p>1.2M+ devices protected and counting — still testing every product like it's the only one that matters.</p>
+      </div>
+      <div class="ab-journey-media"><img src="Assest/m12.webp" alt="STACKLY today"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8. CAREERS CTA — PARALLAX + MAGNETIC BUTTON ================= -->
+<section class="ab-careers" id="ab-careers">
+  <div class="ab-careers-media" id="abCareersMedia">
+    <img src="Assest/m1.webp" alt="STACKLY product lineup">
+  </div>
+  <div class="ab-careers-overlay"></div>
+
+  <div class="ab-careers-badges" aria-hidden="true">
+    <span class="ab-badge ab-badge-1"><i class="fa-solid fa-house-laptop"></i> Remote-friendly</span>
+    <span class="ab-badge ab-badge-2"><i class="fa-solid fa-heart-pulse"></i> Health coverage</span>
+    <span class="ab-badge ab-badge-3"><i class="fa-solid fa-gauge-high"></i> 4-day sprints</span>
+  </div>
+
+  <div class="ab-careers-content">
+    <p class="eyebrow"><i class="fa-solid fa-briefcase"></i> Join Us</p>
+    <h2>We're hiring across design, ops &amp; support.</h2>
+    <p>No corner offices, no ten-round interview loops — just a small team that ships fast and argues about the details.</p>
+    <div class="ab-magnetic-wrap" id="abMagneticWrap">
+      <a href="404.html" class="btn btn-primary ab-magnetic-btn" id="abMagneticBtn">See Open Roles <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER (same as home) ================= -->
+<footer class="site-footer" id="contact">
+  <div class="footer-marquee" aria-hidden="true">
+    <div class="footer-marquee-track">
+      <span>Free Worldwide Shipping</span><span class="dot">•</span>
+      <span>30-Day Easy Returns</span><span class="dot">•</span>
+      <span>24/7 Customer Support</span><span class="dot">•</span>
+      <span>2-Year Warranty</span><span class="dot">•</span>
+      <span>Free Worldwide Shipping</span><span class="dot">•</span>
+      <span>30-Day Easy Returns</span><span class="dot">•</span>
+      <span>24/7 Customer Support</span><span class="dot">•</span>
+      <span>2-Year Warranty</span><span class="dot">•</span>
+    </div>
+  </div>
+
+  <div class="footer-bg" aria-hidden="true">
+    <div class="footer-blob"></div>
+    <div class="footer-blob footer-blob-2"></div>
+    <i class="fa-solid fa-atom footer-watermark"></i>
+  </div>
+
+  <div class="footer-top">
+    <div class="footer-brand">
+       <a href="index.html#home" class="logo"><img src="Assest/stackly-logo.webp" alt="Stackly" class="logo-img"></a>
+      <p>Premium mobile accessories engineered for how you actually live — protected, powered, connected.</p>
+      <div class="socials">
+        <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="404.html" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="404.html">Phone Cases</a>
+      <a href="404.html">Earbuds</a>
+      <a href="404.html">Chargers</a>
+      <a href="404.html">Cables</a>
+      <a href="404.html">Power Banks</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="404.html">Our Story</a>
+      <a href="404.html">Sustainability</a>
+      <a href="404.html">Careers</a>
+      <a href="404.html">Press</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="404.html">FAQ</a>
+      <a href="404.html">Track Order</a>
+      <a href="404.html">Returns</a>
+      <a href="404.html">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 STACKLY Accessories. All rights reserved.</p>
+    <div class="pay-icons">
+      <i class="fa-brands fa-cc-visa"></i>
+      <i class="fa-brands fa-cc-mastercard"></i>
+      <i class="fa-brands fa-cc-paypal"></i>
+      <i class="fa-brands fa-cc-apple-pay"></i>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+<script src="about.js"></script>
+</body>
+</html>

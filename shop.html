@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop — STACKLY</title>
+<meta name="description" content="Shop STACKLY — premium phone cases, earbuds, chargers, cables and power banks. Filter by category, build a bundle, and save on today's flash deal.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= CUSTOM CURSOR GLOW ================= -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ================= PRELOADER ================= -->
+<div class="preloader" id="preloader">
+  <div class="preloader-logo">STACKLY</div>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+<!-- ================= HEADER (same as home) ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+
+    <a href="index.html#home" class="logo">
+      <img src="Assest/stackly-logo.webp" alt="Stackly" class="logo-img">
+    </a>
+
+    <nav class="nav-center">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="shop.html" class="nav-link active">Shop</a>
+      <a href="feature.html" class="nav-link">Features</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-right-group">
+      <a href="login.html" class="login-btn">
+        <i class="fa-regular fa-user"></i><span>Login</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-link"><i class="fa-solid fa-house"></i>Home</a>
+      <a href="about.html" class="mobile-link"><i class="fa-solid fa-book-open"></i>About</a>
+      <a href="shop.html" class="mobile-link"><i class="fa-solid fa-layer-group"></i>Shop</a>
+      <a href="feature.html" class="mobile-link"><i class="fa-solid fa-gears"></i>Features</a>
+      <a href="contact.html" class="mobile-link"><i class="fa-solid fa-envelope"></i>Contact</a>
+      <a href="login.html" class="mobile-link login"><i class="fa-regular fa-user"></i>Login</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= 1. SHOP HERO — DEPTH-PARALLAX PRODUCT CLUSTER ================= -->
+<section class="sp-hero" id="sp-hero">
+  <div class="sp-hero-bg">
+    <div class="sp-hero-spotlight" id="spHeroSpotlight"></div>
+    <div class="sp-hero-grid"></div>
+  </div>
+
+  <div class="sp-hero-inner">
+    <div class="sp-hero-copy">
+      <p class="eyebrow"><i class="fa-solid fa-bag-shopping"></i> The Full Range</p>
+      <h1 class="sp-scramble" id="spScrambleTitle" data-text="Shop every orbit.">Shop every orbit.</h1>
+      <p class="sp-hero-sub">Cases, audio, power and cables, all engineered as one system. Move your cursor across the cluster on the right — everything drifts with you.</p>
+
+      <div class="sp-hero-pills">
+        <a href="#sp-grid" class="sp-pill" data-filter="cases"><i class="fa-solid fa-mobile-screen-button"></i> Cases</a>
+        <a href="#sp-grid" class="sp-pill" data-filter="audio"><i class="fa-solid fa-headphones"></i> Audio</a>
+        <a href="#sp-grid" class="sp-pill" data-filter="power"><i class="fa-solid fa-bolt"></i> Power</a>
+        <a href="#sp-grid" class="sp-pill" data-filter="cables"><i class="fa-solid fa-plug"></i> Cables</a>
+      </div>
+
+      <div class="sp-hero-stats">
+        <div><strong data-count="180">0</strong><span>Products</span></div>
+        <div><strong data-count="4">0</strong><span>Core Lines</span></div>
+        <div><strong data-count="24">0</strong><span>Month Warranty</span></div>
+      </div>
+    </div>
+
+    <div class="sp-hero-showcase" id="spHeroShowcase">
+      <div class="sp-cluster-card sp-cluster-main" data-depth="18">
+        <img src="Assest/m19.webp" alt="Aramid Shield Case">
+      </div>
+      <div class="sp-cluster-card sp-cluster-1" data-depth="34">
+        <img src="Assest/m20.webp" alt="STACKLY Pro Earbuds">
+      </div>
+      <div class="sp-cluster-card sp-cluster-2" data-depth="46">
+        <img src="Assest/m21.webp" alt="65W GaN Charger">
+      </div>
+      <div class="sp-cluster-card sp-cluster-3" data-depth="28">
+        <img src="Assest/m22.webp" alt="Braided USB-C Cable">
+      </div>
+      <div class="sp-cluster-card sp-cluster-4" data-depth="40">
+        <img src="Assest/m24.webp" alt="20K Power Bank">
+      </div>
+
+      <div class="sp-cluster-badge sp-cluster-badge-1" data-depth="52">
+        <i class="fa-solid fa-star"></i><div><strong>4.9</strong><span>Avg Rating</span></div>
+      </div>
+      <div class="sp-cluster-badge sp-cluster-badge-2" data-depth="60">
+        <i class="fa-solid fa-truck-fast"></i><div><strong>24h</strong><span>Dispatch</span></div>
+      </div>
+
+      <div class="sp-cluster-ring sp-cluster-ring-1"></div>
+      <div class="sp-cluster-ring sp-cluster-ring-2"></div>
+    </div>
+  </div>
+
+  <a href="#sp-filterbar" class="sp-hero-scroll"><span></span> Browse the shop</a>
+</section>
+
+<!-- ================= 2. STICKY FILTER BAR — LIQUID MORPH INDICATOR ================= -->
+<section class="sp-filterbar" id="sp-filterbar">
+  <div class="sp-filterbar-inner">
+    <div class="sp-filters" id="spFilters">
+      <span class="sp-filter-liquid" id="spFilterLiquid" aria-hidden="true"></span>
+      <button class="sp-filter active" data-filter="all" type="button">All</button>
+      <button class="sp-filter" data-filter="cases" type="button">Cases</button>
+      <button class="sp-filter" data-filter="audio" type="button">Audio</button>
+      <button class="sp-filter" data-filter="power" type="button">Power</button>
+      <button class="sp-filter" data-filter="cables" type="button">Cables</button>
+    </div>
+
+    <div class="sp-filterbar-right">
+      <span class="sp-result-count"><span class="sp-roll" id="spResultCount">8</span> items</span>
+      <div class="sp-sort">
+        <label for="spSort"><i class="fa-solid fa-arrow-down-wide-short"></i></label>
+        <select id="spSort">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating">Top Rated</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. PRODUCT GRID — FLIP-SCALE REVEAL + QUICK ADD ================= -->
+<section class="section sp-shop" id="sp-grid">
+
+  <div class="sp-grid" id="spGrid">
+
+    <article class="sp-card" data-category="cases" data-price="39" data-rating="5.0">
+      <div class="sp-card-media">
+        <img src="Assest/m19.webp" alt="Aramid Shield Case">
+        <span class="badge sale">-20%</span>
+        <button class="sp-wish" aria-label="Add to wishlist" type="button"><i class="fa-regular fa-heart"></i><span class="sp-wish-burst"></span></button>
+        <div class="sp-quickadd">
+          <button class="add-btn" type="button" aria-label="Quick add"><i class="fa-solid fa-plus"></i></button>
+          <span>Quick Add</span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h4>Aramid Shield Case</h4>
+        <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0</p>
+        <div class="price-row"><span class="price">$39</span></div>
+      </div>
+    </article>
+
+    <article class="sp-card" data-category="audio" data-price="79" data-rating="4.8">
+      <div class="sp-card-media">
+        <img src="Assest/m20.webp" alt="STACKLY Pro Earbuds">
+        <span class="badge">New</span>
+        <button class="sp-wish" aria-label="Add to wishlist" type="button"><i class="fa-regular fa-heart"></i><span class="sp-wish-burst"></span></button>
+        <div class="sp-quickadd">
+          <button class="add-btn" type="button" aria-label="Quick add"><i class="fa-solid fa-plus"></i></button>
+          <span>Quick Add</span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h4>STACKLY Pro Earbuds</h4>
+        <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> 4.8</p>
+        <div class="price-row"><span class="price">$79</span></div>
+      </div>
+    </article>
+
+    <article class="sp-card" data-category="power" data-price="49" data-rating="4.7">
+      <div class="sp-card-media">
+        <img src="Assest/m21.webp" alt="65W GaN Charger">
+        <button class="sp-wish" aria-label="Add to wishlist" type="button"><i class="fa-regular fa-heart"></i><span class="sp-wish-burst"></span></button>
+        <div class="sp-quickadd">
+          <button class="add-btn" type="button" aria-label="Quick add"><i class="fa-solid fa-plus"></i></button>
+          <span>Quick Add</span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h4>65W GaN Charger</h4>
+        <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> 4.7</p>
+        <div class="price-row"><span class="price">$49</span></div>
+      </div>
+    </article>
+
+    <article class="sp-card" data-category="power" data-price="59" data-rating="4.9">
+      <div class="sp-card-media">
+        <img src="Assest/m24.webp" alt="20K Power Bank">
+        <span class="badge">New</span>
+        <button class="sp-wish" aria-label="Add to wishlist" type="button"><i class="fa-regular fa-heart"></i><span class="sp-wish-burst"></span></button>
+        <div class="sp-quickadd">
+          <button class="add-btn" type="button" aria-label="Quick add"><i class="fa-solid fa-plus"></i></button>
+          <span>Quick Add</span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h4>20K Power Bank</h4>
+        <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 4.9</p>
+        <div class="price-row"><span class="price">$59</span></div>
+      </div>
+    </article>
+
+    <article class="sp-card" data-category="cables" data-price="19" data-rating="4.6">
+      <div class="sp-card-media">
+        <img src="Assest/m22.webp" alt="Braided USB-C Cable">
+        <button class="sp-wish" aria-label="Add to wishlist" type="button"><i class="fa-regular fa-heart"></i><span class="sp-wish-burst"></span></button>
+        <div class="sp-quickadd">
+          <button class="add-btn" type="button" aria-label="Quick add"><i class="fa-solid fa-plus"></i></button>
+          <span>Quick Add</span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h4>Braided USB-C Cable</h4>
+        <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> 4.6</p>
+        <div class="price-row"><span class="price">$19</span></div>
+      </div>
+    </article>
+
+    <article class="sp-card" data-category="power" data-price="45" data-rating="4.8">
+      <div class="sp-card-media">
+        <img src="Assest/m25.webp" alt="MagSnap Wireless Charger">
+        <span class="badge sale">-15%</span>
+        <button class="sp-wish" aria-label="Add to wishlist" type="button"><i class="fa-regular fa-heart"></i><span class="sp-wish-burst"></span></button>
+        <div class="sp-quickadd">
+          <button class="add-btn" type="button" aria-label="Quick add"><i class="fa-solid fa-plus"></i></button>
+          <span>Quick Add</span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h4>MagSnap Charger</h4>
+        <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> 4.8</p>
+        <div class="price-row"><span class="price">$45</span></div>
+      </div>
+    </article>
+
+    <article class="sp-card" data-category="cases" data-price="29" data-rating="4.9">
+      <div class="sp-card-media">
+        <img src="Assest/m26.webp" alt="Clear Guard Case">
+        <button class="sp-wish" aria-label="Add to wishlist" type="button"><i class="fa-regular fa-heart"></i><span class="sp-wish-burst"></span></button>
+        <div class="sp-quickadd">
+          <button class="add-btn" type="button" aria-label="Quick add"><i class="fa-solid fa-plus"></i></button>
+          <span>Quick Add</span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h4>Clear Guard Case</h4>
+        <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 4.9</p>
+        <div class="price-row"><span class="price">$29</span></div>
+      </div>
+    </article>
+
+    <article class="sp-card" data-category="cables" data-price="24" data-rating="4.5">
+      <div class="sp-card-media">
+        <img src="Assest/m23.webp" alt="USB-C to Lightning Cable">
+        <span class="badge">New</span>
+        <button class="sp-wish" aria-label="Add to wishlist" type="button"><i class="fa-regular fa-heart"></i><span class="sp-wish-burst"></span></button>
+        <div class="sp-quickadd">
+          <button class="add-btn" type="button" aria-label="Quick add"><i class="fa-solid fa-plus"></i></button>
+          <span>Quick Add</span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h4>Fast-Sync Lightning Cable</h4>
+        <p class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i> 4.5</p>
+        <div class="price-row"><span class="price">$24</span></div>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="sp-empty" id="spEmpty">No products in this category yet — try another filter.</p>
+</section>
+
+<!-- ================= 4. FLASH DEAL — SPLIT-FLAP COUNTDOWN ================= -->
+<section class="sp-deal" id="sp-deal">
+  <div class="sp-deal-bg"></div>
+  <div class="sp-deal-inner">
+    <div class="sp-deal-copy">
+      <p class="eyebrow"><i class="fa-solid fa-fire"></i> Flash Deal</p>
+      <h2>20,000mAh Power Bank<br><span class="text-accent">30% off</span>, today only.</h2>
+      <p>Our best-selling power bank, discounted for a limited window. Once the flap drops to zero, the price resets.</p>
+      <div class="sp-deal-price">
+        <span class="sp-deal-now">$41</span>
+        <span class="sp-deal-was">$59</span>
+      </div>
+      <a href="404.html" class="btn btn-primary"><span>Grab the deal</span><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="sp-flap-wrap" aria-label="Deal countdown timer">
+      <div class="sp-flap-unit" data-unit="hours">
+        <div class="sp-flap" id="spFlapHours">
+          <div class="sp-flap-card sp-flap-top"><span>00</span></div>
+          <div class="sp-flap-card sp-flap-bottom"><span>00</span></div>
+          <div class="sp-flap-fold sp-flap-fold-top"><span>00</span></div>
+          <div class="sp-flap-fold sp-flap-fold-bottom"><span>00</span></div>
+        </div>
+        <span class="sp-flap-label">Hours</span>
+      </div>
+      <span class="sp-flap-colon">:</span>
+      <div class="sp-flap-unit" data-unit="minutes">
+        <div class="sp-flap" id="spFlapMinutes">
+          <div class="sp-flap-card sp-flap-top"><span>00</span></div>
+          <div class="sp-flap-card sp-flap-bottom"><span>00</span></div>
+          <div class="sp-flap-fold sp-flap-fold-top"><span>00</span></div>
+          <div class="sp-flap-fold sp-flap-fold-bottom"><span>00</span></div>
+        </div>
+        <span class="sp-flap-label">Minutes</span>
+      </div>
+      <span class="sp-flap-colon">:</span>
+      <div class="sp-flap-unit" data-unit="seconds">
+        <div class="sp-flap" id="spFlapSeconds">
+          <div class="sp-flap-card sp-flap-top"><span>00</span></div>
+          <div class="sp-flap-card sp-flap-bottom"><span>00</span></div>
+          <div class="sp-flap-fold sp-flap-fold-top"><span>00</span></div>
+          <div class="sp-flap-fold sp-flap-fold-bottom"><span>00</span></div>
+        </div>
+        <span class="sp-flap-label">Seconds</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. NEW ARRIVALS — WATERFALL COLUMNS ================= -->
+<section class="section sp-arrivals" id="sp-arrivals">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-sparkles"></i> Just Landed</p>
+    <h2>New arrivals, in constant motion.</h2>
+    <p class="cat-scroll-hint"><i class="fa-solid fa-hand-pointer"></i> Hover a column to pause it</p>
+  </div>
+
+  <div class="sp-waterfall" id="spWaterfall">
+    <div class="sp-wf-col sp-wf-up">
+      <div class="sp-wf-track">
+        <div class="sp-wf-item"><img src="Assest/m19.webp" alt="Case"><span>Aramid Shield</span></div>
+        <div class="sp-wf-item"><img src="Assest/m21.webp" alt="Charger"><span>GaN 65W</span></div>
+        <div class="sp-wf-item"><img src="Assest/m22.webp" alt="Cable"><span>Braided USB-C</span></div>
+        <div class="sp-wf-item"><img src="Assest/m19.webp" alt="Case"><span>Aramid Shield</span></div>
+        <div class="sp-wf-item"><img src="Assest/m21.webp" alt="Charger"><span>GaN 65W</span></div>
+        <div class="sp-wf-item"><img src="Assest/m22.webp" alt="Cable"><span>Braided USB-C</span></div>
+      </div>
+    </div>
+    <div class="sp-wf-col sp-wf-down">
+      <div class="sp-wf-track">
+        <div class="sp-wf-item"><img src="Assest/m20.webp" alt="Earbuds"><span>STACKLY Pro</span></div>
+        <div class="sp-wf-item"><img src="Assest/m24.webp" alt="Power bank"><span>20K Power Bank</span></div>
+        <div class="sp-wf-item"><img src="Assest/m26.webp" alt="Case"><span>Clear Guard</span></div>
+        <div class="sp-wf-item"><img src="Assest/m20.webp" alt="Earbuds"><span>STACKLY Pro</span></div>
+        <div class="sp-wf-item"><img src="Assest/m24.webp" alt="Power bank"><span>20K Power Bank</span></div>
+        <div class="sp-wf-item"><img src="Assest/m26.webp" alt="Case"><span>Clear Guard</span></div>
+      </div>
+    </div>
+    <div class="sp-wf-col sp-wf-up">
+      <div class="sp-wf-track">
+        <div class="sp-wf-item"><img src="Assest/m25.webp" alt="MagSnap"><span>MagSnap Charger</span></div>
+        <div class="sp-wf-item"><img src="Assest/m23.webp" alt="Cable"><span>Lightning Cable</span></div>
+        <div class="sp-wf-item"><img src="Assest/m1.webp" alt="Screen guard"><span>Tempered Glass</span></div>
+        <div class="sp-wf-item"><img src="Assest/m25.webp" alt="MagSnap"><span>MagSnap Charger</span></div>
+        <div class="sp-wf-item"><img src="Assest/m23.webp" alt="Cable"><span>Lightning Cable</span></div>
+        <div class="sp-wf-item"><img src="Assest/m1.webp" alt="Screen guard"><span>Tempered Glass</span></div>
+      </div>
+    </div>
+    <div class="sp-wf-col sp-wf-down sp-wf-hide-mobile">
+      <div class="sp-wf-track">
+        <div class="sp-wf-item"><img src="Assest/m2.webp" alt="Earbuds"><span>Studio Buds</span></div>
+        <div class="sp-wf-item"><img src="Assest/m6.webp" alt="Case"><span>Slim Armor</span></div>
+        <div class="sp-wf-item"><img src="Assest/m4.webp" alt="Cable"><span>Tangle-Free</span></div>
+        <div class="sp-wf-item"><img src="Assest/m2.webp" alt="Earbuds"><span>Studio Buds</span></div>
+        <div class="sp-wf-item"><img src="Assest/m3.webp" alt="Case"><span>Slim Armor</span></div>
+        <div class="sp-wf-item"><img src="Assest/m4.webp" alt="Cable"><span>Tangle-Free</span></div>
+      </div>
+    </div>
+    <div class="sp-waterfall-fade sp-waterfall-fade-top"></div>
+    <div class="sp-waterfall-fade sp-waterfall-fade-bottom"></div>
+  </div>
+</section>
+
+<!-- ================= 6. BUILD A BUNDLE — CONFIGURATOR ================= -->
+<section class="section sp-bundle" id="sp-bundle">
+  <div class="section-head" data-aos="fade-up">
+    <p class="eyebrow"><i class="fa-solid fa-cubes-stacked"></i> Build Your Bundle</p>
+    <h2>Pick three, save on all of them.</h2>
+  </div>
+
+  <div class="sp-config">
+    <div class="sp-config-visual">
+      <div class="sp-config-progress">
+        <span class="sp-config-progress-fill" id="spConfigProgressFill"></span>
+      </div>
+      <div class="sp-config-stage" id="spConfigStage">
+        <img src="Assest/m19.webp" alt="Selected case" class="sp-config-img sp-config-img-case active" data-slot="case">
+        <img src="Assest/m26.webp" alt="Selected case" class="sp-config-img sp-config-img-case" data-slot="case">
+        <img src="Assest/m3.webp" alt="Selected case" class="sp-config-img sp-config-img-case" data-slot="case">
+      </div>
+      <div class="sp-config-price">
+        <span>Bundle total</span>
+        <strong><span id="spConfigTotal">0</span></strong>
+      </div>
+    </div>
+
+    <div class="sp-config-panel">
+
+      <div class="sp-config-step active" data-step="1">
+        <span class="sp-config-step-num">Step 1 — Choose a case</span>
+        <div class="sp-swatches" data-slot="case">
+          <button class="sp-swatch active" data-price="39" data-index="0" type="button"><span class="sp-swatch-dot" style="background:#1c1c26"></span>Aramid Shield <em>$39</em></button>
+          <button class="sp-swatch" data-price="29" data-index="1" type="button"><span class="sp-swatch-dot" style="background:#e9e9ea"></span>Clear Guard <em>$29</em></button>
+          <button class="sp-swatch" data-price="34" data-index="2" type="button"><span class="sp-swatch-dot" style="background:#4e5bff"></span>Slim Armor <em>$34</em></button>
+        </div>
+      </div>
+
+      <div class="sp-config-step" data-step="2">
+        <span class="sp-config-step-num">Step 2 — Choose a charger</span>
+        <div class="sp-swatches" data-slot="charger">
+          <button class="sp-swatch active" data-price="49" type="button"><span class="sp-swatch-dot" style="background:#1c1c26"></span>65W GaN <em>$49</em></button>
+          <button class="sp-swatch" data-price="45" type="button"><span class="sp-swatch-dot" style="background:#4e5bff"></span>MagSnap <em>$45</em></button>
+          <button class="sp-swatch" data-price="59" type="button"><span class="sp-swatch-dot" style="background:#7c85ff"></span>20K Power Bank <em>$59</em></button>
+        </div>
+      </div>
+
+      <div class="sp-config-step" data-step="3">
+        <span class="sp-config-step-num">Step 3 — Choose a cable</span>
+        <div class="sp-swatches" data-slot="cable">
+          <button class="sp-swatch active" data-price="19" type="button"><span class="sp-swatch-dot" style="background:#1c1c26"></span>Braided USB-C <em>$19</em></button>
+          <button class="sp-swatch" data-price="24" type="button"><span class="sp-swatch-dot" style="background:#e9e9ea"></span>Lightning Sync <em>$24</em></button>
+        </div>
+      </div>
+
+      <div class="sp-config-nav">
+        <button class="sp-config-btn sp-config-prev" id="spConfigPrev" type="button" disabled><i class="fa-solid fa-arrow-left"></i> Back</button>
+        <div class="sp-config-dots">
+          <span class="sp-config-dot active" data-goto="1"></span>
+          <span class="sp-config-dot" data-goto="2"></span>
+          <span class="sp-config-dot" data-goto="3"></span>
+        </div>
+        <button class="sp-config-btn sp-config-next" id="spConfigNext" type="button">Next <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      <a href="404.html" class="btn btn-primary sp-config-add" id="spConfigAdd"><span>Add bundle to cart</span><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7. RATINGS & TRUST — ANIMATED BREAKDOWN BARS ================= -->
+<section class="section sp-trust light" id="sp-trust">
+  <div class="sp-trust-inner">
+
+    <div class="sp-trust-score" data-aos="fade-up">
+      <span class="sp-trust-big"><span id="spTrustNumber">0</span></span>
+      <p class="stars sp-trust-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></p>
+      <p>from 12,480 verified orders</p>
+
+      <div class="sp-trust-badges">
+        <span class="sp-badge-pop"><i class="fa-solid fa-shield-halved"></i> Buyer Protection</span>
+        <span class="sp-badge-pop"><i class="fa-solid fa-rotate-left"></i> 30-Day Returns</span>
+        <span class="sp-badge-pop"><i class="fa-solid fa-truck-fast"></i> Fast Dispatch</span>
+        <span class="sp-badge-pop"><i class="fa-solid fa-lock"></i> Secure Checkout</span>
+      </div>
+    </div>
+
+    <div class="sp-trust-bars" data-aos="fade-up" data-aos-delay="100">
+      <div class="sp-bar-row" data-pct="78">
+        <span class="sp-bar-label">5 <i class="fa-solid fa-star"></i></span>
+        <div class="sp-bar-track"><span class="sp-bar-fill"></span></div>
+        <span class="sp-bar-pct">78%</span>
+      </div>
+      <div class="sp-bar-row" data-pct="14">
+        <span class="sp-bar-label">4 <i class="fa-solid fa-star"></i></span>
+        <div class="sp-bar-track"><span class="sp-bar-fill"></span></div>
+        <span class="sp-bar-pct">14%</span>
+      </div>
+      <div class="sp-bar-row" data-pct="5">
+        <span class="sp-bar-label">3 <i class="fa-solid fa-star"></i></span>
+        <div class="sp-bar-track"><span class="sp-bar-fill"></span></div>
+        <span class="sp-bar-pct">5%</span>
+      </div>
+      <div class="sp-bar-row" data-pct="2">
+        <span class="sp-bar-label">2 <i class="fa-solid fa-star"></i></span>
+        <div class="sp-bar-track"><span class="sp-bar-fill"></span></div>
+        <span class="sp-bar-pct">2%</span>
+      </div>
+      <div class="sp-bar-row" data-pct="1">
+        <span class="sp-bar-label">1 <i class="fa-solid fa-star"></i></span>
+        <div class="sp-bar-track"><span class="sp-bar-fill"></span></div>
+        <span class="sp-bar-pct">1%</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 8. SHOP CTA — MORPHING BLOB LOOP ================= -->
+<section class="section sp-cta" id="sp-cta">
+  <div class="sp-cta-bg">
+    <svg class="sp-cta-blob" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path id="spCtaBlobPath" fill="url(#spCtaGradient)"></path>
+      <defs>
+        <linearGradient id="spCtaGradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#4e5bff"></stop>
+          <stop offset="100%" stop-color="#7c85ff"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div class="sp-cta-inner" data-aos="zoom-in">
+    <i class="fa-solid fa-bag-shopping"></i>
+    <h2>Get first access to restocks.</h2>
+    <p>Drop your email — we'll ping you the second a sold-out favorite is back, plus a 10% code for your first order.</p>
+    <form class="sp-cta-form" id="spCtaForm">
+      <span class="sp-cta-input-wrap">
+        <input type="email" placeholder="you@example.com" required id="spCtaEmail">
+        <span class="sp-cta-underline"></span>
+      </span>
+      <button type="submit" class="sp-ripple-btn"><span>Notify Me</span><i class="fa-solid fa-bell"></i></button>
+    </form>
+    <span class="form-msg" id="spCtaMsg"></span>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER (same as home) ================= -->
+<footer class="site-footer" id="contact">
+  <div class="footer-marquee" aria-hidden="true">
+    <div class="footer-marquee-track">
+      <span>Free Worldwide Shipping</span><span class="dot">•</span>
+      <span>30-Day Easy Returns</span><span class="dot">•</span>
+      <span>24/7 Customer Support</span><span class="dot">•</span>
+      <span>2-Year Warranty</span><span class="dot">•</span>
+      <span>Free Worldwide Shipping</span><span class="dot">•</span>
+      <span>30-Day Easy Returns</span><span class="dot">•</span>
+      <span>24/7 Customer Support</span><span class="dot">•</span>
+      <span>2-Year Warranty</span><span class="dot">•</span>
+    </div>
+  </div>
+
+  <div class="footer-bg" aria-hidden="true">
+    <div class="footer-blob"></div>
+    <div class="footer-blob footer-blob-2"></div>
+    <i class="fa-solid fa-atom footer-watermark"></i>
+  </div>
+
+  <div class="footer-top">
+    <div class="footer-brand">
+       <a href="index.html#home" class="logo"><img src="Assest/stackly-logo.webp" alt="Stackly" class="logo-img"></a>
+      <p>Premium mobile accessories engineered for how you actually live — protected, powered, connected.</p>
+      <div class="socials">
+        <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="404.html" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="404.html">Phone Cases</a>
+      <a href="404.html">Earbuds</a>
+      <a href="404.html">Chargers</a>
+      <a href="404.html">Cables</a>
+      <a href="404.html">Power Banks</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="404.html">Our Story</a>
+      <a href="404.html">Sustainability</a>
+      <a href="404.html">Careers</a>
+      <a href="404.html">Press</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="404.html">FAQ</a>
+      <a href="404.html">Track Order</a>
+      <a href="404.html">Returns</a>
+      <a href="404.html">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 STACKLY Accessories. All rights reserved.</p>
+    <div class="pay-icons">
+      <i class="fa-brands fa-cc-visa"></i>
+      <i class="fa-brands fa-cc-mastercard"></i>
+      <i class="fa-brands fa-cc-paypal"></i>
+      <i class="fa-brands fa-cc-apple-pay"></i>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+<script src="shop.js"></script>
+</body>
+</html>
