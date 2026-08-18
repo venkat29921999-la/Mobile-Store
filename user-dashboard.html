@@ -484,20 +484,14 @@
         >
 
           <button
-            type="button"
-            class="db-icon-btn"
-            id="dbNotifBtn"
-            aria-label="Notifications"
-          >
-
-            <i class="fa-regular fa-bell"></i>
-
-            <span
-              class="db-badge"
-              data-source="messages"
-            >0</span>
-
-          </button>
+  class="db-icon-btn"
+  id="dbNotifBtn"
+  aria-label="Notifications"
+  onclick="window.location.href='404.html'"
+>
+  <i class="fa-regular fa-bell"></i>
+  <span class="db-badge" data-source="messages">0</span>
+</button>
 
 
           <div class="db-dropdown db-notif-panel">
@@ -571,82 +565,83 @@
 
         <!-- Profile -->
 
-        <div
-          class="db-profile"
-          id="dbProfile"
-        >
+       <div class="db-profile" id="dbProfile">
 
-          <button
-            type="button"
-            class="db-profile-btn"
-            id="dbProfileBtn"
-          >
+  <!-- Profile Button -->
+  <button
+    type="button"
+    class="db-profile-btn"
+    id="dbProfileBtn"
+    aria-label="Open profile menu"
+    aria-expanded="false"
+  >
+    <span
+      class="db-avatar"
+      style="width:30px;height:30px;font-size:0.7rem;"
+    >
+      AK
+    </span>
 
-            <span
-              class="db-avatar"
-              style="
-                width:30px;
-                height:30px;
-                font-size:0.7rem;
-              "
-            >
-              AK
-            </span>
+    <span class="db-profile-name">
+      Alex
+    </span>
 
-            <span class="db-profile-name">
-              Alex
-            </span>
-
-            <i class="fa-solid fa-chevron-down"></i>
-
-          </button>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
 
 
-          <div class="db-dropdown">
+  <!-- Profile Dropdown -->
+  <div class="db-dropdown" id="dbProfileDropdown">
 
-            <a
-              href="#settings"
-              class="db-dropdown-item"
-              data-view="settings"
-            >
-              <i class="fa-regular fa-user"></i>
-              View Profile
-            </a>
-
-
-            <a
-              href="#settings"
-              class="db-dropdown-item"
-              data-view="settings"
-            >
-              <i class="fa-solid fa-gear"></i>
-              Account Settings
-            </a>
+    <!-- View Profile -->
+    <a
+      href="404.html"
+      class="db-dropdown-item"
+      onclick="window.location.href='404.html'; return false;"
+    >
+      <i class="fa-regular fa-user"></i>
+      <span>View Profile</span>
+    </a>
 
 
-            <a
-              href="contact.html"
-              class="db-dropdown-item"
-            >
-              <i class="fa-regular fa-circle-question"></i>
-              Help &amp; Support
-            </a>
+    <!-- Account Settings -->
+    <a
+      href="404.html"
+      class="db-dropdown-item"
+      onclick="window.location.href='404.html'; return false;"
+    >
+      <i class="fa-solid fa-gear"></i>
+      <span>Account Settings</span>
+    </a>
 
 
-            <div class="db-dropdown-divider"></div>
+    <!-- Help & Support -->
+    <a
+      href="404.html"
+      class="db-dropdown-item"
+      onclick="window.location.href='404.html'; return false;"
+    >
+      <i class="fa-regular fa-circle-question"></i>
+      <span>Help &amp; Support</span>
+    </a>
 
 
-            <a
-              href="login.html"
-              class="db-dropdown-item"
-            >
-              <i class="fa-solid fa-right-from-bracket"></i>
-              Log Out
-            </a>
+    <!-- Divider -->
+    <div class="db-dropdown-divider"></div>
 
-          </div>
 
-        </div>
+    <!-- Logout -->
+    <a
+      href="login.html"
+      class="db-dropdown-item"
+    >
+      <i class="fa-solid fa-right-from-bracket"></i>
+      <span>Log Out</span>
+    </a>
+
+  </div>
+
+</div>
 
       </div>
 
