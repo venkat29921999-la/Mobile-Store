@@ -248,13 +248,6 @@
           </div>
         </a>
 
-        <div class="cat-card cat-card-end">
-          <div class="cat-end-inner">
-            <i class="fa-solid fa-layer-group"></i>
-            <h3>See the full range</h3>
-            <a href="404.html" class="btn btn-primary">Shop All <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
 
       </div>
     </div>
@@ -621,9 +614,50 @@
     <h2>Join the STACKLY Circle</h2>
     <p>Get early access to drops, member-only pricing and a 10% welcome code.</p>
     <form class="newsletter-form" id="newsletterForm">
-      <input type="email" placeholder="you@example.com" required>
-      <button type="submit"><span>Subscribe</span><i class="fa-solid fa-paper-plane"></i></button>
-    </form>
+
+  <input
+    type="email"
+    id="newsletterEmail"
+    placeholder="you@example.com"
+    required
+  >
+
+  <button type="submit">
+    <span>Subscribe</span>
+    <i class="fa-solid fa-paper-plane"></i>
+  </button>
+
+</form>
+
+<script>
+  document
+    .getElementById("newsletterForm")
+    .addEventListener("submit", function (event) {
+
+      event.preventDefault();
+
+      const email = document
+        .getElementById("newsletterEmail")
+        .value
+        .trim();
+
+      const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // Validate email first
+      if (!emailPattern.test(email)) {
+        document
+          .getElementById("newsletterEmail")
+          .focus();
+
+        return;
+      }
+
+      // Valid email → go to 404 page
+      window.location.href = "404.html";
+
+    });
+</script>
     <span class="form-msg" id="formMsg"></span>
   </div>
 </section>
@@ -664,12 +698,12 @@
     </div>
 
     <div class="footer-col">
-      <h4>Shop</h4>
-      <a href="404.html">Phone Cases</a>
-      <a href="404.html">Earbuds</a>
-      <a href="404.html">Chargers</a>
-      <a href="404.html">Cables</a>
-      <a href="404.html">Power Banks</a>
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="shop.html">Shop</a>
+      <a href="feature.html">feature</a>
+      <a href="contact.html">Contact</a>
     </div>
 
     <div class="footer-col">

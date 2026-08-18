@@ -533,12 +533,57 @@
     <h2>Get first access to restocks.</h2>
     <p>Drop your email — we'll ping you the second a sold-out favorite is back, plus a 10% code for your first order.</p>
     <form class="sp-cta-form" id="spCtaForm">
-      <span class="sp-cta-input-wrap">
-        <input type="email" placeholder="you@example.com" required id="spCtaEmail">
-        <span class="sp-cta-underline"></span>
-      </span>
-      <button type="submit" class="sp-ripple-btn"><span>Notify Me</span><i class="fa-solid fa-bell"></i></button>
-    </form>
+
+  <span class="sp-cta-input-wrap">
+    <input
+      type="email"
+      placeholder="you@example.com"
+      required
+      id="spCtaEmail"
+    >
+
+    <span class="sp-cta-underline"></span>
+  </span>
+
+  <button
+    type="submit"
+    class="sp-ripple-btn"
+  >
+    <span>Notify Me</span>
+    <i class="fa-solid fa-bell"></i>
+  </button>
+
+</form>
+
+<script>
+  document
+    .getElementById("spCtaForm")
+    .addEventListener("submit", function (event) {
+
+      event.preventDefault();
+
+      const email = document
+        .getElementById("spCtaEmail")
+        .value
+        .trim();
+
+      const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // Validate email
+      if (!emailPattern.test(email)) {
+        document
+          .getElementById("spCtaEmail")
+          .focus();
+
+        return;
+      }
+
+      // Valid email → 404.html
+      window.location.href = "404.html";
+
+    });
+</script>
     <span class="form-msg" id="spCtaMsg"></span>
   </div>
 </section>
@@ -579,12 +624,12 @@
     </div>
 
     <div class="footer-col">
-      <h4>Shop</h4>
-      <a href="404.html">Phone Cases</a>
-      <a href="404.html">Earbuds</a>
-      <a href="404.html">Chargers</a>
-      <a href="404.html">Cables</a>
-      <a href="404.html">Power Banks</a>
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="shop.html">Shop</a>
+      <a href="feature.html">feature</a>
+      <a href="contact.html">Contact</a>
     </div>
 
     <div class="footer-col">
