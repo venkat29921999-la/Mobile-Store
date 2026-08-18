@@ -1,0 +1,2571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>My Account — STACKLY</title>
+
+  <meta
+    name="description"
+    content="Your STACKLY customer dashboard — track orders, manage your wishlist, rewards and messages."
+  >
+
+  <meta name="robots" content="noindex">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Dashboard CSS -->
+  <link rel="stylesheet" href="dashboard.css">
+
+
+  <!-- =====================================================
+       INLINE VIEW FIX
+       ===================================================== -->
+
+  <style>
+
+    /*
+     * Every dashboard page is inside one main container.
+     * Only the selected section is displayed.
+     */
+
+    .db-view {
+      display: none;
+      width: 100%;
+    }
+
+    .db-view.active {
+      display: block;
+    }
+
+    .db-view[aria-hidden="true"] {
+      display: none;
+    }
+
+    .db-view[aria-hidden="false"] {
+      display: block;
+    }
+
+
+    /* =====================================================
+       PAGE HEADING
+       ===================================================== */
+
+    .db-page-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .db-page-heading h1 {
+      margin: 6px 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.05;
+    }
+
+    .db-page-heading p {
+      margin: 0;
+    }
+
+    .db-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+
+    /* =====================================================
+       ORDERS
+       ===================================================== */
+
+    .db-orders-panel {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .db-orders-panel .db-table-scroll {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .db-orders-panel .db-table {
+      width: 100%;
+      min-width: 700px;
+    }
+
+
+    /* =====================================================
+       WISHLIST
+       ===================================================== */
+
+    .db-wishlist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .db-wishlist-card {
+      overflow: hidden;
+    }
+
+    .db-wishlist-image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+    }
+
+    .db-wishlist-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .db-wishlist-info {
+      padding: 20px;
+    }
+
+    .db-wishlist-category {
+      display: inline-block;
+      margin-bottom: 7px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .db-wishlist-info h3 {
+      margin: 0 0 18px;
+    }
+
+    .db-wishlist-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+
+    /* =====================================================
+       REWARDS
+       ===================================================== */
+
+    .db-rewards-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 1fr) minmax(280px, 1fr);
+      gap: 24px;
+    }
+
+    .db-rewards-card {
+      padding: 28px;
+    }
+
+    .db-rewards-points {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin: 8px 0;
+    }
+
+    .db-reward-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .db-reward-list-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+
+    /* =====================================================
+       SETTINGS
+       ===================================================== */
+
+    .db-settings-card {
+      padding: 26px;
+    }
+
+    .db-setting-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+    }
+
+    .db-setting-row + .db-setting-row {
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .db-setting-copy strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .db-setting-copy span {
+      display: block;
+      font-size: 0.86rem;
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 900px) {
+
+      .db-wishlist-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .db-rewards-layout {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+      .db-page-heading {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .db-wishlist-bottom {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .db-wishlist-bottom .btn {
+        width: 100%;
+      }
+
+      .db-orders-panel .db-table {
+        min-width: 650px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="db-page db-role-customer">
+
+
+<div class="db-shell">
+
+
+  <!-- =====================================================
+       SIDEBAR
+       ===================================================== -->
+
+  <aside
+    class="db-sidebar"
+    id="dbSidebar"
+  >
+
+    <div class="db-sidebar-top">
+
+      <a
+        href="index.html#home"
+        class="db-logo"
+      >
+        <i class="fa-solid fa-atom"></i>
+        <span>STACKLY</span>
+      </a>
+
+
+      <button
+        type="button"
+        class="db-sidebar-close"
+        id="dbSidebarClose"
+        aria-label="Close menu"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+    </div>
+
+
+    <!-- ===================================================
+         NAVIGATION
+         =================================================== -->
+
+    <nav class="db-nav">
+
+      <a
+        href="#overview"
+        class="db-nav-link active"
+        data-view="overview"
+      >
+        <i class="fa-solid fa-table-cells-large"></i>
+        <span>Overview</span>
+      </a>
+
+
+      <a
+        href="#orders"
+        class="db-nav-link"
+        data-view="orders"
+      >
+        <i class="fa-solid fa-box"></i>
+        <span>My Orders</span>
+      </a>
+
+
+      <a
+        href="#wishlist"
+        class="db-nav-link"
+        data-view="wishlist"
+      >
+        <i class="fa-solid fa-heart"></i>
+        <span>Wishlist</span>
+      </a>
+
+
+      <a
+        href="#messages"
+        class="db-nav-link"
+        data-view="messages"
+      >
+        <i class="fa-solid fa-envelope"></i>
+        <span>Messages</span>
+
+        <span
+          class="db-nav-badge"
+          data-source="messages"
+        >0</span>
+
+      </a>
+
+
+      <a
+        href="#rewards"
+        class="db-nav-link"
+        data-view="rewards"
+      >
+        <i class="fa-solid fa-award"></i>
+        <span>Rewards</span>
+      </a>
+
+
+      <a
+        href="#settings"
+        class="db-nav-link"
+        data-view="settings"
+      >
+        <i class="fa-solid fa-gear"></i>
+        <span>Settings</span>
+      </a>
+
+    </nav>
+
+
+    <!-- ===================================================
+         USER
+         =================================================== -->
+
+    <div class="db-sidebar-bottom">
+
+      <div class="db-user-card">
+
+        <span class="db-avatar">
+          AK
+        </span>
+
+        <span class="db-user-card-info">
+
+          <strong>
+            Alex King
+          </strong>
+
+          <span>
+            Customer
+          </span>
+
+        </span>
+
+      </div>
+
+
+      <a
+        href="login.html"
+        class="db-logout"
+      >
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Log Out
+      </a>
+
+    </div>
+
+  </aside>
+
+
+  <div
+    class="db-overlay"
+    id="dbOverlay"
+  ></div>
+
+
+  <!-- =====================================================
+       MAIN
+       ===================================================== -->
+
+  <div class="db-main">
+
+
+    <!-- ===================================================
+         TOP BAR
+         =================================================== -->
+
+    <header class="db-topbar">
+
+
+      <button
+        type="button"
+        class="db-hamburger"
+        id="dbHamburger"
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+      <div class="db-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+          type="text"
+          placeholder="Search orders, products…"
+        >
+
+      </div>
+
+
+      <div class="db-topbar-right">
+
+
+        <!-- Notifications -->
+
+        <div
+          class="db-notif"
+          id="dbNotif"
+        >
+
+          <button
+            type="button"
+            class="db-icon-btn"
+            id="dbNotifBtn"
+            aria-label="Notifications"
+          >
+
+            <i class="fa-regular fa-bell"></i>
+
+            <span
+              class="db-badge"
+              data-source="messages"
+            >0</span>
+
+          </button>
+
+
+          <div class="db-dropdown db-notif-panel">
+
+            <p class="db-dropdown-head">
+              Notifications
+            </p>
+
+
+            <div class="db-notif-row">
+
+              <span class="db-notif-dot"></span>
+
+              <p>
+                <strong>
+                  Order #4821
+                </strong>
+                has shipped and is on its way.
+
+                <span>
+                  2 hours ago
+                </span>
+
+              </p>
+
+            </div>
+
+
+            <div class="db-notif-row">
+
+              <span class="db-notif-dot"></span>
+
+              <p>
+                <strong>
+                  20% off
+                </strong>
+                chargers this weekend only.
+
+                <span>
+                  1 day ago
+                </span>
+
+              </p>
+
+            </div>
+
+
+            <div class="db-notif-row read">
+
+              <span class="db-notif-dot"></span>
+
+              <p>
+                Your
+                <strong>
+                  warranty claim
+                </strong>
+                was approved.
+
+                <span>
+                  3 days ago
+                </span>
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Profile -->
+
+        <div
+          class="db-profile"
+          id="dbProfile"
+        >
+
+          <button
+            type="button"
+            class="db-profile-btn"
+            id="dbProfileBtn"
+          >
+
+            <span
+              class="db-avatar"
+              style="
+                width:30px;
+                height:30px;
+                font-size:0.7rem;
+              "
+            >
+              AK
+            </span>
+
+            <span class="db-profile-name">
+              Alex
+            </span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+          </button>
+
+
+          <div class="db-dropdown">
+
+            <a
+              href="#settings"
+              class="db-dropdown-item"
+              data-view="settings"
+            >
+              <i class="fa-regular fa-user"></i>
+              View Profile
+            </a>
+
+
+            <a
+              href="#settings"
+              class="db-dropdown-item"
+              data-view="settings"
+            >
+              <i class="fa-solid fa-gear"></i>
+              Account Settings
+            </a>
+
+
+            <a
+              href="contact.html"
+              class="db-dropdown-item"
+            >
+              <i class="fa-regular fa-circle-question"></i>
+              Help &amp; Support
+            </a>
+
+
+            <div class="db-dropdown-divider"></div>
+
+
+            <a
+              href="login.html"
+              class="db-dropdown-item"
+            >
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Log Out
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENT
+         ===================================================== -->
+
+    <main class="db-content">
+
+
+      <!-- ===================================================
+           OVERVIEW
+           =================================================== -->
+
+      <section
+        class="db-view db-view-panel active"
+        id="dbViewOverview"
+        data-view-section="overview"
+        aria-hidden="false"
+      >
+
+
+        <!-- Welcome -->
+
+        <section
+          class="db-banner"
+          data-db-reveal
+        >
+
+          <div
+            class="db-banner-glow"
+            aria-hidden="true"
+          ></div>
+
+
+          <div class="db-banner-text">
+
+            <h1>
+              Welcome back, Alex
+              <span class="wave">👋</span>
+            </h1>
+
+            <p>
+              You have 1 order on the way
+              and 3 unread messages waiting
+              for you.
+            </p>
+
+          </div>
+
+
+          <a
+            href="404.html"
+            class="btn btn-primary db-banner-cta"
+            data-view="orders"
+          >
+            Track an Order
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </section>
+
+
+        <!-- Stats -->
+
+        <section class="db-stats">
+
+
+          <div
+            class="db-stat-card"
+            data-db-reveal
+          >
+
+            <div class="db-stat-top">
+
+              <span class="db-stat-icon">
+                <i class="fa-solid fa-box"></i>
+              </span>
+
+              <span class="db-stat-trend up">
+                <i class="fa-solid fa-arrow-up"></i>
+                2
+              </span>
+
+            </div>
+
+            <div
+              class="db-stat-num"
+              data-count="4"
+            >
+              0
+            </div>
+
+            <div class="db-stat-label">
+              Active Orders
+            </div>
+
+          </div>
+
+
+          <div
+            class="db-stat-card"
+            data-db-reveal
+          >
+
+            <div class="db-stat-top">
+
+              <span class="db-stat-icon">
+                <i class="fa-solid fa-heart"></i>
+              </span>
+
+            </div>
+
+            <div
+              class="db-stat-num"
+              data-count="9"
+            >
+              0
+            </div>
+
+            <div class="db-stat-label">
+              Wishlist Items
+            </div>
+
+          </div>
+
+
+          <div
+            class="db-stat-card"
+            data-db-reveal
+          >
+
+            <div class="db-stat-top">
+
+              <span class="db-stat-icon">
+                <i class="fa-solid fa-award"></i>
+              </span>
+
+              <span class="db-stat-trend up">
+                <i class="fa-solid fa-arrow-up"></i>
+                120
+              </span>
+
+            </div>
+
+            <div
+              class="db-stat-num"
+              data-count="1640"
+            >
+              0
+            </div>
+
+            <div class="db-stat-label">
+              Reward Points
+            </div>
+
+          </div>
+
+
+          <div
+            class="db-stat-card"
+            data-db-reveal
+          >
+
+            <div class="db-stat-top">
+
+              <span class="db-stat-icon">
+                <i class="fa-solid fa-headset"></i>
+              </span>
+
+            </div>
+
+            <div
+              class="db-stat-num"
+              data-count="1"
+            >
+              0
+            </div>
+
+            <div class="db-stat-label">
+              Open Tickets
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- Orders + Rewards -->
+
+        <section class="db-grid-2">
+
+
+          <div
+            class="db-panel"
+            data-db-reveal
+          >
+
+            <div class="db-panel-head">
+
+              <h2>
+                Recent Orders
+              </h2>
+
+              <a
+                href="#orders"
+                class="db-panel-link"
+                data-view="orders"
+              >
+                View all
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+
+            <div class="db-table-scroll">
+
+              <table class="db-table">
+
+                <thead>
+
+                  <tr>
+                    <th>Product</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                  </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                  <tr>
+
+                    <td>
+
+                      <div class="db-order-product">
+
+                        <span class="db-order-thumb">
+
+                          <img
+                            src="Assest/m6.webp"
+                            alt="Titan Shell Case"
+                          >
+
+                        </span>
+
+                        <span>
+
+                          <div>
+                            Titan Shell Case
+                          </div>
+
+                          <div class="db-order-id">
+                            #4821
+                          </div>
+
+                        </span>
+
+                      </div>
+
+                    </td>
+
+                    <td>
+                      <span class="db-status db-status-shipped">
+                        Shipped
+                      </span>
+                    </td>
+
+                    <td>
+                      Aug 16, 2026
+                    </td>
+
+                    <td class="db-amount">
+                      $34.00
+                    </td>
+
+                  </tr>
+
+
+                  <tr>
+
+                    <td>
+
+                      <div class="db-order-product">
+
+                        <span class="db-order-thumb">
+
+                          <img
+                            src="Assest/m5.webp"
+                            alt="ChargeFlow 65W GaN"
+                          >
+
+                        </span>
+
+                        <span>
+
+                          <div>
+                            ChargeFlow 65W GaN
+                          </div>
+
+                          <div class="db-order-id">
+                            #4790
+                          </div>
+
+                        </span>
+
+                      </div>
+
+                    </td>
+
+                    <td>
+                      <span class="db-status db-status-delivered">
+                        Delivered
+                      </span>
+                    </td>
+
+                    <td>
+                      Aug 10, 2026
+                    </td>
+
+                    <td class="db-amount">
+                      $49.00
+                    </td>
+
+                  </tr>
+
+
+                  <tr>
+
+                    <td>
+
+                      <div class="db-order-product">
+
+                        <span class="db-order-thumb">
+
+                          <img
+                            src="Assest/m2.webp"
+                            alt="EchoClear Earbuds"
+                          >
+
+                        </span>
+
+                        <span>
+
+                          <div>
+                            EchoClear Earbuds
+                          </div>
+
+                          <div class="db-order-id">
+                            #4756
+                          </div>
+
+                        </span>
+
+                      </div>
+
+                    </td>
+
+                    <td>
+                      <span class="db-status db-status-processing">
+                        Processing
+                      </span>
+                    </td>
+
+                    <td>
+                      Aug 5, 2026
+                    </td>
+
+                    <td class="db-amount">
+                      $89.00
+                    </td>
+
+                  </tr>
+
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+
+          <!-- Rewards -->
+
+          <div
+            class="db-panel"
+            data-db-reveal
+          >
+
+            <div class="db-panel-head">
+
+              <h2>
+                Rewards
+              </h2>
+
+              <a
+                href="404.html"
+                class="db-panel-link"
+                data-view="rewards"
+              >
+                View rewards
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+
+            <div class="db-reward-ring-wrap">
+
+              <div class="db-reward-ring">
+
+                <svg viewBox="0 0 100 100">
+
+                  <circle
+                    class="db-ring-track"
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  ></circle>
+
+                  <circle
+                    class="db-ring-fill"
+                    data-pct="64"
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  ></circle>
+
+                </svg>
+
+                <span class="db-reward-ring-label">
+                  64%
+                </span>
+
+              </div>
+
+
+              <div class="db-reward-copy">
+
+                <strong>
+                  1,640 / 2,500 pts
+                </strong>
+
+                <span>
+                  860 pts to Gold tier
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="db-reward-perks">
+
+              <span class="db-reward-perk">
+                <i class="fa-solid fa-check"></i>
+                Free shipping on every order
+              </span>
+
+              <span class="db-reward-perk">
+                <i class="fa-solid fa-check"></i>
+                Early access to new drops
+              </span>
+
+              <span class="db-reward-perk">
+                <i class="fa-solid fa-lock"></i>
+                Gold: double points weekends
+              </span>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </section>
+
+
+
+      <!-- ===================================================
+           MY ORDERS
+           =================================================== -->
+
+      <section
+        class="db-view db-view-panel"
+        id="dbViewOrders"
+        data-view-section="orders"
+        aria-hidden="true"
+      >
+
+        <div
+          class="db-page-heading"
+          data-db-reveal
+        >
+
+          <div>
+
+            <span class="db-eyebrow">
+              <i class="fa-solid fa-box"></i>
+              Account
+            </span>
+
+            <h1>
+              My Orders
+            </h1>
+
+            <p>
+              Track your current and previous
+              orders without leaving your dashboard.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="db-panel db-orders-panel"
+          data-db-reveal
+        >
+
+          <div class="db-panel-head">
+
+            <h2>
+              All Orders
+            </h2>
+
+            <span class="db-panel-link">
+              5 Orders
+            </span>
+
+          </div>
+
+
+          <div class="db-table-scroll">
+
+            <table class="db-table">
+
+              <thead>
+
+                <tr>
+
+                  <th>
+                    Product
+                  </th>
+
+                  <th>
+                    Status
+                  </th>
+
+                  <th>
+                    Date
+                  </th>
+
+                  <th>
+                    Amount
+                  </th>
+
+                </tr>
+
+              </thead>
+
+
+              <tbody>
+
+
+                <!-- ORDER 1 -->
+
+                <tr>
+
+                  <td>
+
+                    <div class="db-order-product">
+
+                      <span class="db-order-thumb">
+
+                        <img
+                          src="Assest/m6.webp"
+                          alt="Titan Shell Case"
+                        >
+
+                      </span>
+
+                      <span>
+
+                        <div>
+                          Titan Shell Case
+                        </div>
+
+                        <div class="db-order-id">
+                          #4821
+                        </div>
+
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="db-status db-status-shipped">
+                      Shipped
+                    </span>
+
+                  </td>
+
+
+                  <td>
+                    Aug 16, 2026
+                  </td>
+
+
+                  <td class="db-amount">
+                    $34.00
+                  </td>
+
+                </tr>
+
+
+                <!-- ORDER 2 -->
+
+                <tr>
+
+                  <td>
+
+                    <div class="db-order-product">
+
+                      <span class="db-order-thumb">
+
+                        <img
+                          src="Assest/m5.webp"
+                          alt="ChargeFlow 65W GaN"
+                        >
+
+                      </span>
+
+                      <span>
+
+                        <div>
+                          ChargeFlow 65W GaN
+                        </div>
+
+                        <div class="db-order-id">
+                          #4790
+                        </div>
+
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="db-status db-status-delivered">
+                      Delivered
+                    </span>
+
+                  </td>
+
+
+                  <td>
+                    Aug 10, 2026
+                  </td>
+
+
+                  <td class="db-amount">
+                    $49.00
+                  </td>
+
+                </tr>
+
+
+                <!-- ORDER 3 -->
+
+                <tr>
+
+                  <td>
+
+                    <div class="db-order-product">
+
+                      <span class="db-order-thumb">
+
+                        <img
+                          src="Assest/m2.webp"
+                          alt="EchoClear Earbuds"
+                        >
+
+                      </span>
+
+                      <span>
+
+                        <div>
+                          EchoClear Earbuds
+                        </div>
+
+                        <div class="db-order-id">
+                          #4756
+                        </div>
+
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="db-status db-status-processing">
+                      Processing
+                    </span>
+
+                  </td>
+
+
+                  <td>
+                    Aug 5, 2026
+                  </td>
+
+
+                  <td class="db-amount">
+                    $89.00
+                  </td>
+
+                </tr>
+
+
+                <!-- ORDER 4 -->
+
+                <tr>
+
+                  <td>
+
+                    <div class="db-order-product">
+
+                      <span class="db-order-thumb">
+
+                        <img
+                          src="Assest/m4.webp"
+                          alt="Braided USB-C Cable"
+                        >
+
+                      </span>
+
+                      <span>
+
+                        <div>
+                          Braided USB-C Cable
+                        </div>
+
+                        <div class="db-order-id">
+                          #4703
+                        </div>
+
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="db-status db-status-delivered">
+                      Delivered
+                    </span>
+
+                  </td>
+
+
+                  <td>
+                    Jul 29, 2026
+                  </td>
+
+
+                  <td class="db-amount">
+                    $16.00
+                  </td>
+
+                </tr>
+
+
+                <!-- ORDER 5 -->
+
+                <tr>
+
+                  <td>
+
+                    <div class="db-order-product">
+
+                      <span class="db-order-thumb">
+
+                        <img
+                          src="Assest/m17.webp"
+                          alt="20,000mAh Power Bank"
+                        >
+
+                      </span>
+
+                      <span>
+
+                        <div>
+                          20,000mAh Power Bank
+                        </div>
+
+                        <div class="db-order-id">
+                          #4655
+                        </div>
+
+                      </span>
+
+                    </div>
+
+                  </td>
+
+
+                  <td>
+
+                    <span class="db-status db-status-cancelled">
+                      Cancelled
+                    </span>
+
+                  </td>
+
+
+                  <td>
+                    Jul 21, 2026
+                  </td>
+
+
+                  <td class="db-amount">
+                    $59.00
+                  </td>
+
+                </tr>
+
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ===================================================
+           WISHLIST
+           =================================================== -->
+
+      <section
+        class="db-view db-view-panel"
+        id="dbViewWishlist"
+        data-view-section="wishlist"
+        aria-hidden="true"
+      >
+
+        <div
+          class="db-page-heading"
+          data-db-reveal
+        >
+
+          <div>
+
+            <span class="db-eyebrow">
+              <i class="fa-solid fa-heart"></i>
+              My Collection
+            </span>
+
+            <h1>
+              Wishlist
+            </h1>
+
+            <p>
+              Save products you want to buy later.
+              Everything stays on this dashboard.
+            </p>
+
+          </div>
+
+
+          <a
+            href="404.html"
+            class="btn btn-primary"
+          >
+            Continue Shopping
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+
+        <div class="db-wishlist-grid">
+
+
+          <!-- WISHLIST 1 -->
+
+          <article
+            class="db-wishlist-card db-panel"
+            data-db-reveal
+          >
+
+            <div class="db-wishlist-image">
+
+              <img
+                src="Assest/m6.webp"
+                alt="Titan Shell Case"
+              >
+
+            </div>
+
+
+            <div class="db-wishlist-info">
+
+              <span class="db-wishlist-category">
+                Accessories
+              </span>
+
+              <h3>
+                Titan Shell Case
+              </h3>
+
+
+              <div class="db-wishlist-bottom">
+
+                <strong>
+                  $34.00
+                </strong>
+
+                <button
+                  type="button"
+                  class="btn btn-primary db-wishlist-action"
+                  onclick="window.location.href='404.html'"
+                >
+                  <i class="fa-solid fa-cart-plus"></i>
+                  Add to Cart
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- WISHLIST 2 -->
+
+          <article
+            class="db-wishlist-card db-panel"
+            data-db-reveal
+          >
+
+            <div class="db-wishlist-image">
+
+              <img
+                src="Assest/m5.webp"
+                alt="ChargeFlow 65W GaN"
+              >
+
+            </div>
+
+
+            <div class="db-wishlist-info">
+
+              <span class="db-wishlist-category">
+                Chargers
+              </span>
+
+              <h3>
+                ChargeFlow 65W GaN
+              </h3>
+
+
+              <div class="db-wishlist-bottom">
+
+                <strong>
+                  $49.00
+                </strong>
+
+                <button
+                  type="button"
+                  class="btn btn-primary db-wishlist-action"
+                  onclick="window.location.href='404.html'"
+                >
+                  <i class="fa-solid fa-cart-plus"></i>
+                  Add to Cart
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- WISHLIST 3 -->
+
+          <article
+            class="db-wishlist-card db-panel"
+            data-db-reveal
+          >
+
+            <div class="db-wishlist-image">
+
+              <img
+                src="Assest/m2.webp"
+                alt="EchoClear Earbuds"
+              >
+
+            </div>
+
+
+            <div class="db-wishlist-info">
+
+              <span class="db-wishlist-category">
+                Audio
+              </span>
+
+              <h3>
+                EchoClear Earbuds
+              </h3>
+
+
+              <div class="db-wishlist-bottom">
+
+                <strong>
+                  $89.00
+                </strong>
+
+                <button
+                  type="button"
+                  class="btn btn-primary db-wishlist-action"
+                  onclick="window.location.href='404.html'"
+                >
+                  <i class="fa-solid fa-cart-plus"></i>
+                  Add to Cart
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- WISHLIST 4 -->
+
+          <article
+            class="db-wishlist-card db-panel"
+            data-db-reveal
+          >
+
+            <div class="db-wishlist-image">
+
+              <img
+                src="Assest/m17.webp"
+                alt="20,000mAh Power Bank"
+              >
+
+            </div>
+
+
+            <div class="db-wishlist-info">
+
+              <span class="db-wishlist-category">
+                Power
+              </span>
+
+              <h3>
+                20,000mAh Power Bank
+              </h3>
+
+
+              <div class="db-wishlist-bottom">
+
+                <strong>
+                  $59.00
+                </strong>
+
+                <button
+                  type="button"
+                  class="btn btn-primary db-wishlist-action"
+                  onclick="window.location.href='404.html'"
+                >
+                  <i class="fa-solid fa-cart-plus"></i>
+                  Add to Cart
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ===================================================
+           MESSAGES
+           =================================================== -->
+
+      <section
+        class="db-view db-view-panel"
+        id="dbViewMessages"
+        data-view-section="messages"
+        aria-hidden="true"
+      >
+
+        <div
+          class="db-page-heading"
+          data-db-reveal
+        >
+
+          <div>
+
+            <span class="db-eyebrow">
+              <i class="fa-solid fa-envelope"></i>
+              Inbox
+            </span>
+
+            <h1>
+              Messages
+            </h1>
+
+            <p>
+              Stay updated with orders,
+              support and STACKLY offers.
+            </p>
+
+          </div>
+
+
+          <a
+            href="404.html"
+            class="db-panel-link"
+          >
+            Contact support
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+
+        <section
+          class="db-panel db-inbox-panel"
+          id="dbInboxPanel"
+          data-db-reveal
+        >
+
+          <div class="db-panel-head">
+
+            <h2>
+              Your Messages
+            </h2>
+
+          </div>
+
+
+          <div class="db-inbox-toolbar">
+
+            <div class="db-inbox-search">
+
+              <i class="fa-solid fa-magnifying-glass"></i>
+
+              <input
+                type="text"
+                id="dbInboxSearch"
+                placeholder="Search messages…"
+              >
+
+            </div>
+
+
+            <div class="db-inbox-chips">
+
+              <button
+                type="button"
+                class="db-inbox-chip active"
+                data-filter="all"
+              >
+                All
+              </button>
+
+              <button
+                type="button"
+                class="db-inbox-chip"
+                data-filter="unread"
+              >
+                Unread
+              </button>
+
+              <button
+                type="button"
+                class="db-inbox-chip"
+                data-filter="order"
+              >
+                Orders
+              </button>
+
+              <button
+                type="button"
+                class="db-inbox-chip"
+                data-filter="support"
+              >
+                Support
+              </button>
+
+              <button
+                type="button"
+                class="db-inbox-chip"
+                data-filter="promo"
+              >
+                Promo
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="db-msg-list"
+            id="dbMessageList"
+          ></div>
+
+
+          <p
+            class="db-msg-empty"
+            id="dbMsgEmpty"
+          >
+            No messages match that search.
+          </p>
+
+        </section>
+
+      </section>
+
+
+
+      <!-- ===================================================
+           REWARDS
+           =================================================== -->
+
+      <section
+        class="db-view db-view-panel"
+        id="dbViewRewards"
+        data-view-section="rewards"
+        aria-hidden="true"
+      >
+
+        <div
+          class="db-page-heading"
+          data-db-reveal
+        >
+
+          <div>
+
+            <span class="db-eyebrow">
+              <i class="fa-solid fa-award"></i>
+              Membership
+            </span>
+
+            <h1>
+              Rewards
+            </h1>
+
+            <p>
+              Track your points and unlock
+              more STACKLY benefits.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="db-rewards-layout">
+
+
+          <div
+            class="db-panel db-rewards-card"
+            data-db-reveal
+          >
+
+            <span class="db-eyebrow">
+              Current Balance
+            </span>
+
+            <div class="db-rewards-points">
+              1,640 Points
+            </div>
+
+            <p>
+              You are 860 points away from
+              unlocking Gold tier.
+            </p>
+
+
+            <div class="db-reward-ring-wrap">
+
+              <div class="db-reward-ring">
+
+                <svg viewBox="0 0 100 100">
+
+                  <circle
+                    class="db-ring-track"
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  ></circle>
+
+                  <circle
+                    class="db-ring-fill"
+                    data-pct="64"
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  ></circle>
+
+                </svg>
+
+                <span class="db-reward-ring-label">
+                  64%
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="db-panel db-rewards-card"
+            data-db-reveal
+          >
+
+            <h2>
+              Your Benefits
+            </h2>
+
+
+            <div class="db-reward-list">
+
+              <div class="db-reward-list-item">
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  Free shipping on every order
+                </span>
+
+              </div>
+
+
+              <div class="db-reward-list-item">
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  Early access to new drops
+                </span>
+
+              </div>
+
+
+              <div class="db-reward-list-item">
+
+                <i class="fa-solid fa-check"></i>
+
+                <span>
+                  Member-only offers
+                </span>
+
+              </div>
+
+
+              <div class="db-reward-list-item">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <span>
+                  Gold: double points weekends
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ===================================================
+           SETTINGS
+           =================================================== -->
+
+      <section
+        class="db-view db-view-panel"
+        id="dbViewSettings"
+        data-view-section="settings"
+        aria-hidden="true"
+      >
+
+        <div
+          class="db-page-heading"
+          data-db-reveal
+        >
+
+          <div>
+
+            <span class="db-eyebrow">
+              <i class="fa-solid fa-gear"></i>
+              Account
+            </span>
+
+            <h1>
+              Settings
+            </h1>
+
+            <p>
+              Manage your dashboard preferences.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="db-panel db-settings-card"
+          data-db-reveal
+        >
+
+          <div class="db-panel-head">
+
+            <h2>
+              Dashboard Preferences
+            </h2>
+
+          </div>
+
+
+          <div class="db-setting-row">
+
+            <div class="db-setting-copy">
+
+              <strong>
+                Email notifications
+              </strong>
+
+              <span>
+                Receive important account updates.
+              </span>
+
+            </div>
+
+            <input
+              type="checkbox"
+              checked
+            >
+
+          </div>
+
+
+          <div class="db-setting-row">
+
+            <div class="db-setting-copy">
+
+              <strong>
+                Low stock alerts
+              </strong>
+
+              <span>
+                Get notified when saved products
+                are running low.
+              </span>
+
+            </div>
+
+            <input
+              type="checkbox"
+              checked
+            >
+
+          </div>
+
+
+          <div class="db-setting-row">
+
+            <div class="db-setting-copy">
+
+              <strong>
+                Weekly reports
+              </strong>
+
+              <span>
+                Receive a weekly account summary.
+              </span>
+
+            </div>
+
+            <input
+              type="checkbox"
+            >
+
+          </div>
+
+
+          <div style="margin-top:24px;">
+
+            <button
+              type="button"
+              class="btn btn-primary db-save-btn"
+              onclick="window.location.href='404.html'"
+            >
+              Save Changes
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+  </div>
+
+</div>
+
+
+
+<!-- =======================================================
+     DASHBOARD MESSAGE DATA
+     ======================================================= -->
+
+<script>
+
+  window.DASHBOARD_MESSAGES = [
+
+    {
+      id: 1,
+      sender: 'STACKLY Orders',
+      initials: 'SO',
+      tag: 'Order',
+      time: '2h ago',
+      unread: true,
+
+      subject:
+        'Your order #4821 has shipped',
+
+      preview:
+        'Your Titan Shell Case is on its way — estimated delivery Aug 19.',
+
+      full:
+        'Your Titan Shell Case (Order #4821) has shipped via express courier. Estimated delivery is Aug 19, 2026.'
+    },
+
+
+    {
+      id: 2,
+      sender: 'Support Team',
+      initials: 'ST',
+      tag: 'Support',
+      time: '1d ago',
+      unread: true,
+
+      subject:
+        'Re: Warranty claim approved',
+
+      preview:
+        'Good news — your warranty claim for the ChargeFlow charger has been approved.',
+
+      full:
+        'Good news — your warranty claim for the ChargeFlow 65W GaN charger has been approved.'
+    },
+
+
+    {
+      id: 3,
+      sender: 'STACKLY Deals',
+      initials: 'SD',
+      tag: 'Promo',
+      time: '2d ago',
+      unread: true,
+
+      subject:
+        '20% off chargers this weekend',
+
+      preview:
+        'GaN chargers and power banks are 20% off through Sunday — members only.',
+
+      full:
+        'GaN chargers and power banks are 20% off through Sunday, members only.'
+    },
+
+
+    {
+      id: 4,
+      sender: 'STACKLY Orders',
+      initials: 'SO',
+      tag: 'Order',
+      time: '5d ago',
+      unread: false,
+
+      subject:
+        'Order #4756 is being processed',
+
+      preview:
+        'Your EchoClear Earbuds order has been received and is being prepared.',
+
+      full:
+        'Your EchoClear Earbuds order (#4756) has been received and is currently being prepared for shipment.'
+    },
+
+
+    {
+      id: 5,
+      sender: 'Support Team',
+      initials: 'ST',
+      tag: 'Support',
+      time: '1w ago',
+      unread: false,
+
+      subject:
+        'How was your recent order?',
+
+      preview:
+        'We would love to hear your feedback on Order #4703.',
+
+      full:
+        'We would love to hear your feedback on Order #4703. Reviews from customers like you help others shop with confidence.'
+    },
+
+
+    {
+      id: 6,
+      sender: 'STACKLY Rewards',
+      initials: 'SR',
+      tag: 'Order',
+      time: '2w ago',
+      unread: false,
+
+      subject:
+        'You earned 120 reward points',
+
+      preview:
+        'Your recent purchase added 120 points to your balance — 860 to go for Gold tier.',
+
+      full:
+        'Your recent purchase added 120 points to your rewards balance, bringing your total to 1,640.'
+    }
+
+  ];
+
+</script>
+
+
+
+<!-- Dashboard JavaScript -->
+
+<script src="dashboard.js"></script>
+
+
+<!-- =======================================================
+     INLINE NAVIGATION SAFETY FIX
+     ======================================================= -->
+
+<script>
+
+document.addEventListener(
+  'DOMContentLoaded',
+  function () {
+
+    const links =
+      document.querySelectorAll(
+        '.db-nav-link[data-view]'
+      );
+
+
+    const panels =
+      document.querySelectorAll(
+        '[data-view-section]'
+      );
+
+
+    function showView(view) {
+
+      if (!view) {
+        view = 'overview';
+      }
+
+
+      let target =
+        document.querySelector(
+          '[data-view-section="' +
+          view +
+          '"]'
+        );
+
+
+      if (!target) {
+
+        view = 'overview';
+
+        target =
+          document.querySelector(
+            '[data-view-section="overview"]'
+          );
+
+      }
+
+
+      panels.forEach(
+        function (panel) {
+
+          const active =
+            panel === target;
+
+          panel.classList.toggle(
+            'active',
+            active
+          );
+
+          panel.setAttribute(
+            'aria-hidden',
+            active ? 'false' : 'true'
+          );
+
+        }
+      );
+
+
+      links.forEach(
+        function (link) {
+
+          link.classList.toggle(
+            'active',
+            link.dataset.view === view
+          );
+
+        }
+      );
+
+    }
+
+
+    links.forEach(
+      function (link) {
+
+        link.addEventListener(
+          'click',
+          function (event) {
+
+            event.preventDefault();
+
+            const view =
+              this.dataset.view;
+
+            showView(view);
+
+            history.replaceState(
+              null,
+              '',
+              '#' + view
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+    /*
+     * Overview buttons that should
+     * open another dashboard section.
+     */
+
+    document
+      .querySelectorAll(
+        '[data-view]'
+      )
+      .forEach(
+        function (element) {
+
+          if (
+            element.classList.contains(
+              'db-nav-link'
+            )
+          ) {
+            return;
+          }
+
+
+          element.addEventListener(
+            'click',
+            function (event) {
+
+              const view =
+                this.dataset.view;
+
+              if (!view) {
+                return;
+              }
+
+
+              const target =
+                document.querySelector(
+                  '[data-view-section="' +
+                  view +
+                  '"]'
+                );
+
+
+              if (!target) {
+                return;
+              }
+
+
+              event.preventDefault();
+
+              showView(view);
+
+              history.replaceState(
+                null,
+                '',
+                '#' + view
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    /*
+     * Load view from URL.
+     *
+     * Example:
+     *
+     * user-dashboard.html#orders
+     * user-dashboard.html#wishlist
+     * user-dashboard.html#messages
+     */
+
+    let initialView =
+      window.location.hash
+        .replace('#', '')
+        .trim();
+
+
+    if (
+      !initialView ||
+      !document.querySelector(
+        '[data-view-section="' +
+        initialView +
+        '"]'
+      )
+    ) {
+
+      initialView = 'overview';
+
+    }
+
+
+    showView(initialView);
+
+
+    /*
+     * Browser back/forward
+     */
+
+    window.addEventListener(
+      'hashchange',
+      function () {
+
+        const view =
+          window.location.hash
+            .replace('#', '')
+            .trim();
+
+        showView(view || 'overview');
+
+      }
+    );
+
+  }
+);
+
+</script>
+
+
+</body>
+</html>

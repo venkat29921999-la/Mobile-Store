@@ -24,6 +24,17 @@
 .au-visual-top{ position:relative; z-index:2; display:flex; align-items:center; gap:9px; font-family:var(--font-display); font-weight:700; font-size:1.25rem; }
 .au-visual-top i{ color:var(--accent); font-size:1.15rem; }
 
+/* ---------- Floating particle field ---------- */
+.au-particles{ position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+.au-particle{ position:absolute; bottom:-14px; border-radius:50%; background:var(--accent-2); opacity:0; animation-name:auParticleRise; animation-timing-function:linear; animation-iteration-count:infinite; }
+@keyframes auParticleRise{
+  0%{ transform:translateY(0) translateX(0); opacity:0; }
+  10%{ opacity:0.6; }
+  50%{ transform:translateY(-260px) translateX(10px); }
+  90%{ opacity:0.35; }
+  100%{ transform:translateY(-540px) translateX(-6px); opacity:0; }
+}
+
 .au-orbit-scene{ position:relative; z-index:1; width:min(300px,72%); aspect-ratio:1/1; margin:20px auto; }
 .au-ring{ position:absolute; inset:0; border-radius:50%; border:1px solid var(--line); }
 .au-ring-1{ inset:6%; }
@@ -64,8 +75,9 @@
 .au-sub #auRoleLabel, .au-sub .au-role-label{ color:var(--accent-2); font-weight:600; }
 
 .au-field{ position:relative; margin-bottom:18px; }
-.au-field input{ width:100%; padding:20px 18px 10px; border-radius:14px; border:1px solid var(--line); background:var(--black-elev); color:var(--white); font-size:0.95rem; font-family:inherit; transition:border-color .3s; }
+.au-field input{ width:100%; padding:20px 18px 10px; border-radius:14px; border:1px solid var(--line); background:var(--black-elev); color:var(--white); font-size:0.95rem; font-family:inherit; transition:border-color .3s, box-shadow .3s; }
 .au-field input:focus{ outline:none; border-color:var(--accent); }
+.au-field.au-field-focus input{ box-shadow:0 0 0 4px rgba(78,91,255,0.14); }
 .au-field label{ position:absolute; left:18px; top:19px; color:var(--white-dim); font-size:0.95rem; pointer-events:none; transition:transform .25s var(--ease), font-size .25s var(--ease), color .25s var(--ease); transform-origin:left top; }
 .au-field input:focus + label, .au-field input:not(:placeholder-shown) + label{ transform:translateY(-10px) scale(0.78); color:var(--accent-2); }
 .au-field-row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
@@ -86,13 +98,17 @@
 .au-forgot:hover, .au-terms a:hover{ color:var(--white); }
 .au-terms{ color:var(--white-dim); }
 
-.au-submit-btn{ position:relative; width:100%; padding:17px; border-radius:100px; background:var(--accent); color:var(--white); font-weight:600; font-size:0.95rem; overflow:hidden; transition:background .3s, transform .3s var(--ease); }
+.au-submit-btn{ position:relative; width:100%; padding:17px; border-radius:100px; background:var(--accent); color:var(--white); font-weight:600; font-size:0.95rem; overflow:hidden; transition:background .3s, transform .2s var(--ease); }
 .au-submit-btn:hover{ transform:translateY(-2px); }
 .au-submit-label{ display:flex; align-items:center; justify-content:center; gap:10px; transition:opacity .25s; }
 .au-submit-loader{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .25s; }
 .au-submit-loader::after{ content:''; width:20px; height:20px; border-radius:50%; border:2px solid rgba(246,246,244,0.35); border-top-color:#fff; animation:auSpin .7s linear infinite; }
+.au-submit-check{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; transform:scale(0.5); transition:opacity .3s var(--ease), transform .3s var(--ease); }
 .au-submit-btn.is-loading .au-submit-label{ opacity:0; }
 .au-submit-btn.is-loading .au-submit-loader{ opacity:1; }
+.au-submit-btn.is-success{ background:#2fbf71; }
+.au-submit-btn.is-success .au-submit-label{ opacity:0; }
+.au-submit-btn.is-success .au-submit-check{ opacity:1; transform:scale(1); }
 
 .au-divider{ display:flex; align-items:center; gap:14px; margin:28px 0; color:var(--white-dim); font-size:0.78rem; }
 .au-divider::before, .au-divider::after{ content:''; flex:1; height:1px; background:var(--line); }

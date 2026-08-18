@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — STACKLY</title>
+<meta name="description" content="STACKLY admin dashboard — revenue, orders, customers and the support inbox in one place.">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="db-page db-role-admin">
+
+<div class="db-shell">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="db-sidebar" id="dbSidebar">
+    <div class="db-sidebar-top">
+<a href="index.html#home" class="db-logo">
+  <img
+    src="Assest/stackly-logo.webp"
+    alt="STACKLY"
+    class="db-logo-image"
+  >
+</a>      <button class="db-sidebar-close" id="dbSidebarClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <nav class="db-nav">
+
+  <a
+    href="#overview"
+    class="db-nav-link active"
+    data-view="overview"
+  >
+    <i class="fa-solid fa-table-cells-large"></i>
+    <span>Overview</span>
+  </a>
+
+
+  <a
+    href="#orders"
+    class="db-nav-link"
+    data-view="orders"
+  >
+    <i class="fa-solid fa-box"></i>
+    <span>Orders</span>
+  </a>
+
+
+  <a
+    href="#products"
+    class="db-nav-link"
+    data-view="products"
+  >
+    <i class="fa-solid fa-layer-group"></i>
+    <span>Products</span>
+  </a>
+
+
+  <a
+    href="#customers"
+    class="db-nav-link"
+    data-view="customers"
+  >
+    <i class="fa-solid fa-users"></i>
+    <span>Customers</span>
+  </a>
+
+
+  <a
+    href="#messages"
+    class="db-nav-link"
+    data-view="messages"
+  >
+    <i class="fa-solid fa-headset"></i>
+    <span>Support Inbox</span>
+    <span
+      class="db-nav-badge"
+      data-source="messages"
+    >0</span>
+  </a>
+
+
+  <a
+    href="#settings"
+    class="db-nav-link"
+    data-view="settings"
+  >
+    <i class="fa-solid fa-gear"></i>
+    <span>Settings</span>
+  </a>
+
+</nav>
+
+    <div class="db-sidebar-bottom">
+      <div class="db-user-card">
+        <span class="db-avatar">RM</span>
+        <span class="db-user-card-info">
+          <strong>Riya Mehta</strong>
+          <span>Admin</span>
+        </span>
+      </div>
+      <a href="login.html" class="db-logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+    </div>
+  </aside>
+
+  <div class="db-overlay" id="dbOverlay"></div>
+
+  <!-- ================= MAIN ================= -->
+  <div class="db-main">
+
+    <header class="db-topbar">
+      <button class="db-hamburger" id="dbHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+
+      <div class="db-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search orders, customers, products…">
+      </div>
+
+      <div class="db-topbar-right">
+        <div class="db-notif" id="dbNotif">
+          <button
+  class="db-icon-btn"
+  id="dbNotifBtn"
+  aria-label="Notifications"
+  onclick="window.location.href='404.html'"
+>
+  <i class="fa-regular fa-bell"></i>
+  <span class="db-badge" data-source="messages">0</span>
+</button>
+         
+        </div>
+
+        <div class="db-profile" id="dbProfile">
+          <button class="db-profile-btn" id="dbProfileBtn">
+            <span class="db-avatar" style="width:30px;height:30px;font-size:0.7rem;">RM</span>
+            <span class="db-profile-name">Riya</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="db-dropdown">
+            <a href="404.html" class="db-dropdown-item"><i class="fa-regular fa-user"></i> View Profile</a>
+            <a href="404.html" class="db-dropdown-item"><i class="fa-solid fa-gear"></i> Admin Settings</a>
+            <a href="404.html" class="db-dropdown-item"><i class="fa-regular fa-circle-question"></i> Help Center</a>
+            <div class="db-dropdown-divider"></div>
+            <a href="login.html" class="db-dropdown-item"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="db-content">
+      <section class="db-view db-view-panel active" id="dbViewOverview" data-view-section="overview">
+
+
+      <!-- Welcome banner -->
+      <section class="db-banner" data-db-reveal>
+        <div class="db-banner-glow" aria-hidden="true"></div>
+        <div class="db-banner-text">
+          <h1>Welcome back, Riya <span class="wave">👋</span></h1>
+          <p>Revenue is up 12% this week, and 3 support tickets are waiting on a reply.</p>
+        </div>
+        <a href="404.html" class="btn btn-primary db-banner-cta">View Support Inbox <i class="fa-solid fa-arrow-right"></i></a>
+      </section>
+
+      <!-- Stat cards -->
+      <section class="db-stats">
+        <div class="db-stat-card" data-db-reveal>
+          <div class="db-stat-top">
+            <span class="db-stat-icon"><i class="fa-solid fa-sack-dollar"></i></span>
+            <span class="db-stat-trend up"><i class="fa-solid fa-arrow-up"></i> 12%</span>
+          </div>
+          <div class="db-stat-num" data-count="48250" data-prefix="$">0</div>
+          <div class="db-stat-label">Revenue (This Month)</div>
+        </div>
+        <div class="db-stat-card" data-db-reveal>
+          <div class="db-stat-top">
+            <span class="db-stat-icon"><i class="fa-solid fa-box"></i></span>
+            <span class="db-stat-trend up"><i class="fa-solid fa-arrow-up"></i> 8%</span>
+          </div>
+          <div class="db-stat-num" data-count="1284">0</div>
+          <div class="db-stat-label">Total Orders</div>
+        </div>
+        <div class="db-stat-card" data-db-reveal>
+          <div class="db-stat-top">
+            <span class="db-stat-icon"><i class="fa-solid fa-users"></i></span>
+            <span class="db-stat-trend up"><i class="fa-solid fa-arrow-up"></i> 34</span>
+          </div>
+          <div class="db-stat-num" data-count="392">0</div>
+          <div class="db-stat-label">New Customers</div>
+        </div>
+        <div class="db-stat-card" data-db-reveal>
+          <div class="db-stat-top">
+            <span class="db-stat-icon"><i class="fa-solid fa-headset"></i></span>
+            <span class="db-stat-trend down"><i class="fa-solid fa-arrow-down"></i> 2</span>
+          </div>
+          <div class="db-stat-num" data-count="7">0</div>
+          <div class="db-stat-label">Pending Tickets</div>
+        </div>
+      </section>
+
+      <!-- Orders + Analytics chart -->
+      <section class="db-grid-2">
+        <div class="db-panel" data-db-reveal>
+          <div class="db-panel-head">
+            <h2>Recent Orders</h2>
+            <a href="#" class="db-panel-link">View all <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="db-table-scroll">
+            <table class="db-table">
+              <thead><tr><th>Customer</th><th>Product</th><th>Status</th><th>Amount</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><div class="db-order-product"><span class="db-avatar" style="width:32px;height:32px;font-size:0.68rem;">AK</span><span>Alex King</span></div></td>
+                  <td>Titan Shell Case</td>
+                  <td><span class="db-status db-status-shipped">Shipped</span></td>
+                  <td class="db-amount">$34.00</td>
+                </tr>
+                <tr>
+                  <td><div class="db-order-product"><span class="db-avatar" style="width:32px;height:32px;font-size:0.68rem;">JT</span><span>Jordan Tan</span></div></td>
+                  <td>ChargeFlow 65W GaN</td>
+                  <td><span class="db-status db-status-processing">Processing</span></td>
+                  <td class="db-amount">$49.00</td>
+                </tr>
+                <tr>
+                  <td><div class="db-order-product"><span class="db-avatar" style="width:32px;height:32px;font-size:0.68rem;">PN</span><span>Priya Nair</span></div></td>
+                  <td>EchoClear Earbuds</td>
+                  <td><span class="db-status db-status-delivered">Delivered</span></td>
+                  <td class="db-amount">$89.00</td>
+                </tr>
+                <tr>
+                  <td><div class="db-order-product"><span class="db-avatar" style="width:32px;height:32px;font-size:0.68rem;">DL</span><span>Diego Luna</span></div></td>
+                  <td>Power Bank 20,000mAh</td>
+                  <td><span class="db-status db-status-cancelled">Cancelled</span></td>
+                  <td class="db-amount">$59.00</td>
+                </tr>
+                <tr>
+                  <td><div class="db-order-product"><span class="db-avatar" style="width:32px;height:32px;font-size:0.68rem;">SW</span><span>Sara Wen</span></div></td>
+                  <td>Braided USB-C Cable</td>
+                  <td><span class="db-status db-status-delivered">Delivered</span></td>
+                  <td class="db-amount">$16.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="db-panel" data-db-reveal>
+          <div class="db-panel-head"><h2>Revenue — Last 7 Days</h2></div>
+          <div class="db-chart">
+            <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar" data-height="52"></div></div><span class="db-chart-label">Mon</span></div>
+            <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar" data-height="68"></div></div><span class="db-chart-label">Tue</span></div>
+            <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar" data-height="45"></div></div><span class="db-chart-label">Wed</span></div>
+            <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar" data-height="80"></div></div><span class="db-chart-label">Thu</span></div>
+            <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar" data-height="63"></div></div><span class="db-chart-label">Fri</span></div>
+            <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar is-peak" data-height="100"></div></div><span class="db-chart-label">Sat</span></div>
+            <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar" data-height="74"></div></div><span class="db-chart-label">Sun</span></div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      </section>
+      <section class="db-view db-view-panel" id="dbViewOrders" data-view-section="orders">
+        <div class="db-page-heading" data-db-reveal><div><span class="db-eyebrow"><i class="fa-solid fa-box"></i> Sales</span><h1>Orders</h1><p>Review and manage all recent customer orders inline.</p></div></div>
+        <div class="db-panel" data-db-reveal><div class="db-panel-head"><h2>Order Management</h2><span class="db-panel-note">Latest orders</span></div><div class="db-table-scroll"><table class="db-table"><thead><tr><th>Customer</th><th>Product</th><th>Status</th><th>Amount</th></tr></thead><tbody>
+          <tr><td>Alex King</td><td>Titan Shell Case</td><td><span class="db-status db-status-shipped">Shipped</span></td><td class="db-amount">$34.00</td></tr>
+          <tr><td>Jordan Tan</td><td>ChargeFlow 65W GaN</td><td><span class="db-status db-status-processing">Processing</span></td><td class="db-amount">$49.00</td></tr>
+          <tr><td>Priya Nair</td><td>EchoClear Earbuds</td><td><span class="db-status db-status-delivered">Delivered</span></td><td class="db-amount">$89.00</td></tr>
+          <tr><td>Diego Luna</td><td>Power Bank 20,000mAh</td><td><span class="db-status db-status-cancelled">Cancelled</span></td><td class="db-amount">$59.00</td></tr>
+        </tbody></table></div></div>
+      </section>
+      <!-- =========================================================
+     ADMIN PRODUCTS
+     ========================================================= -->
+
+<section
+  class="db-view db-view-panel"
+  id="dbViewProducts"
+  data-view-section="products"
+>
+
+  <!-- Page heading -->
+  <div class="db-page-heading admin-products-heading">
+
+    <div>
+
+      <span class="db-eyebrow">
+        <i class="fa-solid fa-layer-group"></i>
+        Catalog
+      </span>
+
+      <h1>Products</h1>
+
+      <p>
+        Manage your product catalog without leaving the dashboard.
+      </p>
+
+    </div>
+
+    <div class="admin-products-actions">
+
+      <span class="db-page-count">
+        3 Products
+      </span>
+
+      <button
+  type="button"
+  class="btn btn-primary"
+  id="adminAddProductBtn"
+  onclick="window.location.href='404.html'"
+>
+  <i class="fa-solid fa-plus"></i>
+  Add Product
+</button>
+
+    </div>
+
+  </div>
+
+
+  <!-- Product toolbar -->
+  <div class="admin-products-toolbar">
+
+    <div class="admin-products-search">
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+      <input
+        type="text"
+        id="adminProductSearch"
+        placeholder="Search products..."
+        autocomplete="off"
+      >
+
+    </div>
+
+
+    <div class="admin-products-filter">
+
+      <button
+        type="button"
+        class="admin-filter-btn active"
+        data-product-filter="all"
+      >
+        All
+      </button>
+
+      <button
+        type="button"
+        class="admin-filter-btn"
+        data-product-filter="accessories"
+      >
+        Accessories
+      </button>
+
+      <button
+        type="button"
+        class="admin-filter-btn"
+        data-product-filter="chargers"
+      >
+        Chargers
+      </button>
+
+      <button
+        type="button"
+        class="admin-filter-btn"
+        data-product-filter="audio"
+      >
+        Audio
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- Product grid -->
+  <div
+    class="admin-products-grid"
+    id="adminProductsGrid"
+  >
+
+
+    <!-- Product 1 -->
+    <article
+      class="admin-product-card"
+      data-product-category="accessories"
+      data-product-name="Titan Shell Case"
+    >
+
+      <div class="admin-product-image">
+
+        <img
+          src="Assest/m6.webp"
+          alt="Titan Shell Case"
+        >
+
+        <span class="admin-product-badge">
+          Popular
+        </span>
+
+        <button
+  type="button"
+  class="admin-product-favorite"
+  aria-label="Favorite product"
+  onclick="window.location.href='404.html'"
+>
+  <i class="fa-regular fa-heart"></i>
+</button>
+
+      </div>
+
+
+      <div class="admin-product-content">
+
+        <span class="admin-product-category">
+          Accessories
+        </span>
+
+        <h3>
+          Titan Shell Case
+        </h3>
+
+        <p class="admin-product-description">
+          Premium protective shell case with a slim,
+          durable design.
+        </p>
+
+
+        <div class="admin-product-meta">
+
+          <div>
+            <span>SKU</span>
+            <strong>STK-001</strong>
+          </div>
+
+          <div>
+            <span>Stock</span>
+            <strong class="admin-stock-good">
+              42 units
+            </strong>
+          </div>
+
+        </div>
+
+
+        <div class="admin-product-bottom">
+
+          <strong class="admin-product-price">
+            $34.00
+          </strong>
+
+          <div class="admin-product-buttons">
+
+            <button
+  type="button"
+  class="admin-product-btn admin-product-btn-light"
+  onclick="window.location.href='404.html'"
+>
+  View
+</button>
+
+<button
+  type="button"
+  class="admin-product-btn admin-product-btn-primary"
+  onclick="window.location.href='404.html'"
+>
+  Edit
+</button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- Product 2 -->
+    <article
+      class="admin-product-card"
+      data-product-category="chargers"
+      data-product-name="ChargeFlow 65W GaN"
+    >
+
+      <div class="admin-product-image">
+
+        <img
+          src="Assest/m5.webp"
+          alt="ChargeFlow 65W GaN"
+        >
+
+        <span class="admin-product-badge admin-product-badge-new">
+          New
+        </span>
+
+        <button
+  type="button"
+  class="admin-product-favorite"
+  aria-label="Favorite product"
+  onclick="window.location.href='404.html'"
+>
+  <i class="fa-regular fa-heart"></i>
+</button>
+
+      </div>
+
+
+      <div class="admin-product-content">
+
+        <span class="admin-product-category">
+          Chargers
+        </span>
+
+        <h3>
+          ChargeFlow 65W GaN
+        </h3>
+
+        <p class="admin-product-description">
+          Compact GaN charger with fast charging
+          support for multiple devices.
+        </p>
+
+
+        <div class="admin-product-meta">
+
+          <div>
+            <span>SKU</span>
+            <strong>STK-002</strong>
+          </div>
+
+          <div>
+            <span>Stock</span>
+            <strong class="admin-stock-good">
+              28 units
+            </strong>
+          </div>
+
+        </div>
+
+
+        <div class="admin-product-bottom">
+
+          <strong class="admin-product-price">
+            $49.00
+          </strong>
+
+          <div class="admin-product-buttons">
+
+            <button
+  type="button"
+  class="admin-product-btn admin-product-btn-light"
+  onclick="window.location.href='404.html'"
+>
+  View
+</button>
+
+<button
+  type="button"
+  class="admin-product-btn admin-product-btn-primary"
+  onclick="window.location.href='404.html'"
+>
+  Edit
+</button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- Product 3 -->
+    <article
+      class="admin-product-card"
+      data-product-category="audio"
+      data-product-name="EchoClear Earbuds"
+    >
+
+      <div class="admin-product-image">
+
+        <img
+          src="Assest/m2.webp"
+          alt="EchoClear Earbuds"
+        >
+
+        <span class="admin-product-badge admin-product-badge-low">
+          Low Stock
+        </span>
+
+        <button
+  type="button"
+  class="admin-product-favorite"
+  aria-label="Favorite product"
+  onclick="window.location.href='404.html'"
+>
+  <i class="fa-regular fa-heart"></i>
+</button>
+
+      </div>
+
+
+      <div class="admin-product-content">
+
+        <span class="admin-product-category">
+          Audio
+        </span>
+
+        <h3>
+          EchoClear Earbuds
+        </h3>
+
+        <p class="admin-product-description">
+          Wireless earbuds with clear audio,
+          comfortable fit and long battery life.
+        </p>
+
+
+        <div class="admin-product-meta">
+
+          <div>
+            <span>SKU</span>
+            <strong>STK-003</strong>
+          </div>
+
+          <div>
+            <span>Stock</span>
+            <strong class="admin-stock-low">
+              6 units
+            </strong>
+          </div>
+
+        </div>
+
+
+        <div class="admin-product-bottom">
+
+          <strong class="admin-product-price">
+            $89.00
+          </strong>
+
+          <div class="admin-product-buttons">
+
+            <button
+  type="button"
+  class="admin-product-btn admin-product-btn-light"
+  onclick="window.location.href='404.html'"
+>
+  View
+</button>
+
+<button
+  type="button"
+  class="admin-product-btn admin-product-btn-primary"
+  onclick="window.location.href='404.html'"
+>
+  Edit
+</button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+
+  <!-- Empty search result -->
+  <div
+    class="admin-products-empty"
+    id="adminProductsEmpty"
+  >
+
+    <i class="fa-solid fa-box-open"></i>
+
+    <h3>No products found</h3>
+
+    <p>
+      Try another product name or category.
+    </p>
+
+  </div>
+
+
+</section>
+      <section class="db-view db-view-panel" id="dbViewCustomers" data-view-section="customers">
+        <div class="db-page-heading" data-db-reveal><div><span class="db-eyebrow"><i class="fa-solid fa-users"></i> CRM</span><h1>Customers</h1><p>View customer accounts and their latest activity inline.</p></div></div>
+        <div class="db-panel" data-db-reveal><div class="db-panel-head"><h2>Customers</h2></div><div class="db-table-scroll"><table class="db-table"><thead><tr><th>Customer</th><th>Orders</th><th>Status</th><th>Latest Order</th></tr></thead><tbody>
+          <tr><td>Alex King</td><td>5</td><td><span class="db-status db-status-delivered">Active</span></td><td>#4821</td></tr>
+          <tr><td>Jordan Tan</td><td>3</td><td><span class="db-status db-status-delivered">Active</span></td><td>#4790</td></tr>
+          <tr><td>Priya Nair</td><td>7</td><td><span class="db-status db-status-processing">Review</span></td><td>#4756</td></tr>
+        </tbody></table></div></div>
+      </section>
+      <section class="db-view db-view-panel" id="dbViewAnalytics" data-view-section="analytics">
+        <div class="db-page-heading" data-db-reveal><div><span class="db-eyebrow"><i class="fa-solid fa-chart-line"></i> Insights</span><h1>Analytics</h1><p>Review revenue performance inline.</p></div></div>
+        <div class="db-panel" data-db-reveal><div class="db-panel-head"><h2>Revenue — Last 7 Days</h2></div><div class="db-chart">
+          <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar" data-height="52"></div></div><span class="db-chart-label">Mon</span></div>
+          <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar" data-height="68"></div></div><span class="db-chart-label">Tue</span></div>
+          <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar" data-height="45"></div></div><span class="db-chart-label">Wed</span></div>
+          <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar" data-height="80"></div></div><span class="db-chart-label">Thu</span></div>
+          <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar" data-height="63"></div></div><span class="db-chart-label">Fri</span></div>
+          <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar is-peak" data-height="100"></div></div><span class="db-chart-label">Sat</span></div>
+          <div class="db-chart-col"><div class="db-chart-bar-track"><div class="db-chart-bar" data-height="74"></div></div><span class="db-chart-label">Sun</span></div>
+        </div></div>
+      </section>
+      <section class="db-view db-view-panel" id="dbViewSettings" data-view-section="settings">
+        <div class="db-page-heading" data-db-reveal><div><span class="db-eyebrow"><i class="fa-solid fa-gear"></i> Admin</span><h1>Settings</h1><p>Manage dashboard settings inline.</p></div></div>
+        <div class="db-panel"><h2>Dashboard Preferences</h2><label class="db-toggle-row"><span>Email notifications</span><input type="checkbox" checked><span class="db-toggle"></span></label><label class="db-toggle-row"><span>Low stock alerts</span><input type="checkbox" checked><span class="db-toggle"></span></label><label class="db-toggle-row"><span>Weekly reports</span><input type="checkbox"><span class="db-toggle"></span></label></div>
+      </section>
+      <section class="db-view db-view-panel" id="dbViewMessages" data-view-section="messages">
+      <!-- Support Inbox — fully dynamic -->
+      <section class="db-panel db-inbox-panel" id="dbInboxPanel" data-db-reveal>
+        <div class="db-panel-head">
+          <h2>Support Inbox</h2>
+          <a href="404.html" class="db-panel-link">Open full inbox <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="db-inbox-toolbar">
+          <div class="db-inbox-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="dbInboxSearch" placeholder="Search tickets…">
+          </div>
+          <div class="db-inbox-chips">
+            <button type="button" class="db-inbox-chip active" data-filter="all">All</button>
+            <button type="button" class="db-inbox-chip" data-filter="unread">Unread</button>
+            <button type="button" class="db-inbox-chip" data-filter="order">Orders</button>
+            <button type="button" class="db-inbox-chip" data-filter="billing">Billing</button>
+            <button type="button" class="db-inbox-chip" data-filter="wholesale">Wholesale</button>
+          </div>
+        </div>
+
+        <div class="db-msg-list" id="dbMessageList"><!-- rendered dynamically by dashboard.js --></div>
+        <p class="db-msg-empty" id="dbMsgEmpty">No tickets match that search.</p>
+      </section>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script>
+  /* Ticket data — dashboard.js renders this into #dbMessageList dynamically. */
+  window.DASHBOARD_MESSAGES = [
+    { id: 1, sender: 'Alex King', initials: 'AK', tag: 'Order', time: '18m ago', unread: true,
+      subject: 'Where is my order #4821?', preview: 'Hi, tracking hasn\u2019t updated in 2 days — can someone check on this?',
+      full: 'Hi, my tracking for order #4821 (Titan Shell Case) hasn\u2019t updated in 2 days and it still says "label created." Could someone check with the courier? Thanks!' },
+    { id: 2, sender: 'Priya Nair', initials: 'PN', tag: 'Billing', time: '1h ago', unread: true,
+      subject: 'Double charge on my card', preview: 'I think I was charged twice for order #4790 — can you confirm?',
+      full: 'I just noticed two charges of $49.00 on my card, both labeled STACKLY, dated the same day. I only placed one order (#4790). Could you confirm whether this is a duplicate charge and refund if so?' },
+    { id: 3, sender: 'Global Retail Co.', initials: 'GR', tag: 'Wholesale', time: '3h ago', unread: true,
+      subject: 'Bulk order — 200 units', preview: 'Requesting a wholesale quote for 200 units of the ChargeFlow charger.',
+      full: 'We are a retail chain interested in a wholesale quote for 200 units of the ChargeFlow 65W GaN charger, with recurring monthly orders if pricing works out. Please advise on lead time and bulk pricing tiers.' },
+    { id: 4, sender: 'Diego Luna', initials: 'DL', tag: 'Order', time: '6h ago', unread: false,
+      subject: 'Cancel order #4655', preview: 'Please cancel this order, I ordered the wrong power bank capacity.',
+      full: 'I accidentally ordered the 20,000mAh power bank instead of the 10,000mAh one. Order #4655. Could you cancel it before it ships? I\u2019ll place a new order for the correct one.' },
+    { id: 5, sender: 'Sara Wen', initials: 'SW', tag: 'Billing', time: '1d ago', unread: false,
+      subject: 'Need an invoice copy', preview: 'Could you resend the invoice for order #4703 for my expense report?',
+      full: 'Could you resend the invoice for order #4703? I need it attached to a work expense report and can\u2019t find the original email. My billing email is on file.' },
+    { id: 6, sender: 'Jordan Tan', initials: 'JT', tag: 'Order', time: '2d ago', unread: false,
+      subject: 'Wrong color received', preview: 'I ordered the black case but received white — how do we fix this?',
+      full: 'I ordered the Titan Shell Case in black but received white instead. Order #4790. I\u2019d like an exchange for the correct color — happy to ship the wrong one back once I get a return label.' }
+  ];
+</script>
+<script src="dashboard.js"></script>
+</body>
+</html>
