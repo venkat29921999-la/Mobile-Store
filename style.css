@@ -1094,3 +1094,390 @@ p{ margin:0; }
 @media (prefers-reduced-motion:reduce){
   .sp-cta-underline{ transition:none; }
 }
+/* =========================================================
+   FINAL FIXES — HOME HERO MOBILE + FOOTER
+   These rules are scoped so they do not change other sections.
+   ========================================================= */
+
+/* ---------- FOOTER: only real links are clickable ---------- */
+.site-footer,
+.site-footer .footer-top,
+.site-footer .footer-bottom,
+.site-footer .footer-brand,
+.site-footer .footer-col,
+.site-footer .footer-marquee {
+  cursor: default;
+}
+
+/* Decorative footer layers must never receive mouse clicks */
+.site-footer .footer-bg,
+.site-footer .footer-blob,
+.site-footer .footer-blob-2,
+.site-footer .footer-watermark {
+  pointer-events: none;
+}
+
+/* Footer marquee is informational, not a navigation link */
+.site-footer .footer-marquee,
+.site-footer .footer-marquee-track,
+.site-footer .footer-marquee-track span {
+  pointer-events: none;
+}
+
+/* Only actual footer anchors are clickable */
+.site-footer a {
+  cursor: pointer;
+}
+
+.site-footer .footer-brand > a,
+.site-footer .footer-col > a,
+.site-footer .socials > a {
+  pointer-events: auto;
+}
+
+/* ---------- HOME HERO: prevent mobile horizontal overflow ---------- */
+.hero {
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-inner,
+.hero-copy,
+.hero-orbit {
+  min-width: 0;
+}
+
+.hero-copy h1,
+.hero-sub {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+@media (max-width:980px){
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-copy h1 {
+    max-width: 100%;
+    font-size: clamp(2.2rem, 7vw, 3.5rem);
+    line-height: 1.08;
+  }
+
+  .hero-sub {
+    width: 100%;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta,
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .hero-orbit {
+    width: min(82vw, 400px);
+    max-width: 400px;
+    margin: 20px auto 0;
+    overflow: visible;
+  }
+
+  .float-card {
+    display: none;
+  }
+
+  /* Keep the four orbit items inside the hero area */
+  .item-2 {
+    right: 1%;
+  }
+
+  .item-4 {
+    left: 1%;
+  }
+}
+
+@media (max-width:600px){
+  .hero {
+    padding: 120px 20px 70px;
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    gap: 24px;
+  }
+
+  .hero-copy h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1.08;
+    margin: 14px 0;
+  }
+
+  .hero-sub {
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+
+  .hero-cta {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
+  }
+
+  .hero-cta .btn {
+    width: min(100%, 280px);
+    justify-content: center;
+  }
+
+  .hero-stats {
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-stats strong {
+    font-size: 1.5rem;
+  }
+
+  .hero-stats span {
+    font-size: 0.72rem;
+  }
+
+  .hero-orbit {
+    width: min(78vw, 330px);
+    max-width: 330px;
+    margin: 10px auto 0;
+  }
+
+  .orbit-item {
+    width: 62px;
+    height: 62px;
+  }
+
+  .item-1 {
+    top: 3%;
+  }
+
+  .item-2 {
+    right: 2%;
+  }
+
+  .item-3 {
+    bottom: 3%;
+  }
+
+  .item-4 {
+    left: 2%;
+  }
+
+  /* Prevent the scroll cue from becoming a horizontal overflow source */
+  .scroll-cue {
+    max-width: 100%;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width:380px){
+  .hero {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .hero-copy h1 {
+    font-size: 2rem;
+  }
+
+  .hero-orbit {
+    width: 75vw;
+    max-width: 300px;
+  }
+
+  .orbit-item {
+    width: 56px;
+    height: 56px;
+  }
+
+  .hero-stats {
+    gap: 16px;
+  }
+}
+
+
+/* =========================================================
+   FINAL MOBILE SCROLL FIX
+   ONLY affects mobile devices
+   Does not change desktop or other sections
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  /* Prevent browser from automatically repositioning
+     the page when content/animations change */
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-anchor: none;
+  }
+
+  /* Keep the main page in normal vertical scrolling */
+  body {
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: auto;
+  }
+
+  /* Footer must stay in normal document flow */
+  .site-footer {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    min-height: 0;
+    transform: none !important;
+  }
+
+  /* Footer decorative animations cannot affect page scrolling */
+  .site-footer .footer-bg,
+  .site-footer .footer-blob,
+  .site-footer .footer-blob-2,
+  .site-footer .footer-watermark {
+    pointer-events: none;
+  }
+
+  /* Footer marquee is only visual */
+  .site-footer .footer-marquee {
+    overflow: hidden;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .site-footer .footer-marquee-track {
+    pointer-events: none;
+  }
+
+  /* Do not allow footer content itself to create
+     horizontal page movement */
+  .site-footer .footer-top,
+  .site-footer .footer-bottom {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .site-footer .footer-col,
+  .site-footer .footer-brand {
+    min-width: 0;
+  }
+
+  /* Text should wrap instead of increasing page width */
+  .site-footer p,
+  .site-footer a,
+  .site-footer h4 {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  /* Payment icons stay inside mobile width */
+  .site-footer .pay-icons {
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Back-to-top button stays fixed and cannot affect layout */
+  .back-to-top {
+    position: fixed;
+  }
+
+  /* Disable sticky positioning on mobile */
+  .sticky-section .sticky-visual {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  /* Disable accidental vertical scroll snapping */
+  .cat-viewport {
+    scroll-snap-type: x mandatory;
+  }
+}
+
+
+/* =========================================================
+   EXTRA MOBILE SAFETY
+   Prevent animated sections from changing the
+   browser's scroll anchor
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-anchor: none;
+  }
+
+  main {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .section {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .newsletter,
+  .faq-section,
+  .site-footer {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Keep newsletter inside the mobile viewport */
+  .newsletter-inner {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .newsletter-form {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .newsletter-form input {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .newsletter-form button {
+    max-width: 100%;
+  }
+} 

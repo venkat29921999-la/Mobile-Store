@@ -240,7 +240,8 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Timeline fill line on scroll (comet-trail progress) ---------- */
   const timelineFill = document.getElementById('timelineFill');
   const timelineSection = document.querySelector('.timeline-section');
-  if (timelineFill && timelineSection && window.ScrollTrigger) {
+ if (timelineFill && timelineSection && window.ScrollTrigger && window.matchMedia('(min-width:901px)').matches
+) {
     const isMobileLine = () => window.matchMedia('(max-width:900px)').matches;
     ScrollTrigger.create({
       trigger: timelineSection,
